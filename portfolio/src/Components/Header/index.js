@@ -18,11 +18,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
+import Autocomplete from '@mui/material/Autocomplete';
+
+
 
 import MenuItem from '@mui/material/MenuItem';
 import ApiIcon from '@mui/icons-material/Api';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedIn from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -38,12 +42,18 @@ import { styled, alpha } from '@mui/material/styles';
 import ProfilePic from '../Media/logo.jpg';
 
 import colors from '../Constants/colorscheme.js';
+import contactLinks from '../Constants/contactme.js';
+
+import searchData from "../../Pages/Projects/projects.json";
+
+import { Link  } from "react-router-dom";
 
 const pages = ['Projects', 'Timeline', 'About'];
-const profile_dropdown = [['Github',<GitHubIcon />], ['Gmail',<MailIcon/>], ['Instagram',<InstagramIcon/>], ['Resume',<DownloadIcon/>]];
+const profile_dropdown = [['github',<GitHubIcon />], ['gmail',<MailIcon/>], ['instagram',<InstagramIcon/>],['linkedin',<LinkedIn/>] ,['resume',<DownloadIcon/>]];
 
 
 function ResponsiveAppBar() {
+
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -86,6 +96,7 @@ function ResponsiveAppBar() {
 
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
@@ -137,11 +148,29 @@ function ResponsiveAppBar() {
       transition: theme.transitions.create('width'),
       width: '100%',
       [theme.breakpoints.up('sm')]: {
-        width: '15ch',
-        '&:focus': {
-          width: '20ch',
-        },
+        width: '20ch',
+        // '&:focus': {
+        //   width: '20ch',
+        // },
       },
+    },
+  }));
+
+  const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiAutocomplete-inputRoot .MuiAutocomplete-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width:'100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '20ch',
+        // '&:focus': {
+        //   width: '20ch',
+        // },
+      },
+
     },
   }));
 
@@ -185,6 +214,8 @@ function ResponsiveAppBar() {
 
   const customTheme = createTheme(customDarkTheme('light'));
 
+  // console.log(searchData.map((element)=> element['name']));
+
   return (
     <ThemeProvider theme={customTheme}>
       <AppBar position="static">
@@ -220,40 +251,6 @@ function ResponsiveAppBar() {
                 {list('left')}
               </Drawer>
             </div>
-            {/* <IconButton
-              size="large"
-              aria-label="links"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-             <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <a textAlign="center" href={page}>{page}</a>
-                </MenuItem>
-              ))}
-            </Menu> */}
           </Box>
           <ApiIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -280,9 +277,7 @@ function ResponsiveAppBar() {
                 key={page}
                 sx={{ my: 2, display: 'block' }}
               >
-              <Button>
-                <a textAlign="center" href={page}>{page}</a>
-              </Button>
+                <a href={page}>{page}</a>
               </Button>
             ))}
           </Box>
@@ -291,37 +286,66 @@ function ResponsiveAppBar() {
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search projects…"
-              inputProps={{ 'aria-label': 'search' }}
+            <StyledAutocomplete
+              // open
+              options={searchData.map((element,index)=> {return [element['name'],index]})}
+              freeSolo
+              renderOption={(props, option) => {
+                // if(option[1]>3)
+                //   return '';
+                return (
+                  <span {...props} style={{ backgroundColor: colors[1]}}>
+                    <Link to={`/Projects`} state={{ goto: `#section-${option[1]}`}}>
+                      {option[0]}
+                    </Link>
+                  </span>
+                );
+              }}
+              renderInput={(params) => {
+                const {InputLabelProps,InputProps,...rest} = params;
+                return <StyledInputBase {...params.InputProps} {...rest} placeholder="Search projects…" />}}
             />
           </Search>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Contact Me">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton 
+                onClick={handleOpenUserMenu} 
+                sx={{ p: 0 }}
+                aria-controls={anchorElUser ? 'account-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={anchorElUser ? 'true' : undefined}
+                >
                 <Avatar alt="Remy Sharp" src={ProfilePic} />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '20px' }}
-              id="menu-appbar"
+              disableScrollLock={true}
+              sx={{marginTop: 5,marginLeft:-0.9}}
               anchorEl={anchorElUser}
               // anchorOrigin={{
               //   vertical: 'top',
               //   horizontal: 'right',
               // }}
-              keepMounted
-              // transformOrigin={{
-              //   vertical: 'top',
-              //   horizontal: 'right',
-              // }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
             >
               {profile_dropdown.map(([setting,symbol]) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Tooltip textAlign="center" title={setting} placement="left-end">{symbol}</Tooltip>
+                  <Tooltip textalign="center" title={setting} placement="left-end">
+                    <a href={contactLinks[setting]}>{symbol}</a>
+                  </Tooltip>
                 </MenuItem>
               ))}
             </Menu>

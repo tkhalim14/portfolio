@@ -5,7 +5,7 @@ let exp_elements = [
         location: "Student Mentorship Program - IIT Dharwad",
         description:
         "Implemented the UI design and webapp of the Technical Council website of IIT Dharwad using the technologies : React.js, CSS.",
-        link: "",
+        link: "https://smp.iitdh.ac.in",
         date: "Oct, 2021 - Oct, 2022",
         icon: "school"
     },
@@ -15,7 +15,7 @@ let exp_elements = [
         location: "Career Development Cell, IIT Dharwad",
         description:
             "I was given this role to based off my people skills. Throughout the experience, my core responsibilities were inviting companies for placements, being the point of contact between company and the candidates and coordinating the selection process",
-        link: "",
+        link: "https://cdc.iitdh.ac.in",
         date: "Mar, 2022 - May, 2023",
         icon: "school"
     },
@@ -58,7 +58,7 @@ let curricular_elements = [
         location: "Indian Institute of Technology, Dharwad",
         description:
         "Conducted live-action coding competition for the freshers batch at IIT Dharwad.",
-        link: "View Backend Projects",
+        link: "",
         date: "Jun, 2021",
         icon: "school"
     },
@@ -68,7 +68,7 @@ let curricular_elements = [
         location: "Open Source Society - IIT Dharwad",
         description:
         "Conducted an open-source website building event open for all the batches during the month of October for creating our virtual yearbook.",
-        link: "View Frontend Projects",
+        link: "",
         date: "Oct, 2021",
         icon: "school"
     },
@@ -90,6 +90,16 @@ let curricular_elements = [
         "I became a Student Mentor for my junior batch in 2nd year. The core skills I learned from this were mentorship, communication, group therapy and social skills.",
         link: "",
         date: "Nov, 2021 - Nov, 2022",
+        icon: "school"
+    },
+    {
+        id: 1,
+        title: "Emotion Detector - SOI",
+        location: "Summer of Innovation, IIT Dharwad",
+        description:
+        "Our team won the second prize for the AI track event of Summer of Innovation for Emotion Detection achieving accuracy of 68% . ",
+        link: "",
+        date: "July, 2022",
         icon: "school"
     },
     {
@@ -150,6 +160,7 @@ const education_elements = [
         location: "Patna, Bihar",
         description:
         "Highschool - St. Karen’s instilled in me a strong sense of self-belief and confidence and empower them to positively contribute to society and become active. In my years of high school, I've excelled at academics and have even picked up various soft skills.",
+        link: "https://www.stkarenssecondaryschool.com",
         date: "2017 - 2020",
         icon: "school"
     },
@@ -159,7 +170,7 @@ const education_elements = [
         location: "Dharwad, Karnataka",
         description:
         "College - I am currently pursuing my B.Tech degree from IIT Dharwad. One of the most prestigious institutions in India. It is among the 3rd generation IITs established by the Ministry of Human Resource Development, Government of India in 2016 under the mentorship of IIT Bombay.",
-        link: "College Projects",
+        link: "https://iitdh.ac.in",
         date: "2020 - 2024",
         icon: "school"
     },

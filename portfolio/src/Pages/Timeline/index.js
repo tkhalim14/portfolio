@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -6,7 +7,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
-import LinkIcon from '@mui/icons-material/Link';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import Typography from '@mui/material/Typography';
 
@@ -24,19 +25,20 @@ export default function CustomizedTimeline() {
     const theme = createTheme({
         palette: {
             primary: {
-                main: colors[2]
+                main: colors[2],
+                dark: '#FFF',
             },
             secondary: {
-                main: '#d32f2f'
+                main: '#d32f2f',
             },
             text: {
                 primary: colors[3],
-                secondary: colors[3],
+                secondary: '#FFF',
             },
           },
     });
 
-  return (
+  return (<React.Fragment>
     <ThemeProvider theme={theme}>
         <Typography variant="h4" marginX="50px" marginY="25px">
         Work Experience
@@ -55,11 +57,11 @@ export default function CustomizedTimeline() {
 
             let timelinedot_color = terminal_colors[element.id%3];
 
-            return (<TimelineItem>
+            return (<TimelineItem key={element.title}>
                 <TimelineSeparator>
                 <TimelineConnector />
                 <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
-                    <RadioButtonCheckedIcon />
+                    <RadioButtonCheckedIcon color="primary.dark"/>
                 </TimelineDot>
                 <TimelineConnector />
                 </TimelineSeparator>
@@ -67,12 +69,18 @@ export default function CustomizedTimeline() {
                 <Typography variant="h6" component="span">
                     {element.title} 
                 </Typography>
-                <a href={element.link}><LinkIcon margin='10px'/></a>
                 <Typography sx={{ color: 'secondary.main' }} >
                     {element.date}
                 </Typography>
                 <Typography sx={{ color: 'primary.main' }}>
-                    {element.location}
+                    {element.location} 
+                    <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                        {
+                            element.link==="" ?
+                            ("") :
+                            (<a href={element.link}><OpenInNewIcon fontSize='small'/></a>)
+                        }
+                    </span>
                 </Typography>
                 <Typography variant="caption">
                     {element.description}
@@ -99,7 +107,7 @@ export default function CustomizedTimeline() {
 
             let timelinedot_color = terminal_colors[element.id%3];
 
-            return (<TimelineItem>
+            return (<TimelineItem key={element.title}>
                 <TimelineSeparator>
                 <TimelineConnector />
                 <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
@@ -115,7 +123,14 @@ export default function CustomizedTimeline() {
                     {element.date}
                 </Typography>
                 <Typography sx={{ color: 'primary.main' }}>
-                    {element.location}
+                    {element.location} 
+                    <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                        {
+                            element.link==="" ?
+                            ("") :
+                            (<Link key={element.link} to={element.link}><OpenInNewIcon fontSize='small'/></Link>)
+                        }
+                    </span>
                 </Typography>
                 <Typography variant="caption">
                     {element.description}
@@ -142,7 +157,7 @@ export default function CustomizedTimeline() {
 
             let timelinedot_color = terminal_colors[element.id%3];
 
-            return (<TimelineItem>
+            return (<TimelineItem key={element.title}>
                 <TimelineSeparator>
                 <TimelineConnector />
                 <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
@@ -158,7 +173,14 @@ export default function CustomizedTimeline() {
                     {element.date}
                 </Typography>
                 <Typography sx={{ color: 'primary.main' }}>
-                    {element.location}
+                    {element.location} 
+                    <span sx={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                        {
+                            element.link==="" ?
+                            ("") :
+                            (<Link key={element.link} to={element.link}><OpenInNewIcon fontSize='small'/></Link>)
+                        }
+                    </span>
                 </Typography>
                 <Typography variant="caption">
                     {element.description}
@@ -168,6 +190,8 @@ export default function CustomizedTimeline() {
         })}
         </Timeline>
     </ThemeProvider>
+  </React.Fragment>
+    
     
   );
 }
