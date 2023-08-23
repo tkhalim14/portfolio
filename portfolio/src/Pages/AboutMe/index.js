@@ -21,7 +21,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import StarIcon from '@mui/icons-material/Star';
 
-import { styled, alpha } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
 
 import {programmingLanguages , tools} from './techstack.js';
 
@@ -47,14 +47,14 @@ function About() {
       },
 });
 
-  const CustomButton = styled(Button)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiButton-outlined': {
-      '&:hover': {
-        color: '#FFF',
-      }
-    },
-  }));
+  // const CustomButton = styled(Button)(({ theme }) => ({
+  //   color: 'inherit',
+  //   '& .MuiButton-outlined': {
+  //     '&:hover': {
+  //       color: '#FFF',
+  //     }
+  //   },
+  // }));
 
     return (
       <>
