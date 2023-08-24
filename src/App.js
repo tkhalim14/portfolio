@@ -22,10 +22,10 @@ function App() {
           <Route path='/Projects' element={<Projects/>}/>
         </Routes>
       </div>
-      </BrowserRouter>
       <div style={{ position:'relative', bottom:0 }}>
         <Footer/>
       </div>
+      </BrowserRouter>
     </div>
   );
 }
