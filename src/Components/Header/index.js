@@ -80,7 +80,7 @@ function ResponsiveAppBar() {
       <List >
         {['Projects', 'Timeline', 'About'].map((text, index) => (
           <ListItem key={text}>
-            <ListItemButton>
+            <ListItemButton href={'/portfolio#'+text}>
             <ListItemText primary={text} />
             <ListItemIcon>
               <ChevronRightIcon sx={{color: colors[3]}}/>
@@ -275,9 +275,11 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                sx={{ my: 2, display: 'block' }}
+                sx={{ my: 2, display: 'block', color: colors[3] }}
+                href={'/portfolio#'+page}
               >
-                <a href={'/portfolio#'+page}>{page}</a>
+                {/* <a href={'/portfolio#'+page}>{page}</a> */}
+                {page}
               </Button>
             ))}
           </Box>
@@ -288,17 +290,15 @@ function ResponsiveAppBar() {
             </SearchIconWrapper>
             <StyledAutocomplete
               // open
-              options={searchData.map((element,index)=> {return [element['name'],index]})}
+              options={searchData.map((element)=> {return element['name']})}
               freeSolo
               renderOption={(props, option) => {
                 // if(option[1]>3)
                 //   return '';
                 return (
-                  <span {...props} style={{ backgroundColor: colors[1]}}>
-                    <Link to={`/Projects`} state={{ goto: `#section-${option[1]}`}}>
-                      {option[0]}
-                    </Link>
-                  </span>
+                  <Link {...props} style={{ backgroundColor: colors[1]}} to={`/Projects`} state={{ goto: `#${option}`}}>
+                      {option}
+                  </Link>
                 );
               }}
               renderInput={(params) => {

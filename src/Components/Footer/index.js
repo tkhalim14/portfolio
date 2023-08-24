@@ -73,7 +73,7 @@ export default function Footer() {
         <Box mt={5}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"Copyright © "}
-            <a color="inherit" href="https://your-website.com/" key={'https://your-website.com/'}>
+            <a color="inherit" href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
               Tabish Portfolio
             </a>{" " + new Date().getFullYear()+"."}
           </Typography>

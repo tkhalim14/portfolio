@@ -50,7 +50,7 @@ export default function ProjectPage(props) {
             {index=== project.length-1? '': <TimelineConnector/>}
           </TimelineSeparator>
           <TimelineContent>
-            <Typography variant="h5" id={'#section-'+(index)}>
+            <Typography variant="h5" id={'#'+(element['name'])}>
               {element['name']}
             </Typography>
             <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
