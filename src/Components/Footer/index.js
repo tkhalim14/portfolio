@@ -40,7 +40,7 @@ export default function Footer() {
               <Button href={contactLinks['resume']} sx={{color:'secondary.main'}}>Download Resume&nbsp; <Download/></Button>
             </Typography>
             <Typography variant="body2">
-              <Button href="/About" sx={{color:'secondary.main'}}>Go to About Section</Button>
+              <Button href="/portfolio#About" sx={{color:'secondary.main'}}>Go to About Section</Button>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>

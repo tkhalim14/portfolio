@@ -11,22 +11,22 @@ import React from 'react';
 
 function App() {
   return (
+    <HashRouter basename="/">
     <div className="Main">
-      <HashRouter>
-      <Header/>
       <div>
+        <Header/>
+      </div>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/About' element={<About/>}/>
           <Route path='/Timeline' element={<Timeline/>}/>
           <Route path='/Projects' element={<Projects/>}/>
         </Routes>
-      </div>
       <div style={{ position:'relative', bottom:0 }}>
         <Footer/>
       </div>
-      </HashRouter>
     </div>
+    </HashRouter>
   );
 }
 

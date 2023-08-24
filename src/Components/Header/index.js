@@ -226,7 +226,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/portfolio#/"
             sx={{
               mr: 6,
               display: { xs: 'none', md: 'flex' },
@@ -257,7 +257,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="/portfolio#/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -277,7 +277,7 @@ function ResponsiveAppBar() {
                 key={page}
                 sx={{ my: 2, display: 'block' }}
               >
-                <a href={page}>{page}</a>
+                <a href={'/portfolio#'+page}>{page}</a>
               </Button>
             ))}
           </Box>

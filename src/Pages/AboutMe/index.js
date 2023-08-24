@@ -21,6 +21,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import StarIcon from '@mui/icons-material/Star';
 
+// import { useLocation } from 'react-router-dom';
+
 // import { styled } from '@mui/material/styles';
 
 import {programmingLanguages , tools} from './techstack.js';
@@ -28,9 +30,18 @@ import {programmingLanguages , tools} from './techstack.js';
 
 function About() {
 
-  React.useEffect(() => {
-    document.body.style.backgroundImage = `url(${banner})`;
-  });
+  // const location = useLocation();
+
+  // React.useEffect(() => {
+  //   if(location.pathname === '/About'){
+  //     document.body.style.backgroundImage = `url(${banner})`;
+  //   }
+  //   else{
+  //     document.body.style.backgroundImage = 'none';
+  //   }
+  //   // console.log(location.pathname);
+    
+  // });
 
   const theme = createTheme({
     palette: {
