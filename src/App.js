@@ -5,14 +5,14 @@ import Timeline from './Pages/Timeline/index.js';
 import Projects from './Pages/Projects/index.js';
 import Header from './Components/Header/index.js';
 import Footer from './Components/Footer/index.js';
-import { BrowserRouter, Routes, Route  } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
 
 
 function App() {
   return (
     <div className="Main">
-      <BrowserRouter>
+      <HashRouter>
       <Header/>
       <div>
         <Routes>
@@ -25,7 +25,7 @@ function App() {
       <div style={{ position:'relative', bottom:0 }}>
         <Footer/>
       </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
