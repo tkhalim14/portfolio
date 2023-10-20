@@ -5,7 +5,7 @@ import Timeline from './Pages/Timeline/index.js';
 import Projects from './Pages/Projects/index.js';
 import Header from './Components/Header/index.js';
 import Footer from './Components/Footer/index.js';
-import { BrowserRouter, Routes, Route, HashRouter  } from "react-router-dom";
+import { Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
 
 

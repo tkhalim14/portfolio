@@ -19,6 +19,12 @@
         "techstack": "Tensorflow · MobileNet · Keras · OpenCV",
         "link": "https://github.com/shashankp28/soi-hardly-human-2022"
     },
+    {   "priority": 1,
+        "name": "Project: Cross-cade",
+        "description": "Developed an immersive puzzle-solving web application that significantly enhanced the user experience through a variety of challenging puzzle games. Leveraged llama LLM to curate generation of creative riddles and hints providing users with engaging and enjoyable puzzle-solving experiences.",
+        "techstack": "React.js · FastAPI · PostgreSQL · NLP · LLM",
+        "link": "https://github.com/tkhalim14/project-crosscade"
+    },
     {   "priority": 0,
         "name": "American-Sign-Language (ASL) Detector",
         "description": "Developed an AI-based Python program that employs a 26-class classifier to perform real-time classification of both videos and images. The classifier is designed to accurately categorize various American Sign Language (ASL) signs, encompassing a diverse range of 26 distinct symbols.",
