@@ -18,7 +18,7 @@ import colors from '../../Components/Constants/colorscheme.js';
 import Profile from './profilecard.js'
 
 import Timeline from '../Timeline/index.js';
-import Projects from '../Projects/index.js';
+// import Projects from '../Projects/index.js';
 
 import LazyLoad from 'react-lazy-load';
 import { Typography } from '@mui/material';
@@ -35,7 +35,7 @@ function Home() {
 
   const [expanded, setExpanded] = React.useState(true);
 
-  const [project_expanded, setproject_Expanded] = React.useState(false);
+  // const [project_expanded, setproject_Expanded] = React.useState(false);
 
   const handleChange = (panel, setPanel) => (event, isExpanded) => {
     setPanel(isExpanded ? panel : false);
@@ -68,7 +68,7 @@ function Home() {
             </Grid>
           </Grid>
         </Box>
-        <Box sx={{ flexGrow: 1, margin:'2vmax'}}>
+        {/* <Box sx={{ flexGrow: 1, margin:'2vmax'}}>
           <Accordion expanded={project_expanded} onChange={handleChange(!project_expanded,setproject_Expanded)}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="secondary"/>}
@@ -87,7 +87,7 @@ function Home() {
               <Projects priority_bool={true}/>
             </AccordionDetails>
           </Accordion>
-        </Box>
+        </Box> */}
         <Box sx={{ flexGrow: 1, margin:'2vmax'}}>
           <Accordion expanded={expanded} onChange={handleChange(!expanded,setExpanded)}>
             <AccordionSummary

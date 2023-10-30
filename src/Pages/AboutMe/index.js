@@ -1,4 +1,4 @@
-import banner from '../../Components/Media/banner.png';
+// import banner from '../../Components/Media/banner.png';
 
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
@@ -13,13 +13,18 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import contactLinks from '../../Components/Constants/contactme.js';
 import colors from '../../Components/Constants/colorscheme.js';
 
-
+import LazyLoad from 'react-lazy-load';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Grow from '@mui/material/Grow';
+import Avatar from '@mui/material/Avatar';
 import StarIcon from '@mui/icons-material/Star';
+
+// import banner from '../../Components/Media/banner.png';
+import ProfileImg from '../../Components/Media/AboutDP.jpg';
 
 // import { useLocation } from 'react-router-dom';
 
@@ -70,11 +75,20 @@ function About() {
     return (
       <>
       <div>
-        <Grid sx={{display:'flex', justifyContent:'space-between', flexDirection:'column',mt:'5vh'}}>
-          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5}}>
+        <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }, mt:'5vh'}}>
+          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
             <ThemeProvider theme={theme}>
-                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'60vw'}}>
+                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: 90}}>
+                </Card>
+                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0}}>
                     <CardContent>
+                      <Typography variant='h4'>
+                      <LazyLoad>
+                        <Grow in={true}>
+                          <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: 180, width: 180, marginBottom: 3,  margin:2}} align="left"/>
+                        </Grow >
+                      </LazyLoad>
+                      </Typography>
                       <Typography variant="h5" component="div">
                           Tabish Khalid Halim
                       </Typography>
@@ -130,9 +144,11 @@ function About() {
                 </Card>
             </ThemeProvider>
           </Grid>
-          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 10, paddingBottom:6}}>
+          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '30%'}}>
             <ThemeProvider theme={theme}>
-                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'60vw'}}>
+                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
+                    <CardContent sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', height: '2.5%'}}>
+                    </CardContent>
                     <CardContent>
                         <Typography variant='h4'>
                           Skills
@@ -161,9 +177,8 @@ function About() {
           </Grid>
         </Grid>
       </div>
-      <div style={{position: 'relative',}}>
-            
-        </div>
+      <div style={{position: 'relative'}}>
+      </div>
       </>
     );
   }
