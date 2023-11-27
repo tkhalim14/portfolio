@@ -58,8 +58,17 @@ export default function BasicCard() {
         <ThemeProvider theme={theme}>
             <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0}}>
                 <CardContent>
-                <Typography variant="h5" component="div">
-                            Tabish Khalid Halim
+                        <Typography variant="h5">
+                            <Grid rows={{ xs: 1}} columns={{ xs: 1 }} sx={{display:'flex',justifyContent:'space-between'}}>
+                                <Grid item>
+                                    Tabish Khalid Halim
+                                </Grid>
+                                <Grid item>
+                                    <CardActions sx={{display:'inline',justifyContent:'flex-end'}}>
+                                        <Button size="medium" href={contactLinks['resume']} variant="contained" color="secondary">Resume</Button>
+                                    </CardActions>
+                                </Grid>
+                            </Grid>
                         </Typography>
                         <Typography sx={{ fontSize: 14 , mb: 1.5 }} color="text.secondary" gutterBottom>
                             B.Tech, CSE'24
@@ -79,11 +88,11 @@ export default function BasicCard() {
                           <Grid item>
                               Thanks for visiting my portfolio. Explore my projects and experiences, and let's connect!
                           </Grid>
-                          <Grid item>
+                          {/* <Grid item>
                               <CardActions sx={{display:'inline',justifyContent:'flex-end'}}>
                                   <Button size="small" href={contactLinks['resume']} variant="contained" color="secondary">Resume</Button>
                               </CardActions>
-                          </Grid>
+                          </Grid> */}
                       </Grid>
                 </CardContent>
                 
