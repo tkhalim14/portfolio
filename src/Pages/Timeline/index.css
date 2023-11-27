@@ -8,3 +8,12 @@
     color: black;
     border-radius: 10px;
 }
+.timeline-dot-target{
+    transition: 0.2s;
+}
+.timeline-dot-target:hover{
+    transform: scale(1.4);
+}
+.hovered{
+    transform: scale(1.4);
+}

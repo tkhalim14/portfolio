@@ -1,0 +1,6 @@
+.project-item{
+    transition: 0.2s;
+}
+.project-item:hover{
+    transform: scale(1.03);
+}

@@ -50,6 +50,29 @@ export default function CustomizedTimeline() {
     });
 
 
+    const handleHover = (event) => {
+        const hoveredElement = event.currentTarget.parentNode.querySelector('.timeline-dot-target');
+
+        if (hoveredElement) {
+            // Add logic for hover effect on the nearest hovered-element
+            // You can update styles, content, or perform other actions here
+            hoveredElement.classList.add('hovered');
+        }
+    };
+    
+    const handleLeave = (event) => {
+    const hoveredElement = event.currentTarget.parentNode.querySelector('.timeline-dot-target');
+
+    console.log(hoveredElement);
+
+    if (hoveredElement) {
+        // Add logic for when the mouse leaves the hover-trigger element
+        // You can update styles, content, or perform other actions here
+        hoveredElement.classList.remove('hovered');
+    }
+    };
+
+
   return (<React.Fragment>
     <ThemeProvider theme={theme}>
         <Typography variant="h4" marginX="50px" marginY="25px">
@@ -72,12 +95,12 @@ export default function CustomizedTimeline() {
             return (<TimelineItem key={element.title}>
                 <TimelineSeparator>
                 <TimelineConnector />
-                <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                <TimelineDot className='timeline-dot-target' color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
                     <RadioButtonCheckedIcon color="primary.dark"/>
                 </TimelineDot>
                 <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                <TimelineContent sx={{ py: '12px', px: 2 }} className='timeline-dot-trigger' onMouseEnter={handleHover} onMouseLeave={handleLeave}>
                 <Typography variant="h6" component="span">
                     {element.title} 
                 </Typography>
@@ -122,12 +145,12 @@ export default function CustomizedTimeline() {
             return (<TimelineItem key={element.title}>
                 <TimelineSeparator>
                 <TimelineConnector />
-                <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                <TimelineDot className='timeline-dot-target' color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
                     <RadioButtonCheckedIcon />
                 </TimelineDot>
                 <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                <TimelineContent sx={{ py: '12px', px: 2 }} className='timeline-dot-trigger' onMouseEnter={handleHover} onMouseLeave={handleLeave}>
                 <Typography variant="h6" component="span">
                     {element.title}
                 </Typography>
@@ -165,19 +188,19 @@ export default function CustomizedTimeline() {
         }}
         >
 
-        {curricular_elements.slice(0,c_1).reverse().map((element)=>{
+        {curricular_elements.slice(curricular_elements.length-c_1,curricular_elements.length).reverse().map((element)=>{
 
             let timelinedot_color = terminal_colors[element.id%3];
 
             return (<TimelineItem key={element.title}>
                 <TimelineSeparator>
                 <TimelineConnector />
-                <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                <TimelineDot className='timeline-dot-target' color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
                     <RadioButtonCheckedIcon />
                 </TimelineDot>
                 <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                <TimelineContent sx={{ py: '12px', px: 2 }} className='timeline-dot-trigger' onMouseEnter={handleHover} onMouseLeave={handleLeave}>
                 <Typography variant="h6" component="span">
                     {element.title}
                 </Typography>

@@ -19,6 +19,8 @@ import colors from '../../Components/Constants/colorscheme.js';
 
 import { useLocation, Link } from 'react-router-dom';
 
+import './index.css';
+
 export default function ProjectPage(props) {
   const location = useLocation();
 
@@ -48,52 +50,54 @@ export default function ProjectPage(props) {
         if(props.priority_bool===true && element['priority'] === 0)
           return ''
         return (
-        <TimelineItem key={element['name']} sx={{ padding: 1}}>
-          <TimelineSeparator>
-            <TimelineDot sx={{backgroundColor: 'white'}}/>
-            <TimelineConnector sx={{backgroundColor: colors[8]}}/>
-          </TimelineSeparator>
-          <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 4, paddingBottom: 2}}>
-            <CardContent sx={{backgroundColor: "white", position: 'relative', left: -10, top: "50%", borderRadius: 10,width: 2, height: 5}}>
-            </CardContent>
-            <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center', height: '0.1vh', width: '86.25%'}}>
-            </CardContent>
-            <CardContent sx={{backgroundColor: "white", padding: 3, width: '85%'}}>
-              <Typography variant="h5" id={'#'+(element['name'])} color={colors[9]}>
-                {element['name']}
-                <span style={{display:'in-line', color:'orange'}}>
-                  &nbsp;&nbsp;&nbsp;
-                { element['priority']===1 ? <StarIcon/>: "" }
-                </span>
-              </Typography>
-              <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
-                Made with &nbsp;
-                <span style={{color: colors[3], display:'inline-block'}}>
-                  {element['techstack']}
-                  <b style={{paddingLeft: 18, position:'relative', top: 4}}>
-                    <Link to={element['link']}><GitHub fontSize='small'/></Link>
-                  </b>
-                </span>
-              </Typography>
-              <div style={{height: '0.01vmin', marginTop: 5,marginBottom: 5, paddingTop: 0.5, backgroundColor:colors[2] }}/>
-              <Typography variant="body2" sx={{color: colors[4],paddingTop:1}}>
-                {element['description']}
-              </Typography>
-            </CardContent>
-            {/* <Typography variant="h5" id={'#'+(element['name'])}>
-              {element['name']}
-            </Typography>
-            <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
-              Made with &nbsp;
-              <span style={{color: colors[3], display:'inline-block'}}>
-                {element['techstack']}<b style={{paddingLeft:18}}><Link to={element['link']}><GitHub fontSize='small'/></Link></b>
-              </span>
-            </Typography>
-            <Typography variant="body2" sx={{color: colors[8],paddingTop:1}}>
-              {element['description']}
-            </Typography> */}
-          </TimelineContent>
-        </TimelineItem>
+          <TimelineItem key={element['name']} sx={{ padding: 1}}>
+            <TimelineSeparator>
+              <TimelineDot sx={{backgroundColor: 'white'}}/>
+              <TimelineConnector sx={{backgroundColor: colors[8]}}/>
+            </TimelineSeparator>
+            {/* <div className='project-item'> */}
+              <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 4, paddingBottom: 2}} id={'#'+(element['name'])} className='project-item'>
+                <CardContent sx={{backgroundColor: "white", position: 'relative', left: -10, top: "50%", borderRadius: 10,width: 2, height: 5}}>
+                </CardContent>
+                <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center', height: '0.1vh', width: '86.25%'}}>
+                </CardContent>
+                <CardContent sx={{backgroundColor: "white", padding: 3, width: '85%'}}>
+                  <Typography variant="h5" color={colors[9]}>
+                    {element['name']}
+                    <span style={{display:'in-line', color:'orange'}}>
+                      &nbsp;&nbsp;&nbsp;
+                    { element['priority']===1 ? <StarIcon/>: "" }
+                    </span>
+                  </Typography>
+                  <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
+                    Made with &nbsp;
+                    <span style={{color: colors[3], display:'inline-block'}}>
+                      {element['techstack']}
+                      <b style={{paddingLeft: 18, position:'relative', top: 4}}>
+                        <Link to={element['link']}><GitHub fontSize='small'/></Link>
+                      </b>
+                    </span>
+                  </Typography>
+                  <div style={{height: '0.01vmin', marginTop: 5,marginBottom: 5, paddingTop: 0.5, backgroundColor:colors[2] }}/>
+                  <Typography variant="body2" sx={{color: colors[4],paddingTop:1}}>
+                    {element['description']}
+                  </Typography>
+                </CardContent>
+                {/* <Typography variant="h5" id={'#'+(element['name'])}>
+                  {element['name']}
+                </Typography>
+                <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
+                  Made with &nbsp;
+                  <span style={{color: colors[3], display:'inline-block'}}>
+                    {element['techstack']}<b style={{paddingLeft:18}}><Link to={element['link']}><GitHub fontSize='small'/></Link></b>
+                  </span>
+                </Typography>
+                <Typography variant="body2" sx={{color: colors[8],paddingTop:1}}>
+                  {element['description']}
+                </Typography> */}
+              </TimelineContent>
+            {/* </div> */}
+          </TimelineItem>
       )}
       )}
       </Timeline>
