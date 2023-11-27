@@ -1,3 +1,10 @@
 .timetag{
     margin-right: 100px;
 }
+.timeline-background{
+    margin: 0 4vmax 4vmax 2vmax;
+    padding: 1vmax;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}

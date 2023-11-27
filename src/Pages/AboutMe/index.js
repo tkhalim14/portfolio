@@ -75,7 +75,7 @@ function About() {
     return (
       <>
       <div>
-        <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }, mt:'5vh'}}>
+        <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }, mt:'1vh'}}>
           <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
             <ThemeProvider theme={theme}>
                 <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: 100}}>

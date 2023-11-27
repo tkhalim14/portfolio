@@ -39,157 +39,159 @@ export default function CustomizedTimeline() {
     });
 
   return (<React.Fragment>
-    <ThemeProvider theme={theme}>
-        <Typography variant="h4" marginX="50px" marginY="25px">
-        Work Experience
-        </Typography>
-        <Timeline
-        sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-            flex: 0,
-            padding: 0,
-            marginX: 5,
-            },
-        }}
-        >
+    <div className='timeline-background'>
+        <ThemeProvider theme={theme}>
+            <Typography variant="h4" marginX="50px" marginY="25px">
+            Work Experience
+            </Typography>
+            <Timeline
+            sx={{
+                [`& .${timelineItemClasses.root}:before`]: {
+                flex: 0,
+                padding: 0,
+                marginX: 5,
+                },
+            }}
+            >
 
-        {exp_elements.slice(0).reverse().map((element)=>{
+            {exp_elements.slice(0).reverse().map((element)=>{
 
-            let timelinedot_color = terminal_colors[element.id%3];
+                let timelinedot_color = terminal_colors[element.id%3];
 
-            return (<TimelineItem key={element.title}>
-                <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
-                    <RadioButtonCheckedIcon color="primary.dark"/>
-                </TimelineDot>
-                <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                    {element.title} 
-                </Typography>
-                <Typography sx={{ color: 'secondary.main' }} >
-                    {element.date}
-                </Typography>
-                <Typography sx={{ color: 'primary.main' }}>
-                    {element.location} 
-                    <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
-                        {
-                            element.link==="" ?
-                            ("") :
-                            (<a href={element.link}><OpenInNewIcon fontSize='small'/></a>)
-                        }
-                    </span>
-                </Typography>
-                <Typography variant="caption">
-                    {element.description}
-                </Typography>
-                </TimelineContent>
-            </TimelineItem>);
-        })}
-        </Timeline>
-        
-        <Typography variant="h4" marginX="50px" marginY="25px">
-            Education
-        </Typography>
-        <Timeline
-        sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-            flex: 0,
-            padding: 0,
-            marginX: 5,
-            },
-        }}
-        >
+                return (<TimelineItem key={element.title}>
+                    <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                        <RadioButtonCheckedIcon color="primary.dark"/>
+                    </TimelineDot>
+                    <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        {element.title} 
+                    </Typography>
+                    <Typography sx={{ color: 'secondary.main' }} >
+                        {element.date}
+                    </Typography>
+                    <Typography sx={{ color: 'primary.main' }}>
+                        {element.location} 
+                        <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                            {
+                                element.link==="" ?
+                                ("") :
+                                (<a href={element.link}><OpenInNewIcon fontSize='small'/></a>)
+                            }
+                        </span>
+                    </Typography>
+                    <Typography variant="caption">
+                        {element.description}
+                    </Typography>
+                    </TimelineContent>
+                </TimelineItem>);
+            })}
+            </Timeline>
+            
+            <Typography variant="h4" marginX="50px" marginY="25px">
+                Education
+            </Typography>
+            <Timeline
+            sx={{
+                [`& .${timelineItemClasses.root}:before`]: {
+                flex: 0,
+                padding: 0,
+                marginX: 5,
+                },
+            }}
+            >
 
-        {education_elements.slice(0).reverse().map((element)=>{
+            {education_elements.slice(0).reverse().map((element)=>{
 
-            let timelinedot_color = terminal_colors[element.id%3];
+                let timelinedot_color = terminal_colors[element.id%3];
 
-            return (<TimelineItem key={element.title}>
-                <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
-                    <RadioButtonCheckedIcon />
-                </TimelineDot>
-                <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                    {element.title}
-                </Typography>
-                <Typography sx={{ color: 'secondary.main' }}>
-                    {element.date}
-                </Typography>
-                <Typography sx={{ color: 'primary.main' }}>
-                    {element.location} 
-                    <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
-                        {
-                            element.link==="" ?
-                            ("") :
-                            (<Link key={element.link} to={element.link}><OpenInNewIcon fontSize='small'/></Link>)
-                        }
-                    </span>
-                </Typography>
-                <Typography variant="caption">
-                    {element.description}
-                </Typography>
-                </TimelineContent>
-            </TimelineItem>);
-        })}
-        </Timeline>
+                return (<TimelineItem key={element.title}>
+                    <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                        <RadioButtonCheckedIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        {element.title}
+                    </Typography>
+                    <Typography sx={{ color: 'secondary.main' }}>
+                        {element.date}
+                    </Typography>
+                    <Typography sx={{ color: 'primary.main' }}>
+                        {element.location} 
+                        <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                            {
+                                element.link==="" ?
+                                ("") :
+                                (<Link key={element.link} to={element.link}><OpenInNewIcon fontSize='small'/></Link>)
+                            }
+                        </span>
+                    </Typography>
+                    <Typography variant="caption">
+                        {element.description}
+                    </Typography>
+                    </TimelineContent>
+                </TimelineItem>);
+            })}
+            </Timeline>
 
-        <Typography variant="h4" marginX="50px" marginY="25px">
-            Achievements & Recognitions
-        </Typography>
-        <Timeline
-        sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-            flex: 0,
-            padding: 0,
-            marginX: 5,
-            },
-        }}
-        >
+            <Typography variant="h4" marginX="50px" marginY="25px">
+                Achievements & Recognitions
+            </Typography>
+            <Timeline
+            sx={{
+                [`& .${timelineItemClasses.root}:before`]: {
+                flex: 0,
+                padding: 0,
+                marginX: 5,
+                },
+            }}
+            >
 
-        {curricular_elements.slice(0).reverse().map((element)=>{
+            {curricular_elements.slice(0).reverse().map((element)=>{
 
-            let timelinedot_color = terminal_colors[element.id%3];
+                let timelinedot_color = terminal_colors[element.id%3];
 
-            return (<TimelineItem key={element.title}>
-                <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
-                    <RadioButtonCheckedIcon />
-                </TimelineDot>
-                <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                    {element.title}
-                </Typography>
-                <Typography sx={{ color: 'secondary.main' }}>
-                    {element.date}
-                </Typography>
-                <Typography sx={{ color: 'primary.main' }}>
-                    {element.location} 
-                    <span sx={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
-                        {
-                            element.link==="" ?
-                            ("") :
-                            (<Link key={element.link} to={element.link}><OpenInNewIcon fontSize='small'/></Link>)
-                        }
-                    </span>
-                </Typography>
-                <Typography variant="caption">
-                    {element.description}
-                </Typography>
-                </TimelineContent>
-            </TimelineItem>);
-        })}
-        </Timeline>
-    </ThemeProvider>
+                return (<TimelineItem key={element.title}>
+                    <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                        <RadioButtonCheckedIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        {element.title}
+                    </Typography>
+                    <Typography sx={{ color: 'secondary.main' }}>
+                        {element.date}
+                    </Typography>
+                    <Typography sx={{ color: 'primary.main' }}>
+                        {element.location} 
+                        <span sx={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                            {
+                                element.link==="" ?
+                                ("") :
+                                (<Link key={element.link} to={element.link}><OpenInNewIcon fontSize='small'/></Link>)
+                            }
+                        </span>
+                    </Typography>
+                    <Typography variant="caption">
+                        {element.description}
+                    </Typography>
+                    </TimelineContent>
+                </TimelineItem>);
+            })}
+            </Timeline>
+        </ThemeProvider>
+    </div>
   </React.Fragment>
     
     
