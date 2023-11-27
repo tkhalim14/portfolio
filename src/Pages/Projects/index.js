@@ -56,6 +56,8 @@ export default function ProjectPage(props) {
           <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 4, paddingBottom: 2}}>
             <CardContent sx={{backgroundColor: "white", position: 'relative', left: -10, top: "50%", borderRadius: 10,width: 2, height: 5}}>
             </CardContent>
+            <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center', height: '0.1vh', width: '86.25%'}}>
+            </CardContent>
             <CardContent sx={{backgroundColor: "white", padding: 3, width: '85%'}}>
               <Typography variant="h5" id={'#'+(element['name'])} color={colors[9]}>
                 {element['name']}

@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './Pages/Home/index.js';
 import About from './Pages/AboutMe/index.js';
-import Timeline from './Pages/Timeline/index.js';
+import Timeline from './Pages/Timeline/timeline.js';
 import Projects from './Pages/Projects/index.js';
 import Header from './Components/Header/index.js';
 import Footer from './Components/Footer/index.js';
