@@ -73,9 +73,7 @@ export default function ProjectPage(props) {
                   </b>
                 </span>
               </Typography>
-              <Typography sx={{ mb: 1.5,paddingTop: 0.5 }} variant="body1" color="text.secondary">
-                <hr/>
-              </Typography>
+              <div style={{height: '0.01vmin', marginTop: 5,marginBottom: 5, paddingTop: 0.5, backgroundColor:colors[2] }}/>
               <Typography variant="body2" sx={{color: colors[4],paddingTop:1}}>
                 {element['description']}
               </Typography>

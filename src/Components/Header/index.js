@@ -17,6 +17,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import TextField from '@mui/material/TextField';
 
 import Autocomplete from '@mui/material/Autocomplete';
 
@@ -51,6 +52,8 @@ import { Link  } from "react-router-dom";
 const pages = ['Projects', 'Timeline', 'About'];
 const profile_dropdown = [['github',<GitHubIcon />], ['gmail',<MailIcon/>], ['instagram',<InstagramIcon/>],['linkedin',<LinkedIn/>] ,['resume',<DownloadIcon/>]];
 
+
+// https://stackoverflow.com/questions/74239730/mui-autocomplete-does-not-fully-appear-in-appbar
 
 function ResponsiveAppBar() {
 
@@ -97,6 +100,8 @@ function ResponsiveAppBar() {
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  // const [view, setview] = React.useState(false);
+
 
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
@@ -141,18 +146,13 @@ function ResponsiveAppBar() {
   
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
+    transition: '0.5s linear ease-in-out',
     '& .MuiInputBase-input': {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
+      
       width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        width: '20ch',
-        // '&:focus': {
-        //   width: '20ch',
-        // },
-      },
     },
   }));
 
@@ -164,15 +164,30 @@ function ResponsiveAppBar() {
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create('width'),
       width:'100%',
-      [theme.breakpoints.up('sm')]: {
-        width: '20ch',
-        // '&:focus': {
-        //   width: '20ch',
-        // },
-      },
-
+      // [theme.breakpoints.up('sm')]: {
+      //   width: '16ch',
+      //   '&:focus': {
+      //     width: '24ch',
+      //   },
+      // },
     },
   }));
+
+  const StyledLink = styled(Link)(({ theme }) => ({
+  color: "#fff",
+  background: "rgba(255, 255, 255, 0.15)",
+  borderRadius: "4px",
+  width: "100%",
+  "& input": {
+    color: "#fff !important"
+  },
+  "& fieldset": {
+    borderWidth: "0px",
+    "& fieldset:hover, & fieldset:focus, & fieldset:active": {
+      borderWidth: "0px"
+    },
+  }
+}));
 
   const customDarkTheme  = (mode) => ({
     palette: {
@@ -289,21 +304,19 @@ function ResponsiveAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledAutocomplete
-              // open
               options={searchData.map((element)=> {return element['name']})}
               freeSolo
               renderOption={(props, option) => {
-                // if(option[1]>3)
-                //   return '';
                 return (
-                  <Link {...props} style={{ backgroundColor: colors[1]}} to={`/Projects`} state={{ goto: `#${option}`}}>
+                  <StyledLink {...props} style={{ backgroundColor: colors[1]}} to={`/Projects`} state={{ goto: `#${option}`}}>
                       {option}
-                  </Link>
+                  </StyledLink>
                 );
               }}
               renderInput={(params) => {
                 const {InputLabelProps,InputProps,...rest} = params;
-                return <StyledInputBase {...params.InputProps} {...rest} placeholder="Search projects…" />}}
+                return <StyledInputBase {...params.InputProps} {...rest} placeholder="Search projects…" />
+              }}
             />
           </Search>
 

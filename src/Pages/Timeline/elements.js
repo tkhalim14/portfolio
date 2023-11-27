@@ -25,10 +25,20 @@ let exp_elements = [
         location: "Benam.me, Karnataka",
         description:
           "I had done my internship under the role of software development at Benam for a period of 6 months. Apart from software development,  I learnt the following skills : user experience, optimizing app performance, integrating marketing and analytics functionalities, and ensuring comprehensive testing capabilities.",
-        link: "https://video.benam.me",
+        link: "https://www.linkedin.com/in/tabish-khalid-halim-27209b201/details/experience/1635537136559/single-media-viewer/?type=DOCUMENT&profileId=ACoAADNytLYBIMCuYNxZL32JzwXCu05XMgj6RYo",
         date: "Mar, 2023 - Aug, 2023",
         icon: "school"
-      },
+    },
+    {
+        id: 3,
+        title: "Teaching Assistant",
+        location: "IIT Dharwad, Karnataka",
+        description:
+          "Assessed and demonstrated 10 labs on basics of C & C++ programming including topics such as datatypes, operators, control statements, arrays, strings, pointers, functions, structures, file operations, classes, and objects.",
+        link: "https://iitdh.ac.in",
+        date: "Aug, 2023 - Nov, 2023",
+        icon: "school"
+    }
   ];
 
 let curricular_elements = [
@@ -150,7 +160,15 @@ let curricular_elements = [
         date: "10th Feb, 2023 - 12th Feb, 2023",
         icon: "school"
     },
-    
+    {
+        id: 1,
+        title: "Sleepless Coding Saga Hackathon | IIT Dharwad",
+        location: "Indian Institute of Technology, Dharwad",
+        description: "Participated in the 24-hrs long Sleepless Coding Saga Hackathon at IIT Dharwad for the Campus Marketplace track. Technologies used : React.js, FastAPI, MongoDB",
+        link: "https://github.com/Shriagrawal/IITDH_OLX",
+        date: "5th Nov, 2023 - 6th Nov, 2023",
+        icon: "school"
+    },
 ];
 
 const education_elements = [

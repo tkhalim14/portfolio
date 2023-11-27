@@ -25,6 +25,12 @@
         "techstack": "React.js · FastAPI · PostgreSQL · NLP · LLM",
         "link": "https://github.com/tkhalim14/project-crosscade"
     },
+    {   "priority": 1,
+        "name": "Github-Notify-Discord-Bot",
+        "description": "GitHub Notify Bot is a powerful tool designed to keep you informed about the latest commits from your friends and explore the commit history of any GitHub user effortlessly. Whether you're a developer, a tech enthusiast, or just curious about what your network is up to on GitHub, this bot has you covered.",
+        "techstack": "Python · Discord",
+        "link": "https://github.com/tkhalim14/github-notify-bot"
+    },
     {   "priority": 0,
         "name": "American-Sign-Language (ASL) Detector",
         "description": "Developed an AI-based Python program that employs a 26-class classifier to perform real-time classification of both videos and images. The classifier is designed to accurately categorize various American Sign Language (ASL) signs, encompassing a diverse range of 26 distinct symbols.",

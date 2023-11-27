@@ -39,6 +39,7 @@ export default function CustomizedTimeline() {
     });
 
   return (<React.Fragment>
+    <div className='timeline-background'>
     <ThemeProvider theme={theme}>
         <Typography variant="h4" marginX="50px" marginY="25px">
         Work Experience
@@ -190,6 +191,7 @@ export default function CustomizedTimeline() {
         })}
         </Timeline>
     </ThemeProvider>
+    </div>
   </React.Fragment>
     
     

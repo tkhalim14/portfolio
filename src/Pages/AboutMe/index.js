@@ -78,7 +78,7 @@ function About() {
         <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }, mt:'5vh'}}>
           <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
             <ThemeProvider theme={theme}>
-                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: 90}}>
+                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: 100}}>
                 </Card>
                 <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0}}>
                     <CardContent>
@@ -93,7 +93,7 @@ function About() {
                           Tabish Khalid Halim
                       </Typography>
                       <Typography sx={{ fontSize: 14 , mb: 1.5 }} color="text.secondary" gutterBottom>
-                          B.Tech, CSE'24
+                          B.Tech, CSE '24
                           <br/> <a href="https://www.iitdh.ac.in" >IIT Dharwad</a>
                       </Typography>
                       <Typography variant="body2">
@@ -159,7 +159,7 @@ function About() {
                         </Typography>
                         <Typography variant='body1' color="secondary" fontWeight={600}>
                         {programmingLanguages.map((element)=>(
-                          <Button variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
+                          <Button key={element} variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
                         ))}
                         </Typography>
                         <br/>
@@ -168,7 +168,7 @@ function About() {
                         </Typography>
                         <Typography variant='body1' color="secondary" fontWeight={600} >
                         {tools.map((element)=>(
-                          <Button variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
+                          <Button key={element} variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
                         ))}
                         </Typography>
                     </CardContent>
