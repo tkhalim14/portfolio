@@ -31,6 +31,13 @@ export default function ProjectPage(props) {
       if (element) {
         // 👇 Will scroll smoothly to the top of the next section
         element.scrollIntoView({ behavior: 'smooth' });
+        if(element.classList.contains('pop-out-effect')){
+          element.classList.remove('pop-out-effect');
+        }
+        element.classList.add('pop-out-effect');
+        element.addEventListener('animationend', () => {
+          element.classList.remove('pop-out-effect');
+        })
       }
     }
   });
@@ -56,12 +63,12 @@ export default function ProjectPage(props) {
               <TimelineConnector sx={{backgroundColor: colors[8]}}/>
             </TimelineSeparator>
             {/* <div className='project-item'> */}
-              <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 4, paddingBottom: 2}} id={'#'+(element['name'])} className='project-item'>
-                <CardContent sx={{backgroundColor: "white", position: 'relative', left: -10, top: "50%", borderRadius: 10,width: 2, height: 5}}>
+              <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 20, paddingBottom: 2}} id={'#'+(element['name'])} className='project-item'>
+                <CardContent sx={{backgroundColor: "white", position: 'relative', left: -10, top: "50%", borderRadius: 10, width: "0.01%", height: 5}}>
                 </CardContent>
-                <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center', height: '0.1vh', width: '86.25%'}}>
+                <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center'}}>
                 </CardContent>
-                <CardContent sx={{backgroundColor: "white", padding: 3, width: '85%'}}>
+                <CardContent sx={{backgroundColor: "white", padding: 3}}>
                   <Typography variant="h5" color={colors[9]}>
                     {element['name']}
                     <span style={{display:'in-line', color:'orange'}}>

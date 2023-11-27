@@ -78,7 +78,7 @@ function About() {
         <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }}}>
           <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
             <ThemeProvider theme={theme}>
-                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderTopRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: 100}}>
+                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderTopRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: '35%'}}>
                 </Card>
                 <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0}}>
                     <CardContent>
