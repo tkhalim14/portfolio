@@ -22,12 +22,14 @@ import { useLocation, Link } from 'react-router-dom';
 import './index.css';
 
 export default function ProjectPage(props) {
+  
   const location = useLocation();
 
   React.useEffect(()=>{
     // console.log(location);
     if(location.state){
       const element = document.getElementById(location.state.goto);
+      // console.log()
       if (element) {
         // 👇 Will scroll smoothly to the top of the next section
         element.scrollIntoView({ behavior: 'smooth' });
@@ -40,7 +42,7 @@ export default function ProjectPage(props) {
         })
       }
     }
-  });
+  },[location]);
 
   return (
     <React.Fragment>
@@ -59,14 +61,14 @@ export default function ProjectPage(props) {
         return (
           <TimelineItem key={element['name']} sx={{ padding: 1}}>
             <TimelineSeparator>
-              <TimelineDot sx={{backgroundColor: 'white'}}/>
-              <TimelineConnector sx={{backgroundColor: colors[8]}}/>
+              <TimelineDot sx={{backgroundColor: colors[2]}}/>
+              <TimelineConnector sx={{backgroundColor: colors[3]}}/>
             </TimelineSeparator>
             {/* <div className='project-item'> */}
-              <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 20, paddingBottom: 2}} id={'#'+(element['name'])} className='project-item'>
+              <TimelineContent sx={{paddingTop: 3, paddingLeft: 6, paddingRight: 20, paddingBottom: 2}} id={(element['name'])} className='project-item'>
                 <CardContent sx={{backgroundColor: "white", position: 'relative', left: -10, top: "50%", borderRadius: 10, width: "0.01%", height: 5}}>
                 </CardContent>
-                <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center'}}>
+                <CardContent sx={{top: 0, bgcolor: colors[0], backgroundPosition:'center'}}>
                 </CardContent>
                 <CardContent sx={{backgroundColor: "white", padding: 3}}>
                   <Typography variant="h5" color={colors[9]}>
@@ -76,7 +78,7 @@ export default function ProjectPage(props) {
                     { element['priority']===1 ? <StarIcon/>: "" }
                     </span>
                   </Typography>
-                  <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
+                  <Typography variant="body2" sx={{color: colors[0], fontWeight:200}}>
                     Made with &nbsp;
                     <span style={{color: colors[3], display:'inline-block'}}>
                       {element['techstack']}
@@ -86,22 +88,10 @@ export default function ProjectPage(props) {
                     </span>
                   </Typography>
                   <div style={{height: '0.01vmin', marginTop: 5,marginBottom: 5, paddingTop: 0.5, backgroundColor:colors[2] }}/>
-                  <Typography variant="body2" sx={{color: colors[4],paddingTop:1}}>
+                  <Typography variant="body2" sx={{color: colors[1],paddingTop:1}}>
                     {element['description']}
                   </Typography>
                 </CardContent>
-                {/* <Typography variant="h5" id={'#'+(element['name'])}>
-                  {element['name']}
-                </Typography>
-                <Typography variant="body2" sx={{color: colors[2], fontWeight:200}}>
-                  Made with &nbsp;
-                  <span style={{color: colors[3], display:'inline-block'}}>
-                    {element['techstack']}<b style={{paddingLeft:18}}><Link to={element['link']}><GitHub fontSize='small'/></Link></b>
-                  </span>
-                </Typography>
-                <Typography variant="body2" sx={{color: colors[8],paddingTop:1}}>
-                  {element['description']}
-                </Typography> */}
               </TimelineContent>
             {/* </div> */}
           </TimelineItem>

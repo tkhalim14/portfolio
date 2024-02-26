@@ -1,7 +1,5 @@
 import * as React from "react";
-// import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-// import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { Facebook, GitHub, Instagram, LinkedIn, Download } from "@mui/icons-material";
 import Button from '@mui/material/Button';
@@ -14,15 +12,10 @@ export default function Footer() {
 
   const contactsData = [['github',<GitHub/>],['facebook',<Facebook/>],['instagram',<Instagram/>],['linkedin',<LinkedIn/>]];
 
-
   return (
     <Box
-      component="footer"
       sx={{
-        backgroundColor: (theme) =>
-          theme.palette.mode === "light"
-            ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+        backgroundColor: 'primary.main',
         p: 6,
       }}
     >

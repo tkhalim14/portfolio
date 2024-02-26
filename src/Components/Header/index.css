@@ -1,0 +1,36 @@
+.resumeButton {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 0.5rem 2.5rem;
+    border-radius: 1.5rem;
+    border: 0.1rem white solid;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.resumeButton:hover{
+    background-color: white;
+    color: black;
+}
+
+.searchBar{
+    display: block;
+    position: 'relative';
+    margin-left: 0;
+    width: 60%;
+}
+
+.searchListItem {
+    color: '#FFF';
+    border-radius: 4px;
+    padding: 1rem;
+    width: "100%";
+}
+
+@media only screen and (max-width: 800px) {
+    .searchBar {
+        display: none;
+    }
+}

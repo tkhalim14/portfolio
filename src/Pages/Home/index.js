@@ -36,14 +36,6 @@ function Home() {
 
   const [svgData, setsvgData] = useState();
 
-  const [expanded, setExpanded] = React.useState(true);
-
-  // const [project_expanded, setproject_Expanded] = React.useState(false);
-
-  const handleChange = (panel, setPanel) => (event, isExpanded) => {
-    setPanel(isExpanded ? panel : false);
-  };
-
   useEffect(() => {
     const hasCodeRunBefore = localStorage.getItem('codeHasRun');
     if(hasCodeRunBefore===true){
@@ -62,14 +54,7 @@ function Home() {
       <>
       <Box sx={{ flexGrow: 1, margin:'2vmax'}}>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundImage: 'url('+banner+')', backgroundPosition:'center'}}>
-                  <LazyLoad>
-                    <Grow in={true}>
-                      <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: '10vw', width: '10vw', margin:2, marginBottom: 1.5}} align="left"/>
-                    </Grow >
-                  </LazyLoad>
-                </Card>
+            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }} style={{display:'flex',justifyContent:'center', flexDirection:'row'}}>
                 <Profile/>
             </Grid>
             <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }} sx={{justifyContent:'center',display:'flex'}}>
@@ -80,48 +65,8 @@ function Home() {
               </Grid>
             </Grid>
           </Grid>
-        </Box>
-        {/* <Box sx={{ flexGrow: 1, margin:'2vmax'}}>
-          <Accordion expanded={project_expanded} onChange={handleChange(!project_expanded,setproject_Expanded)}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon color="secondary"/>}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-              sx={{backgroundColor: colors[1]}}
-            >
-              <Typography variant="h3" sx={{color: colors[2]}}>
-                Explore
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography color="text.secondary">
-                Here's a list of my most captivating projects I've done/worked on.
-              </Typography>
-              <Projects priority_bool={true}/>
-            </AccordionDetails>
-          </Accordion>
-        </Box> */}
-        <Box sx={{ flexGrow: 1, margin:'2vmax'}}>
-          <Accordion expanded={expanded} onChange={handleChange(!expanded,setExpanded)}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon color="secondary"/>}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-              sx={{backgroundColor: colors[1]}}
-            >
-              <Typography variant="h3" sx={{color: colors[2]}}>
-                Timeline
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography color="text.secondary">
-                Discover my creative journey through milestones, projects, and growth. This timeline unveils the path that shaped my skills and perspective.
-              </Typography>
-              <Timeline/>
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <LoadingOverlay open={isLoading}/>
+      </Box>
+      <LoadingOverlay open={isLoading}/>
       </>
     );
   }

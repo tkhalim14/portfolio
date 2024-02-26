@@ -7,9 +7,7 @@ import './index.css';
 
 export default function TimelineContainer(){
     return (
-        <Card className='timeline-background' style={{padding: 0}}>
-            <CardContent sx={{top: 0, bgcolor: colors[2], backgroundPosition:'center', height: '4vh'}}>
-            </CardContent>
+        <Card className='timeline-background'>
             <CustomizedTimeline/>
         </Card>
     );

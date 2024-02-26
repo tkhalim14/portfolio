@@ -1,3 +1,13 @@
 .Main {
   transition:0.5s ;
+  
+}
+.pageContent{
+  margin: 4rem;
+  padding-top: 2rem;
+}
+.footerContent{
+  position:'relative';
+  bottom: 0;
+  margin-left: 4rem;
 }

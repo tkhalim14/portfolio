@@ -28,7 +28,7 @@ export default function CustomizedTimeline() {
     function LoadMore(){
         setc_1(curricular_elements.length);
         // console.log(curricular_elements.length);
-        console.log('Loading more...');
+        // console.log('Loading more...');
     }
 
     const terminal_colors=['#ff0000','#FFD700','#65a765'];
@@ -38,9 +38,6 @@ export default function CustomizedTimeline() {
             primary: {
                 main: colors[2],
                 dark: 'black',
-            },
-            secondary: {
-                main: '#d32f2f',
             },
             text: {
                 primary: colors[3],
@@ -76,53 +73,50 @@ export default function CustomizedTimeline() {
   return (<React.Fragment>
     <ThemeProvider theme={theme}>
         <Typography variant="h4" marginX="50px" marginY="25px">
-        <KeyboardArrowRightIcon/> Work Experience
+            <KeyboardArrowRightIcon/> Work Experience
         </Typography>
         <Timeline
-        sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-            flex: 0,
-            padding: 0,
-            marginX: 5,
-            },
-        }}
-        >
-
-        {exp_elements.slice(0).reverse().map((element)=>{
-
-            let timelinedot_color = terminal_colors[element.id%3];
-
-            return (<TimelineItem key={element.title}>
-                <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot className='timeline-dot-target' color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
-                    <RadioButtonCheckedIcon color="primary.dark"/>
-                </TimelineDot>
-                <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }} className='timeline-dot-trigger' onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-                <Typography variant="h6" component="span">
-                    {element.title} 
-                </Typography>
-                <Typography sx={{ color: 'secondary.main' }} >
-                    {element.date}
-                </Typography>
-                <Typography sx={{ color: 'primary.main' }}>
-                    {element.location} 
-                    <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
-                        {
-                            element.link==="" ?
-                            ("") :
-                            (<a href={element.link}><OpenInNewIcon fontSize='small'/></a>)
-                        }
-                    </span>
-                </Typography>
-                <Typography variant="caption">
-                    {element.description}
-                </Typography>
-                </TimelineContent>
-            </TimelineItem>);
-        })}
+            sx={{
+                [`& .${timelineItemClasses.root}:before`]: {
+                flex: 0,
+                padding: 0,
+                marginX: 5,
+                },
+            }}
+            >
+            {exp_elements.slice(0).reverse().map((element)=>{
+                let timelinedot_color = terminal_colors[element.id%3];
+                return (<TimelineItem key={element.title}>
+                    <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot className='timeline-dot-target' color='primary' variant="outlined" sx={{ backgroundColor: timelinedot_color }}>
+                        <RadioButtonCheckedIcon color="primary.dark"/>
+                    </TimelineDot>
+                    <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '12px', px: 2 }} className='timeline-dot-trigger' onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+                    <Typography variant="h6" component="span">
+                        {element.title} 
+                    </Typography>
+                    <Typography sx={{ color: 'secondary.main' }} >
+                        {element.date}
+                    </Typography>
+                    <Typography sx={{ color: 'primary.main' }}>
+                        {element.location} 
+                        <span style={{  color: 'primary.main', display:'inline-block', marginLeft:'1vw' }}>
+                            {
+                                element.link==="" ?
+                                ("") :
+                                (<a href={element.link}><OpenInNewIcon fontSize='small'/></a>)
+                            }
+                        </span>
+                    </Typography>
+                    <Typography variant="caption">
+                        {element.description}
+                    </Typography>
+                    </TimelineContent>
+                </TimelineItem>);
+            })}
         </Timeline>
         
         <Typography variant="h4" marginX="50px" marginY="25px">
@@ -225,7 +219,7 @@ export default function CustomizedTimeline() {
         })}
         <div style={{display:'flex',justifyContent:'flex-end'}}>
             <div>
-            { c_1===curricular_elements.length ? "" : <Button variant="contained" onClick={LoadMore} style={{marginTop: '2vmax'}}>Load More...</Button>}
+            { c_1===curricular_elements.length ? "" : <Button variant="outlined" onClick={LoadMore} style={{marginTop: '2vmax'}}>Load More...</Button>}
             </div>
         </div>
         </Timeline>
