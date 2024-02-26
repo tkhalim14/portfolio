@@ -1,7 +1,8 @@
 
 import './index.css';
 import SearchBar from './searchBar';
-import DrawerListComponent from './drawerlist';
+import DrawerComponent from './drawer';
+import DropDownMenuElement from './dropDown';
 
 const UserLogo = () =>{
     return(
@@ -24,10 +25,16 @@ const ProjectSearchBar = () => {
     );
 }
 
-const DrawerList = (props) => {
+const Drawer = (props) => {
     return (
-        <DrawerListComponent {...props}/>
+        <DrawerComponent {...props}/>
     )
 };
 
-export {UserLogo, ProjectSearchBar, DrawerList};
+const DropdownMenu = (props) => {
+    return (
+        <DropDownMenuElement {...props}/>
+    );
+}
+
+export {UserLogo, ProjectSearchBar, Drawer, DropdownMenu};

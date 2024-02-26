@@ -17,7 +17,7 @@ const LoadingOverlay = ({ open }) => {
 
     React.useEffect(() => {
         import("../../Components/Media/loading.json")
-        .then(setsvgData);
+        .then((data) => setsvgData(data));
     },[]);
     
     return (
