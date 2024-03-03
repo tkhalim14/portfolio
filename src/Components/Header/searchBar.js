@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-import searchData from "../../Pages/Projects/projects.json";
+import searchData from "../../Pages/Projects/projects.js";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import colors from '../Constants/colorscheme.js';

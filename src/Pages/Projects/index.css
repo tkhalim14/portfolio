@@ -2,7 +2,7 @@
     transition: 0.2s;
 }
 .project-item:hover{
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 @keyframes shake {
@@ -23,4 +23,10 @@
     animation-name: shake; /* Use 'zoomOut' for zoom-out effect */
     animation-duration: 1.2s; /* Set the duration of the animation */
     animation-fill-mode: both; /* Maintain the final state of the animation */
+}
+
+.opp-content{
+  transition: 0.5s all;
+  padding: 0rem;
+  border-radius: 1rem;
 }

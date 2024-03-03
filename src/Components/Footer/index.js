@@ -8,9 +8,11 @@ import { Box } from "@mui/material";
 
 import contactLinks from '../../Components/Constants/contactme.js';
 
+import colors from '../../Components/Constants/colorscheme.js';
+
 export default function Footer() {
 
-  const contactsData = [['github',<GitHub/>],['facebook',<Facebook/>],['instagram',<Instagram/>],['linkedin',<LinkedIn/>]];
+  const contactsData = [['Github',<GitHub/>],['Facebook',<Facebook/>],['Instagram',<Instagram/>],['Linkedin',<LinkedIn/>]];
 
   return (
     <Box
@@ -19,7 +21,6 @@ export default function Footer() {
         p: 6,
       }}
     >
-      {/* <Container maxWidth="lg"> */}
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
@@ -56,7 +57,7 @@ export default function Footer() {
             </Typography>
             <div>
               {contactsData.map(([element,elementIcon])=> (
-                    <a key={element} className="nav-link" href={contactLinks[element]} style={{padding:3, color:'primary.main'}}>
+                    <a key={element} className="nav-link" href={contactLinks[element]} style={{padding:3, color:colors[2]}}>
                       {elementIcon}
                     </a>
                 ))}
@@ -66,12 +67,11 @@ export default function Footer() {
         <Box mt={5}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"Copyright © "}
-            <a color="inherit" href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
+            <a color="primary.main" href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
               Tabish Portfolio
             </a>{" " + new Date().getFullYear()+"."}
           </Typography>
         </Box>
-      {/* </Container> */}
     </Box>
   );
 }

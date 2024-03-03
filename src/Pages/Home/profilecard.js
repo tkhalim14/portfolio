@@ -4,42 +4,15 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-
-import Fade from '@mui/material/Fade';
-import Typewriter from "typewriter-effect";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import colors from '../../Components/Constants/colorscheme.js';
 
+import { TypewriterEffect } from './extras.js';
+
+const Fields =  ['Artificial Intelligence', 'Application Development', 'Competitive Programming', 'UI/UX Design', 'Open Source Work']
+
 export default function BasicCard() {
-
-
-    const Fields =  ['Artificial Intelligence', 'Application Development', 'Competitive Programming', 'UI/UX Design', 'Open Source Work']
-    const Topics = () => {
-    return (
-            <div style={{color: colors[4]}}>
-                <Fade>
-                    <Typewriter
-                        options={{
-                        loop: true,
-                        deleteSpeed: 10,
-                        delay: 30,
-                        }}
-                        onInit={(typewriter) => {
-                            const words = Fields;
-                            typewriter.typeString("I live in a world of ");
-                            
-                            for (let index = 0; index < words.length; index++) {
-                                typewriter.typeString(words[index]).pauseFor(1200).deleteChars(words[index].length);
-                            }
-                            typewriter.start();
-                        }}
-                    />
-                </Fade>
-            </div>
-              
-      )
-  }
 
     return (
         <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0}}>
@@ -88,32 +61,16 @@ export default function BasicCard() {
                         </div>
                     </div>
                     <span style={{margin: '0 1rem'}}>
-                        <Topics />
+                        <TypewriterEffect fields={Fields} highlightColor={colors[4]}/>
                         <br/>
                     </span>
                     <Typography>
-                    I am characterized by my passion and dedication towards coding, consistently striving to enhance my skills and delve into novel realms. My commitment to self-improvement and exploration remains steadfast.
-                    <br/><br/>
-                    {/* <Typography variant='body1' sx={{paddingBottom:1}}>Programming Languages : C, C++ & Python</Typography>
-                    <Typography variant='body2' sx={{paddingBottom:1}}>Ex-SDE Intern @Benam | LeetCode 400+</Typography> */}
+                        I am characterized by my passion and dedication towards coding, consistently striving to enhance my skills and delve into novel realms. My commitment to self-improvement and exploration remains steadfast.
+                        <br/><br/>
                     </Typography>
                     <Grid container spacing={5}>
                         <Grid item>
                             Thanks for visiting my portfolio. Explore my projects and experiences, and let's connect!
-                        </Grid>
-                        <Grid item>
-                            Achievements corner:
-                            <Grid container spacing={5} style={{padding: '1rem 0'}}>
-                                <Grid item>
-                                    Item 1
-                                </Grid>
-                                <Grid item>
-                                    Item 1
-                                </Grid>
-                                <Grid item>
-                                    Item 1
-                                </Grid>
-                            </Grid>
                         </Grid>
                     </Grid>
             </CardContent>

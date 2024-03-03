@@ -38,6 +38,16 @@ let exp_elements = [
         link: "https://iitdh.ac.in",
         date: "Aug, 2023 - Nov, 2023",
         icon: "school"
+    },
+    {
+        id: 3,
+        title: "Teaching Assistant",
+        location: "IIT Dharwad, Karnataka",
+        description:
+          "Teaching Assistant for the Artificial Intelligence Lab course. Enabled students to learn the fundamentals of Artificial Intelligence. Guided in understanding complex concepts, evaluating assignments, and facilitating discussions to enhance learning.",
+        link: "https://iitdh.ac.in",
+        date: "Aug, 2023 - Nov, 2023",
+        icon: "school"
     }
   ];
 

@@ -76,7 +76,7 @@ function ResponsiveAppBar() {
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 1 , display:'flex', justifyContent: 'flex-end'}}>
-              <div className='resumeButton' onClick={()=> window.location.href=contactLinks['resume']}>
+              <div className='resumeButton' onClick={()=> window.location.href=contactLinks['Resume']}>
                 <DownloadIcon size="small"/>
                 Resume 
               </div>

@@ -25,60 +25,78 @@ import StarIcon from '@mui/icons-material/Star';
 
 // import banner from '../../Components/Media/banner.png';
 import ProfileImg from '../../Components/Media/AboutDP.jpg';
-
+import './index.css';
 // import { useLocation } from 'react-router-dom';
 
 // import { styled } from '@mui/material/styles';
 
+
+import { Carousel } from './extras.js';
 import {programmingLanguages , tools} from './techstack.js';
 
 
+const Item = (props) => {
+  return (
+      <div style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
+          <div>
+            <embed src={props.item.url} style={{width: '16rem',height: '12rem'}}></embed>
+          </div>
+      </div>
+  );
+}
+
+const items = [
+  {
+    name: "Hackerrank-CSS",
+    url: process.env.PUBLIC_URL+"/certificates/css certificate.pdf#view=Fit"
+  },
+  {
+    name: "Hackerrank-ProblemSolving (Basic)",
+    url: process.env.PUBLIC_URL+"/certificates/Problem Solving (Basic).pdf#view=Fit",
+  },
+  {
+    name: "Hackerrank-Python (Basic)",
+    url: process.env.PUBLIC_URL+"/certificates/python_basic certificate.pdf#view=Fit"
+  },
+  {
+    name: "Hackerrank-React (Basic)",
+    url: process.env.PUBLIC_URL+"/certificates/react_basic certificate.pdf#view=Fit",
+  },
+  {
+    name: "Hackerrank-Python (Basic)",
+    url: process.env.PUBLIC_URL+"/certificates/python_basic certificate.pdf#view=Fit"
+  },
+  {
+    name: "Hackerrank-SQL (Basic)",
+    url: process.env.PUBLIC_URL+"/certificates/sql_basic certificate.pdf#view=Fit",
+  },
+]
+
 function About() {
 
-  // const location = useLocation();
-
-  // React.useEffect(() => {
-  //   if(location.pathname === '/About'){
-  //     document.body.style.backgroundImage = `url(${banner})`;
-  //   }
-  //   else{
-  //     document.body.style.backgroundImage = 'none';
-  //   }
-  //   // console.log(location.pathname);
-    
-  // });
+  const [carouselIndex, setCarouselIndex] = React.useState(0);
 
   const theme = createTheme({
-    palette: {
-        primary: {
-            main: colors[2],
-            dark: colors[3]
-        },
-        secondary: {
-            main: '#d32f2f',
-            dark: colors[6]
-        },
-        text: {
-        },
-      },
-});
+      palette: {
+          primary: {
+              main: colors[2],
+          },
+          secondary: {
+              main: colors[1]
+          },
+          text: {
 
-  // const CustomButton = styled(Button)(({ theme }) => ({
-  //   color: 'inherit',
-  //   '& .MuiButton-outlined': {
-  //     '&:hover': {
-  //       color: '#FFF',
-  //     }
-  //   },
-  // }));
+          },
+        },
+  });
 
     return (
       <>
       <div>
+      <ThemeProvider theme={theme}>
         <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }}}>
           <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
-            <ThemeProvider theme={theme}>
-                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderTopRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: '35%'}}>
+                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderTopRightRadius: 0, bgcolor: colors[0], backgroundPosition:'center', width: '35%'}}>
                 </Card>
                 <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0}}>
                     <CardContent>
@@ -106,7 +124,7 @@ function About() {
                           <br/> <a href="https://www.iitdh.ac.in" >IIT Dharwad</a>
                       </Typography>
                       <Typography variant="body2">
-                          <br />
+                          <br/>
                           👋 Hey there, I'm Tabish, a final year Computer Science student at IIT Dharwad. I'm passionate about Full-Stack Development, Software Engineering, and Machine Learning.
                       </Typography>
                         <List
@@ -142,21 +160,13 @@ function About() {
                           <Grid item>
                               Thanks for visiting my portfolio. Explore my projects and experiences, and let's connect!
                           </Grid>
-                          {/* <Grid item>
-                          <CardActions sx={{display:'inline',justifyContent:'flex-end'}}>
-                            <Button size="small" href={contactLinks['resume']} variant="contained" color="secondary">Resume</Button>
-                          </CardActions>
-                          </Grid> */}
                       </Grid>
                     </CardContent>
-                    
                 </Card>
-            </ThemeProvider>
           </Grid>
           <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '30%'}}>
-            <ThemeProvider theme={theme}>
                 <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
-                    <CardContent sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', height: '2.5%'}}>
+                    <CardContent sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[0], backgroundPosition:'center', height: '2.5%'}}>
                     </CardContent>
                     <CardContent>
                         <Typography variant='h4'>
@@ -182,11 +192,19 @@ function About() {
                         </Typography>
                     </CardContent>
                 </Card>
-            </ThemeProvider>
           </Grid>
         </Grid>
+        </ThemeProvider>
       </div>
-      <div style={{position: 'relative'}}>
+      <div style={{display:'flex', justifyContent:'flex-start', padding: 5}}>
+        <div style={{padding: '0 2rem'}}>
+          <div className='home-heading' >
+            Achievements corner: <br/>
+            {items[carouselIndex]['name']}
+          </div>
+            <Carousel index={carouselIndex} updateIndex={setCarouselIndex} items={items} Item={Item} height={100} width={250}/>
+
+        </div>
       </div>
       </>
     );
