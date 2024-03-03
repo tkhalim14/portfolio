@@ -12,7 +12,14 @@ const project = [
         "description": "Developed a real-time video chat application using WebRTC and Socket.io. The application allows users to create or join video chat rooms, where they can communicate with each other via video and audio. The application uses PeerJS for simplifying WebRTC setup and Socket.io for real-time communication between clients and the server.",
         "techstack": "Node.js · Express · EJS · HTML · CSS",
         "link": "https://github.com/tkhalim14/video-conferencing-website",
-        "pic": process.env.PUBLIC_URL+"/images/explorenow.jpeg"
+        "pic": process.env.PUBLIC_URL+"/images/video-conferencing.jpeg"
+    },
+    {   "priority": 1,
+        "name": "Github-Notify-Discord-Bot",
+        "description": "GitHub Notify Bot is a powerful tool designed to keep you informed about the latest commits from your friends and explore the commit history of any GitHub user effortlessly. Whether you're a developer, a tech enthusiast, or just curious about what your network is up to on GitHub, this bot has you covered.",
+        "techstack": "Python · Discord",
+        "link": "https://github.com/tkhalim14/github-notify-bot",
+        "pic": process.env.PUBLIC_URL+"/images/github-bot.gif"
     },
     {
         "priority": 1,
@@ -43,13 +50,6 @@ const project = [
         "techstack": "React.js · FastAPI · PostgreSQL · NLP · LLM",
         "link": "https://github.com/tkhalim14/project-crosscade",
         "pic": process.env.PUBLIC_URL+"/images/crosscade.jpeg"
-    },
-    {   "priority": 1,
-        "name": "Github-Notify-Discord-Bot",
-        "description": "GitHub Notify Bot is a powerful tool designed to keep you informed about the latest commits from your friends and explore the commit history of any GitHub user effortlessly. Whether you're a developer, a tech enthusiast, or just curious about what your network is up to on GitHub, this bot has you covered.",
-        "techstack": "Python · Discord",
-        "link": "https://github.com/tkhalim14/github-notify-bot",
-        "pic": process.env.PUBLIC_URL+"/images/github-bot.gif"
     },
     {   "priority": 0,
         "name": "American-Sign-Language (ASL) Detector",
