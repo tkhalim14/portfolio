@@ -80,8 +80,10 @@ function ResponsiveAppBar() {
                 <DownloadIcon size="small"/>
                 Resume 
               </div>
-              <ProjectSearchBar/>
-              <DropdownMenu profilePic={ProfilePic} items={profile_dropdown} links={contactLinks} anchorElUser={anchorElUser} handleOpenMenu={handleOpenUserMenu} handleCloseMenu={handleCloseUserMenu}/>
+                <ProjectSearchBar/>
+              <div className="dropdown-menu">
+                <DropdownMenu profilePic={ProfilePic} items={profile_dropdown} links={contactLinks} anchorElUser={anchorElUser} handleOpenMenu={handleOpenUserMenu} handleCloseMenu={handleCloseUserMenu}/>
+              </div>
             </Box>
           </Toolbar>
       </AppBar>

@@ -12,7 +12,7 @@ const DrawerComponent = ({anchor, state, toggleDrawer, pages}) => {
             open={state[anchor]}
             onClose={toggleDrawer('left', false)}
             PaperProps={{
-            sx: { width: "20%" },
+            sx: { width: "25%" },
             }}
         >
             <Box

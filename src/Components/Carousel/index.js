@@ -1,7 +1,7 @@
 import Carousel from 'react-material-ui-carousel';
 import React from 'react';
 
-const CarouselComponent = ({index, updateIndex, items, Item, height='100%', width='100%'}) => {
+const CarouselComponent = ({index, updateIndex, items, Item, height='auto', width='100%'}) => {
     const [showNav, setShowNav] = React.useState(false);
     if(index===undefined){
       index=0;

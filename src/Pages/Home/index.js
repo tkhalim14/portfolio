@@ -17,7 +17,7 @@ const Item = (props) => {
   return (
       <div style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
           <div>
-            <img src={props.item.url} style={{width: '100%',height: '25rem'}} alt={props.item.url}/>
+            <img src={props.item.url} style={{width: '100%',height: 'auto'}} alt={props.item.url}/>
           </div>
       </div>
   );
