@@ -8,11 +8,24 @@ import Footer from './Components/Footer/index.js';
 import { Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
 import colors from './Components/Constants/colorscheme';
+import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+const HeaderSpacing = styled(Box)(({theme})=>({
+  ...theme.mixins.toolbar,
+}));
 
 const customDarkTheme  = () => ({
   palette: {
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 1000,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
     primary: {
       main: colors[1],
     },
@@ -41,6 +54,7 @@ function App() {
           <Header/>
         </div>
         <div className='pageContent'>
+          <HeaderSpacing/>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/About' element={<About/>}/>

@@ -23,7 +23,7 @@ export default function Footer() {
     >
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
+            <Typography variant="h5" color="text.primary" gutterBottom>
               About Me
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -38,36 +38,36 @@ export default function Footer() {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
+            <Typography variant="h5" color="text.primary" gutterBottom>
               Contact Me
             </Typography>
             <Typography variant="body2" color="text.secondary">
               A/14, Alinagar Colony, Anisabad, Patna
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Email: <a href="mailto:tkhalim14@gmail.com">tkhalim14@gmail.com</a>
+              Email: <a href="mailto:tkhalim14@gmail.com" style={{color:colors[10]}}>tkhalim14@gmail.com</a>
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Phone: +91 8789594839
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
+            <Typography variant="h5" color="text.primary" gutterBottom>
               Follow Me
             </Typography>
             <div>
               {contactsData.map(([element,elementIcon])=> (
-                    <a key={element} className="nav-link" href={contactLinks[element]} style={{padding:3, color:colors[2]}}>
-                      {elementIcon}
-                    </a>
-                ))}
+                <a key={element} aria-label={element} className="nav-link" href={contactLinks[element]} style={{padding:3, color:colors[2]}}>
+                  {elementIcon}
+                </a>
+              ))}
             </div>
           </Grid>
         </Grid>
         <Box mt={5}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"Copyright © "}
-            <a color="primary.main" href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
+            <a style={{color:colors[10]}} href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
               Tabish Portfolio
             </a>{" " + new Date().getFullYear()+"."}
           </Typography>

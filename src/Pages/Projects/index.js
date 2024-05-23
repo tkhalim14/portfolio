@@ -12,17 +12,19 @@ import CardContent from '@mui/material/CardContent';
 import { GitHub } from '@mui/icons-material';
 import StarIcon from '@mui/icons-material/Star';
 
-import { Typography } from '@mui/material';
+import { Button, CardActions, Tooltip, Typography } from '@mui/material';
 
 
 import project from './projects.js';
 import colors from '../../Components/Constants/colorscheme.js';
+import { useMediaQuery } from '@mui/material';
 
 import { useLocation, Link } from 'react-router-dom';
 
 import './index.css';
 
 export default function ProjectPage(props) {
+  const largeView = useMediaQuery(`(min-width: 1000px)`);
 
   const [projectToggles, setProjectToggles] = React.useState(()=>{
     let x = {};
@@ -45,24 +47,10 @@ export default function ProjectPage(props) {
       );
     })
   },[]);
-
-  const handleToggle = (name) => {
-    console.log(name);
-    console.log(projectToggles);
-    setProjectToggles((prev) => {
-      return (
-        {
-          ...prev,
-          [name]: prev[name]===0?1:0,
-        }
-      );
-    })
-  }
   
   const location = useLocation();
 
   React.useEffect(()=>{
-    // console.log(location);
     if(location.state){
       const element = document.getElementById(location.state.goto);
       if (element) {
@@ -78,38 +66,47 @@ export default function ProjectPage(props) {
         // })
       }
     }
-  },[location, handleEnter]);
+  }, [location, handleEnter]);
 
   return (
     <React.Fragment>
       <Timeline
-        position='alternate'
+        position={largeView?'alternate':'right'}
       >
       {project.sort((a,b) => -a['priority']+b['priority']).map((element,index)=>{
         
         if(props.priority_bool===true && element['priority'] === 0)
           return ''
+
         return (
           <TimelineItem key={'project'+index} sx={{ padding: '1rem'}}>
-            <TimelineOppositeContent color="text.secondary">
+            <TimelineOppositeContent color="text.secondary" style={{ flexGrow: 1, height: '20vmax', zIndex: 0 }}>
               {/* <div>10:00 am</div> */}
-              <div style={{display: 'flex', justifyContent: index%2===0?'flex-end':'flex-start'}}>
-                <img 
-                  className="opp-content" 
-                  src={element['pic']} 
-                  alt="banner.png" 
-                  style={{
-                    width: projectToggles[element['name']]?'22rem':'0', 
-                    backgroundColor: colors[2],
-                    opacity: projectToggles[element['name']]
-                  }}></img>
+              <div style={{ display: 'flex', justifyContent: index%2===0 || !largeView?'flex-end':'flex-start'}}>
+                <div style={{flexGrow: 1}}>
+                  <img
+                    className="opp-content" 
+                    src={element['pic']} 
+                    alt="banner.png" 
+                    style={
+                      largeView?
+                      {
+                      width: projectToggles[element['name']] ?'65%':'0', 
+                      backgroundColor: colors[2],
+                      opacity: projectToggles[element['name']]
+                    }:{
+                      width: projectToggles[element['name']] ?'100%':'0', 
+                      backgroundColor: colors[2],
+                      opacity: projectToggles[element['name']]
+                    }}/>
+                </div>
               </div>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot sx={{backgroundColor: colors[2]}}/>
               <TimelineConnector sx={{backgroundColor: colors[3]}}/>
             </TimelineSeparator>
-              <TimelineContent className='project-item'>
+              <TimelineContent>
                 <CardContent 
                   sx={{
                     backgroundColor: colors[5], 
@@ -117,8 +114,11 @@ export default function ProjectPage(props) {
                     borderRadius: '1rem', 
                     cursor: 'pointer'
                   }} 
-                  onMouseEnter={() => handleEnter(element['name'])} 
-                  onClick={()=>handleToggle(element['name'])}
+                  className='project-item'
+                  onMouseOver={() => {
+                    handleEnter(element['name'])
+                  }}
+                  // onClick={()=>handleToggle(element['name'])}
                 >
                   <div id={(element['name'])} style={{marginTop: '-8rem', position:'absolute' }}>
                   </div>
@@ -139,10 +139,23 @@ export default function ProjectPage(props) {
                     </span>
                   </Typography>
                   <div style={{marginTop: '0.3rem',height: '0.05rem', backgroundColor:colors[4]}}/>
-                  <Typography variant="body2" sx={{color: colors[4], marginTop: '0.5rem'}}>
-                    {element['description']}
-                  </Typography>
+                    <Typography variant="body2" 
+                      sx={{
+                        color: colors[4], 
+                        marginTop: '0.5rem', 
+                        overflow: 'hidden', 
+                        textOverflow: 'ellipsis', 
+                        maxWidth: '100%',
+                        display: largeView ?'block': 'none',
+                      }}>
+                      {element['description']}
+                    </Typography>
                 </CardContent>
+                <CardActions sx={{justifyContent: 'flex-end', display: largeView ? 'none': 'flex'}}>
+                  <Tooltip title={element['description']} placement="bottom-start">
+                    <Button variant='contained' sx={{fontSize: '10px', backgroundColor: colors[5]}}>Learn more...</Button>
+                  </Tooltip>
+                </CardActions>
               </TimelineContent>
           </TimelineItem>
         )}

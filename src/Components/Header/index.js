@@ -99,7 +99,7 @@ function ResponsiveAppBar() {
         }}
       >
         <div style={{flex: 1, display:'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '0.5rem'}}>
-          <button onClick={toggleDrawer('left', true)} style={{all: 'unset', color: 'inherit', cursor: 'pointer'}}>
+          <button id={"Open SideNav"} title={"Open SideNav"} aria-label={'Open SideNav'} onClick={toggleDrawer('left', true)} style={{all: 'unset', color: 'inherit', cursor: 'pointer'}}>
             <MenuIcon sx={{ fontSize: 32 , padding: '0.4rem 0'}}/>
           </button>
         </div>

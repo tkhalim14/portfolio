@@ -117,7 +117,7 @@ function Home() {
                 </LazyLoad>
             </Grid>
           </Grid>
-          <div name="controls" style={{display:'flex', justifyContent:'flex-end'}}>
+          <div name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>
             <button onClick={() => handleNav(carouselIndex-1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
               <ArrowBackIosIcon/>
             </button>
@@ -125,7 +125,7 @@ function Home() {
               <ArrowForwardIosIcon/>
             </button>
           </div>
-          <Grid container style={{marginTop: '2rem'}}>
+          <Grid container>
             {Experience.map((ele, index) => {
               const valid = index>=carouselIndex && index<carouselIndex+3;
               if(valid){
