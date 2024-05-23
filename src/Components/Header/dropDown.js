@@ -19,13 +19,13 @@ const DropdownMenuElemet = ({profilePic, items, links, anchorElUser, handleOpenM
     return (
         <>
             <Tooltip title="Contact Me">
-            <IconButton 
-                onClick={handleOpenMenu} 
-                sx={{ p: 0 }}
-                aria-haspopup="true"
-            >
-                <Avatar alt="Remy Sharp" src={profilePic} style={{border: `0.2px solid ${colors[2]}`}}/>
-            </IconButton>
+                <IconButton 
+                    onClick={handleOpenMenu} 
+                    sx={{ p: 0 }}
+                    aria-haspopup="true"
+                >
+                    <Avatar alt="Remy Sharp" src={profilePic} style={{border: `0.2px solid ${colors[2]}`}}/>
+                </IconButton>
             </Tooltip>
             <Menu
                 anchorEl={anchorElUser}

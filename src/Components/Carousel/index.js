@@ -9,9 +9,9 @@ const CarouselComponent = ({index, updateIndex, items, Item, height='auto', widt
     }
   
     return (
-        <div style={{ height:height, width: width, marginBottom: '10rem'}} onMouseEnter={() => setShowNav(true)} onMouseLeave={() => setShowNav(false)}>
+        <div style={{ width: width, height: '100%', marginBottom: '10rem'}} onMouseEnter={() => setShowNav(true)} onMouseLeave={() => setShowNav(false)}>
           <Carousel
-            sx={{zIndex:0}}
+            sx={{ zIndex:0, height: height, width: width }}
             animation={"slide"}
             fullHeightHover={false}
             navButtonsAlwaysVisible={showNav}
@@ -19,7 +19,9 @@ const CarouselComponent = ({index, updateIndex, items, Item, height='auto', widt
             prev={() => updateIndex((items.length+index-1)%items.length)}
           >
               {
-                  items.map( (item, i) => <Item key={i} item={item} /> )
+                items.map((item, i) => 
+                    <Item key={i} item={item} /> 
+                )
               }
           </Carousel>
         </div>

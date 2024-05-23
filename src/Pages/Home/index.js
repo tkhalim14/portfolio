@@ -11,14 +11,13 @@ import colors from '../../Components/Constants/colorscheme.js';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Link } from 'react-router-dom';
 
 
 const Item = (props) => {
   return (
       <div style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
-          <div>
-            <img src={props.item.url} style={{width: '100%',height: 'auto'}} alt={props.item.url}/>
-          </div>
+          <img src={props.item.url} style={{ minWidth: '100%', minHeight: '50vh' }} alt={props.item.url}/>
       </div>
   );
 }
@@ -30,12 +29,12 @@ const items = [
   {
     url: process.env.PUBLIC_URL+"/images/autoreels-banner.png"
   },
-  // {
-  //   url: process.env.PUBLIC_URL+"/images/musipy-banner.png"
-  // },
-  // {
-  //   url: process.env.PUBLIC_URL+"/images/multi-tridos.png"
-  // }
+  {
+    url: process.env.PUBLIC_URL+"/images/musipy-banner.png"
+  },
+  {
+    url: process.env.PUBLIC_URL+"/images/multi-tridos.png"
+  }
 ]
 
 const Experience = [
@@ -72,7 +71,6 @@ const Experience = [
 ];
 
 function Home() {
-
   const [isLoading, setIsLoading] = useState(true);
 
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -145,9 +143,11 @@ function Home() {
             })}
           </Grid>
       </Box>
-      <div style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
-        <Carousel items={items} Item={Item}/>
-      </div>
+      <Link to="Projects">
+        <div style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
+            <Carousel items={items} Item={Item}/>
+        </div>
+      </Link>
       <LoadingOverlay open={isLoading}/>
       </>
     );

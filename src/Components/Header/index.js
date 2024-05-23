@@ -16,8 +16,8 @@ import colors from '../Constants/colorscheme.js';
 import contactLinks from '../Constants/contactme.js';
 
 import { UserLogo, ProjectSearchBar, Drawer, DropdownMenu } from './extras.js';
+import { routes } from '../../app/config/app.config.js';
 
-const pages = ['Projects', 'Timeline', 'About'];
 const profile_dropdown = [['Github',<GitHubIcon />], ['Gmail',<MailIcon/>], ['Instagram',<InstagramIcon/>],['Linkedin',<LinkedIn/>] ,['Resume',<DownloadIcon/>]];
 
 
@@ -104,7 +104,7 @@ function ResponsiveAppBar() {
           </button>
         </div>
       </div>
-      <Drawer anchor={'left'} state={state} toggleDrawer={toggleDrawer} pages={pages}/>
+      <Drawer anchor={'left'} state={state} toggleDrawer={toggleDrawer} pages={routes}/>
     </>
     
   );

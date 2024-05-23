@@ -4,6 +4,7 @@ import {Drawer, List, ListItem, ListItemButton, ListItemText} from '@mui/materia
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import colors from '../Constants/colorscheme';
+import { Link } from 'react-router-dom';
 
 const DrawerComponent = ({anchor, state, toggleDrawer, pages}) => {
     return (
@@ -21,12 +22,14 @@ const DrawerComponent = ({anchor, state, toggleDrawer, pages}) => {
                 onKeyDown={toggleDrawer(anchor, false)}
             >
                 <List>
-                    {pages.map((text, index) => (
+                    {pages.map((page, index) => (
                     <ListItem key={index}>
-                        <ListItemButton href={'/portfolio#'+text} sx={{display: 'flex', justifyContent: 'space-between', flexGrow: 1}}>
-                            <ListItemText primary={text} />
-                            <ChevronRightIcon sx={{color: colors[3]}}/>
-                        </ListItemButton>
+                        <Link to={page.route} style={{all: 'unset', flexGrow: 1}}>
+                            <ListItemButton sx={{display: 'flex', justifyContent: 'space-between',}}>
+                                <ListItemText primary={page.name} />
+                                <ChevronRightIcon sx={{color: colors[3]}}/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                     ))}
                 </List>
