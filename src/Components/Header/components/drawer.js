@@ -6,26 +6,26 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import colors from '../../Constants/colorscheme';
 import { Link } from 'react-router-dom';
 
-const DrawerComponent = ({anchor, state, toggleDrawer, pages}) => {
+const DrawerComponent = ({open, pages, onClose}) => {
     return (
         <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer('left', false)}
+            anchor={'left'}
+            open={open}
+            onClose={onClose}
             PaperProps={{
             sx: {minWidth: '200px'},
             }}
         >
             <Box
                 role="presentation"
-                onClick={toggleDrawer(anchor, false)}
-                onKeyDown={toggleDrawer(anchor, false)}
+                onClick={onClose}
+                onKeyDown={onClose}
             >
                 <List>
                     {pages.map((page, index) => (
                     <ListItem key={index}>
                         <Link to={page.route} style={{all: 'unset', flexGrow: 1}}>
-                            <ListItemButton sx={{display: 'flex', justifyContent: 'space-between',}}>
+                            <ListItemButton sx={{display: 'flex', justifyContent: 'space-between'}}>
                                 <ListItemText primary={page.name} />
                                 <ChevronRightIcon sx={{color: colors[3]}}/>
                             </ListItemButton>

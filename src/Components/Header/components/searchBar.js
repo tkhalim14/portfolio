@@ -7,27 +7,21 @@ import colors from '../../Constants/colorscheme';
 
 const SearchBar = () => {
     return (
-        <div
-            className="searchBar"
-        >
+        <div className="searchBar">
             <Autocomplete
                 options={searchData.map((element)=> {return element['name']})}
                 freeSolo
-                renderOption={(props, option) => {
-                    return (
+                renderOption={(props, option) => (
                     <Link {...props} style={{ color: colors[2], backgroundColor: colors[1]}} to={`/Projects`} state={{ goto: `${option}`}}>
                         {option}
                     </Link>
-                    );
-                }}
-                renderInput={(params) => {
-                    return (
-                        <div style={{ display: 'flex', alignItems: 'center', margin: '0 1rem'}}>
-                            <SearchIcon />
-                            <TextField sx={{zIndex:0}} {...params} label="Search projects…" fullWidth size="small" color="secondary"/>
-                        </div>
-                    );
-                }}
+                )}
+                renderInput={(params) => (
+                  <div style={{ display: 'flex', alignItems: 'center', margin: '0 1rem'}}>
+                      <SearchIcon />
+                      <TextField sx={{zIndex:0}} {...params} label="Search projects…" fullWidth size="small" color="secondary"/>
+                  </div>
+                )}
             />
         </div>
     );
