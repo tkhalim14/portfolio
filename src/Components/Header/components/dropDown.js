@@ -1,7 +1,7 @@
 import {Menu, MenuItem, Tooltip, IconButton, Avatar} from '@mui/material';
-import colors from '../Constants/colorscheme';
+import colors from '../../Constants/colorscheme';
 
-const options = {
+const MenuProps = {
     MenuListProps: {
         'aria-labelledby': 'basic-button',
     },
@@ -33,9 +33,9 @@ const DropdownMenuElemet = ({profilePic, items, links, anchorElUser, handleOpenM
                 onClose={handleCloseMenu}
                 disableScrollLock={true}
                 sx={{marginTop: 5, marginLeft:-0.9}}
-                MenuListProps={options.MenuListProps}
-                anchorOrigin={options.anchorOrigin}
-                transformOrigin={options.transformOrigin}
+                MenuListProps={MenuProps.MenuListProps}
+                anchorOrigin={MenuProps.anchorOrigin}
+                transformOrigin={MenuProps.transformOrigin}
             >
             {items.map(([setting,symbol]) => (
                 <MenuItem key={setting} onClick={handleCloseMenu}>

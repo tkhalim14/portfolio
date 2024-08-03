@@ -1,9 +1,9 @@
 import SearchIcon from '@mui/icons-material/Search';
-import searchData from "../../Pages/Projects/projects.js";
+import searchData from "../../../Pages/Projects/projects.js";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import colors from '../Constants/colorscheme.js';
 import { Link  } from "react-router-dom";
+import colors from '../../Constants/colorscheme';
 
 const SearchBar = () => {
     return (

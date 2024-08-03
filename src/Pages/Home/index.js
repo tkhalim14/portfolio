@@ -143,11 +143,9 @@ function Home() {
             })}
           </Grid>
       </Box>
-      <Link to="Projects">
-        <div style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
-            <Carousel items={items} Item={Item}/>
-        </div>
-      </Link>
+      <div style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
+          <Carousel items={items} Item={Item}/>
+      </div>
       <LoadingOverlay open={isLoading}/>
       </>
     );

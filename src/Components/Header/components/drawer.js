@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import {Drawer, List, ListItem, ListItemButton, ListItemText} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import colors from '../Constants/colorscheme';
+import colors from '../../Constants/colorscheme';
 import { Link } from 'react-router-dom';
 
 const DrawerComponent = ({anchor, state, toggleDrawer, pages}) => {

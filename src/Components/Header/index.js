@@ -9,17 +9,15 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
-
-import './index.css';
 import ProfilePic from '../Media/logo.jpg';
 import colors from '../Constants/colorscheme.js';
 import contactLinks from '../Constants/contactme.js';
 
-import { UserLogo, ProjectSearchBar, Drawer, DropdownMenu } from './extras.js';
+import { UserLogo, ProjectSearchBar, Drawer, DropdownMenu } from './components';
 import { routes } from '../../app/config/app.config.js';
+import './index.css';
 
-const profile_dropdown = [['Github',<GitHubIcon />], ['Gmail',<MailIcon/>], ['Instagram',<InstagramIcon/>],['Linkedin',<LinkedIn/>] ,['Resume',<DownloadIcon/>]];
-
+const profile_dropdown = [['Github',<GitHubIcon />], ['Gmail',<MailIcon/>], ['Instagram',<InstagramIcon/>], ['Linkedin',<LinkedIn/>], ['Resume',<DownloadIcon/>]];
 
 // https://stackoverflow.com/questions/74239730/mui-autocomplete-does-not-fully-appear-in-appbar
 

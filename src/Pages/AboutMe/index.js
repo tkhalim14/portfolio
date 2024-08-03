@@ -203,7 +203,6 @@ function About() {
             {items[carouselIndex]['name']}
           </div>
             <Carousel index={carouselIndex} updateIndex={setCarouselIndex} items={items} Item={Item} height={100} width={250}/>
-
         </div>
       </div>
       </>

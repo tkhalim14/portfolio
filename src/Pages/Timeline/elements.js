@@ -21,10 +21,10 @@ let exp_elements = [
     },
     {
         id: 3,
-        title: "Software Development Intern",
+        title: "Software Developer Intern",
         location: "Benam.me, Karnataka",
         description:
-          "I had done my internship under the role of software development at Benam for a period of 6 months. Apart from software development,  I learnt the following skills : user experience, optimizing app performance, integrating marketing and analytics functionalities, and ensuring comprehensive testing capabilities.",
+          "I had done my internship under the role of software development at Benam for a period of 6 months. Apart from software development,  I learnt the following skills: user experience, optimizing app performance, integrating marketing and analytics functionalities, and ensuring comprehensive testing capabilities.",
         link: "https://www.linkedin.com/in/tabish-khalid-halim-27209b201/details/experience/1635537136559/single-media-viewer/?type=DOCUMENT&profileId=ACoAADNytLYBIMCuYNxZL32JzwXCu05XMgj6RYo",
         date: "Mar, 2023 - Aug, 2023",
         icon: "school"
@@ -48,7 +48,17 @@ let exp_elements = [
         link: "https://iitdh.ac.in",
         date: "Aug, 2023 - Nov, 2023",
         icon: "school"
-    }
+    },
+    {
+        id: 3,
+        title: "Software Developer Intern",
+        location: "effiHR HR Solutions",
+        description:
+        "As an intern at effiHR, collaborated with the web team to develop production-ready code for the organization's official webpage. Tasked with creation of responsive UI elements along with implementation of various web designs along with optimizing code using system design patterns such as querying and caching web contents.",
+        link: "https://home.effihr.com/",
+        date: "Apr, 2024 - July, 2022",
+        icon: "school"
+    },
   ];
 
 let curricular_elements = [
