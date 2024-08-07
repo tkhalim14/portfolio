@@ -6,15 +6,35 @@ import Button from '@mui/material/Button';
 
 import { Box } from "@mui/material";
 
-import contactLinks from '../../Components/Constants/contactme.js';
+import { socialMediaLinks } from '../../app/contactMe';
 
 import colors from '../../Components/Constants/colorscheme.js';
 
-export default function Footer() {
+const socialMediaIcons = [
+    ['Github',<GitHub/>],
+    ['Facebook',<Facebook/>],
+    ['Instagram',<Instagram/>],
+    ['Linkedin',<LinkedIn/>]
+];
 
-  const contactsData = [['Github',<GitHub/>],['Facebook',<Facebook/>],['Instagram',<Instagram/>],['Linkedin',<LinkedIn/>]];
+const FooterSection = ({title, subtitle, body1, body2}) => (
+    <>
+      <Typography variant="h5" color="text.primary" gutterBottom component={"div"}>
+        {title}
+      </Typography>
+      <Typography variant="body2" color="text.secondary" component={"div"}>
+        {subtitle}
+      </Typography>
+      <Typography variant="body2" color="text.secondary" component={"div"}>
+        {body1 && body1}
+      </Typography>
+      <Typography variant="body2" color="text.secondary" component={"div"}>
+        {body2 && body2}
+      </Typography>
+    </>
+);
 
-  return (
+const Footer = () => (
     <Box
       sx={{
         backgroundColor: 'primary.main',
@@ -23,55 +43,42 @@ export default function Footer() {
     >
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h5" color="text.primary" gutterBottom>
-              About Me
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Just your average passionate software developer. Always looking out for the best tech.
-            </Typography>
-            <br/>
-            <Typography variant="body2">
-              <Button href={contactLinks['resume']} sx={{color:'secondary.main'}}>Download Resume&nbsp; <Download/></Button>
-            </Typography>
-            <Typography variant="body2">
-              <Button href="/portfolio#About" sx={{color:'secondary.main'}}>Go to About Section</Button>
-            </Typography>
+            <FooterSection
+              title={"About Me"}
+              subtitle={"Just your average passionate software developer. Always looking out for the best tech."}
+              body1={
+                <>
+                  <br/>
+                  <Button href={socialMediaLinks['resume']} sx={{color:'secondary.main'}}>Download Resume&nbsp; <Download/></Button>
+                </>
+              }
+              body2={<Button href="/portfolio#About" sx={{color:'secondary.main'}}>Go to About Section</Button>}
+            />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h5" color="text.primary" gutterBottom>
-              Contact Me
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              A/14, Alinagar Colony, Anisabad, Patna
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Email: <a href="mailto:tkhalim14@gmail.com" style={{color:colors[10]}}>tkhalim14@gmail.com</a>
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Phone: +91 8789594839
-            </Typography>
+            <FooterSection
+              title={"Contact Me"}
+              subtitle={"A/14, Alinagar Colony, Anisabad, Patna, Bihar"}
+              body1={<>Email: <a href="mailto:tkhalim14@gmail.com" style={{color:colors[10]}}>tkhalim14@gmail.com</a> </>}
+              body2={"Phone: +91 8789594839"}
+            />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h5" color="text.primary" gutterBottom>
-              Follow Me
-            </Typography>
-            <div>
-              {contactsData.map(([element,elementIcon])=> (
-                <a key={element} aria-label={element} className="nav-link" href={contactLinks[element]} style={{padding:3, color:colors[2]}}>
-                  {elementIcon}
-                </a>
-              ))}
-            </div>
+            <FooterSection
+              title={"Follow Me"}
+              body1={
+                <div>
+                  {socialMediaIcons.map(([element,elementIcon])=> (
+                    <a key={element} aria-label={element} className="nav-link" href={socialMediaLinks[element]} style={{padding:3, color:colors[2]}}>
+                      {elementIcon}
+                    </a>
+                  ))}
+                </div>
+              }
+            />
           </Grid>
         </Grid>
-        <Box mt={5}>
-          <Typography variant="body2" color="text.secondary" align="center">
-            {"Copyright © "}
-            <a style={{color:colors[10]}} href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
-              Tabish Portfolio
-            </a>{" " + new Date().getFullYear()+"."}
-          </Typography>
-        </Box>
     </Box>
-  );
-}
+);
+
+export default Footer;

@@ -11,7 +11,7 @@ import LoadingSVG from "../../Components/Media/loading.json";
 import { CircularProgress } from '@mui/material';
 
 const LoadingOverlay = ({ open }) => (
-    <Backdrop open={open} style={{background: colors[1], zIndex: 9999}}>
+    <Backdrop open={open} style={{ background: colors[1], zIndex: 9999 }}>
         <Grid container justifyContent="space-evenly" padding="8vmax">
             <Grid item xs={12} md={6} className='fade-in' style={{display:'flex',justifyContent:'center',flexDirection:'column'}}>
                 <Box sx={{ display: 'flex' }}>

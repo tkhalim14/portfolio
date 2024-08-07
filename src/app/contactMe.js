@@ -1,4 +1,4 @@
-let contactLinks = {
+const socialMediaLinks = {
     'Github':'https://github.com/tkhalim14',
     'Gmail':'mailto:tkhalim14@gmail.com',
     'Instagram':'https://www.instagram.com/thesnagtalker007/',
@@ -7,4 +7,4 @@ let contactLinks = {
     'Facebook': 'https://www.facebook.com/tabish.khalidhalim/'
 };
 
-export default contactLinks;
+export { socialMediaLinks };

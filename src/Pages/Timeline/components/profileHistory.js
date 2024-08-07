@@ -1,4 +1,4 @@
-let exp_elements = [
+let workExperiences = [
     {
         id: 3,
         title: "Website Team",
@@ -54,14 +54,14 @@ let exp_elements = [
         title: "Software Developer Intern",
         location: "effiHR HR Solutions",
         description:
-        "As an intern at effiHR, collaborated with the web team to develop production-ready code for the organization's official webpage. Tasked with creation of responsive UI elements along with implementation of various web designs along with optimizing code using system design patterns such as querying and caching web contents.",
+        "As an intern at effiHR, collaborated with the web team to develop production-ready code for the organization's official webpage. Tasked with creation of responsive UI elements along with implementation of various web designs along with optimizing code using system design patterns for querying and caching web contents.",
         link: "https://home.effihr.com/",
         date: "Apr, 2024 - July, 2022",
         icon: "school"
     },
   ];
 
-let curricular_elements = [
+let extraCurriculars = [
     {
         id: 1,
         title: "Junior Technical Secretary",
@@ -191,7 +191,7 @@ let curricular_elements = [
     },
 ];
 
-const education_elements = [
+const educationalDetails = [
     {
         id: 2,
         title: "St. Karen's Secondary School",
@@ -214,5 +214,5 @@ const education_elements = [
     },
 ];
 
-export {exp_elements, curricular_elements, education_elements};
+export { workExperiences, extraCurriculars, educationalDetails };
   

@@ -15,7 +15,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { Button, CardActions, Tooltip, Typography } from '@mui/material';
 
 
-import project from './projects.js';
+import project from './utils/personalProjects.js';
 import colors from '../../Components/Constants/colorscheme.js';
 import { useMediaQuery } from '@mui/material';
 
@@ -23,7 +23,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 import './index.css';
 
-export default function ProjectPage(props) {
+const ProjectPage = (props) => {
   const largeView = useMediaQuery(`(min-width: 1000px)`);
 
   const [projectToggles, setProjectToggles] = React.useState(()=>{
@@ -164,3 +164,4 @@ export default function ProjectPage(props) {
     </React.Fragment>
   );
 }
+export default ProjectPage;

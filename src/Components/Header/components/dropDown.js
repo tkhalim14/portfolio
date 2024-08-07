@@ -32,7 +32,14 @@ const DropdownMenuElemet = ({profilePic, items, links, anchorElUser, handleOpenM
                 open={anchorElUser!==null}
                 onClose={handleCloseMenu}
                 disableScrollLock={true}
-                sx={{marginTop: 5, marginLeft:-0.9}}
+                sx={{
+                  marginTop: 5.5, 
+                  marginLeft:-0.9,
+                  '& .MuiMenu-list': {
+                    border: `1px solid ${colors[3]}`,
+                    borderRadius: 2
+                  }
+                }}
                 MenuListProps={MenuProps.MenuListProps}
                 anchorOrigin={MenuProps.anchorOrigin}
                 transformOrigin={MenuProps.transformOrigin}

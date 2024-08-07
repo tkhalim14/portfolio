@@ -1,6 +1,4 @@
-
-// import './index.css';
-import SearchBar from './searchBar';
+import SearchBar from '../../SearchBar';
 import DrawerComponent from './drawer';
 import DropDownMenuElement from './dropDown';
 

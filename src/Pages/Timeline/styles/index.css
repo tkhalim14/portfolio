@@ -1,13 +1,6 @@
 .timetag{
     margin-right: 100px;
 }
-.timeline-background{
-    margin: 4vh 4vmax 4vmax 2vmax;
-    padding-top: 1rem;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-}
 .timeline-dot-target{
     transition: 0.2s;
 }

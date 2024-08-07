@@ -1,4 +1,4 @@
-const project = [
+const personalProjects = [
     {
         "priority": 1,
         "name": "TrendRocket-Clone",
@@ -123,4 +123,4 @@ const project = [
     }
 ]
 
-export default project;
+export default personalProjects;

@@ -9,7 +9,7 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
 import ProfilePic from '../../Media/logo.jpg';
-import contactLinks from '../../Constants/contactme.js';
+import { socialMediaLinks } from '../../../app/contactMe';
 
 import { UserLogo, ProjectSearchBar, DropdownMenu } from '.';
 
@@ -23,7 +23,7 @@ const profileDropdown = [
   ['Resume', <DownloadIcon/>]
 ];
 
-const downloadResume = () => () => window.location.href = contactLinks['Resume']
+const downloadResume = () => () => window.location.href = socialMediaLinks['Resume']
 
 const TopNav = () => {
 
@@ -62,7 +62,7 @@ const TopNav = () => {
                 <DropdownMenu 
                   profilePic={ProfilePic} 
                   items={profileDropdown} 
-                  links={contactLinks} 
+                  links={socialMediaLinks} 
                   anchorElUser={anchorElUser} 
                   handleOpenMenu={handleOpenUserMenu} 
                   handleCloseMenu={handleCloseUserMenu}

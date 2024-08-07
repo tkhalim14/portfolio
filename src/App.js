@@ -1,49 +1,20 @@
 import './App.css';
-import Home from './Pages/Home/index.js';
-import About from './Pages/AboutMe/index.js';
-import Timeline from './Pages/Timeline/timeline.js';
-import Projects from './Pages/Projects/index.js';
-import Header from './Components/Header/index.js';
-import Footer from './Components/Footer/index.js';
+import Home from './Pages/Home';
+import About from './Pages/AboutMe';
+import Timeline from './Pages/Timeline';
+import Projects from './Pages/Projects';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import { Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
 import colors from './Components/Constants/colorscheme';
-import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
+import { ThemeProvider, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
+import { customTheme } from './theme';
 
 const HeaderSpacing = styled(Box)(({theme})=>({
   ...theme.mixins.toolbar,
 }));
-
-const customDarkTheme  = () => ({
-  palette: {
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 600,
-        md: 1000,
-        lg: 1200,
-        xl: 1536,
-      },
-    },
-    primary: {
-      main: colors[1],
-    },
-    secondary: {
-      main: colors[2],
-    },
-    background: {
-      default: colors[2],
-      paper: colors[1],
-    },
-    text: {
-      primary: colors[2],
-      secondary: colors[2],
-    },
-  },
-});
-
-const customTheme = createTheme(customDarkTheme());
 
 function App() {
   return (
