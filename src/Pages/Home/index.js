@@ -26,7 +26,7 @@ function Home() {
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   const handleNav = (index) => {
-    const length=Experience.length;
+    const length=experiences.length;
     const end=index+3;
     if(end>length || index<0){
       return;

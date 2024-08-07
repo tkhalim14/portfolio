@@ -1,3 +1,6 @@
+import colors from './Components/Constants/colorscheme';
+import { createTheme } from '@mui/material/styles';
+
 const customDarkTheme  = () => ({
   palette: {
     breakpoints: {

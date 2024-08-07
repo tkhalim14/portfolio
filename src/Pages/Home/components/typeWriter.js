@@ -1,4 +1,3 @@
-import Fade from '@mui/material/Fade';
 import Typewriter from "typewriter-effect";
 
 const TypewriterComponent = ({fields, highlightColor='init'}) => {

@@ -59,7 +59,7 @@ export default function CustomizedTimeline() {
     const [c_1, setc_1] = React.useState(3);
 
     function LoadMore(){
-        setc_1(curricular_elements.length);
+        setc_1(extraCurriculars.length);
     }
 
     const terminal_colors=['#ff0000','#FFD700','#65a765'];
@@ -166,7 +166,7 @@ export default function CustomizedTimeline() {
               },
           }}
         >
-        {extraCurriculars.slice(curricular_elements.length-c_1,curricular_elements.length).reverse().map((element, index)=>(
+        {extraCurriculars.slice(extraCurriculars.length-c_1,extraCurriculars.length).reverse().map((element, index)=>(
             <DetailsTimeLineElement 
                 key={element.title+index} 
                 dotColor={terminal_colors[element.id%3]} 
@@ -182,7 +182,7 @@ export default function CustomizedTimeline() {
         </Timeline>
         <div style={{display:'flex',justifyContent:'flex-end'}}>
             <div>
-            { c_1===curricular_elements.length ? "" : <Button variant="outlined" onClick={LoadMore} style={{marginTop: '2vmax'}}>Load More...</Button>}
+            { c_1===extraCurriculars.length ? "" : <Button variant="outlined" onClick={LoadMore} style={{marginTop: '2vmax'}}>Load More...</Button>}
             </div>
         </div>
     </ThemeProvider>
