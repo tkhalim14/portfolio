@@ -1,4 +1,4 @@
-import colors from '../../Constants/colorscheme.js';
+import colors from '../../Constants/colorScheme.js';
 
 const SideNavStyle = {
   position: 'fixed',

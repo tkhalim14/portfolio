@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-import colors from '../../../Components/Constants/colorscheme.js';
+import colors from '../../../Components/Constants/colorScheme.js';
 
 import { TypewriterEffect } from './index.js';
 

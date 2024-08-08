@@ -7,9 +7,9 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import { Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
-import colors from './Components/Constants/colorscheme';
+import colors from './Components/Constants/colorScheme';
 import { ThemeProvider, styled } from '@mui/material/styles';
-import { Box } from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import { customTheme } from './theme';
 
 const HeaderSpacing = styled(Box)(({theme})=>({
@@ -19,8 +19,9 @@ const HeaderSpacing = styled(Box)(({theme})=>({
 function App() {
   return (
     <ThemeProvider theme={customTheme}>
+      <CssBaseline/>
       <HashRouter basename="/">
-      <div className="Main" style={{backgroundColor: colors[1]}}>
+      <Box className="Main" color="background.default">
         <div>
           <Header/>
         </div>
@@ -36,7 +37,7 @@ function App() {
         <div className='footerContent'>
           <Footer/>
         </div>
-      </div>
+      </Box>
       </HashRouter>
     </ThemeProvider>
   );

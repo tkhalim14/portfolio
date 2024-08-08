@@ -16,7 +16,7 @@ import { Button, CardActions, Tooltip, Typography } from '@mui/material';
 
 
 import project from './utils/personalProjects.js';
-import colors from '../../Components/Constants/colorscheme.js';
+import colors from '../../Components/Constants/colorScheme.js';
 import { useMediaQuery } from '@mui/material';
 
 import { useLocation, Link } from 'react-router-dom';

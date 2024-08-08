@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
 
 import { socialMediaLinks } from '../../app/contactMe';
 
-import colors from '../../Components/Constants/colorscheme.js';
+import colors from '../Constants/colorScheme.js';
 
 const socialMediaIcons = [
     ['Github',<GitHub/>],

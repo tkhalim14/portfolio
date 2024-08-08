@@ -1,5 +1,5 @@
 import {Menu, MenuItem, Tooltip, IconButton, Avatar} from '@mui/material';
-import colors from '../../Constants/colorscheme';
+import colors from '../../Constants/colorScheme';
 
 const MenuProps = {
     MenuListProps: {

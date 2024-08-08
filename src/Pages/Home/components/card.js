@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import colors from '../../../Components/Constants/colorscheme';
+import colors from '../../../Components/Constants/colorScheme';
 
 const CardComponent = ({title, subtitle, image, description}) => {
     return (

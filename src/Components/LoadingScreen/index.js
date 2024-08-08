@@ -5,19 +5,19 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Lottie from "lottie-react";
-import colors from '../Constants/colorscheme.js';
+import colors from '../Constants/colorScheme.js';
 import './index.css';
 import LoadingSVG from "../../Components/Media/loading.json"; 
 import { CircularProgress } from '@mui/material';
 
 const LoadingOverlay = ({ open }) => (
-    <Backdrop open={open} style={{ background: colors[1], zIndex: 9999 }}>
+    <Backdrop open={open} sx={{ background: colors[2], zIndex: 9999 }}>
         <Grid container justifyContent="space-evenly" padding="8vmax">
-            <Grid item xs={12} md={6} className='fade-in' style={{display:'flex',justifyContent:'center',flexDirection:'column'}}>
-                <Box sx={{ display: 'flex' }}>
+            <Grid item xs={12} md={6} className='fade-in' style={{ display:'flex', justifyContent:'center', flexDirection:'column' }}>
+                <Box>
                     <Typography variant="h5">Welcome to</Typography>
                 </Box>
-                <Box sx={{ display: 'flex' ,marginTop: '1.5vh'}}>
+                <Box sx={{ display: 'flex', marginTop: '1.5vh'}}>
                     <Typography variant="h2" sx={{ fontFamily: 'Roboto',letterSpacing: '10px' }}>
                       Tabish Khalid's Portfolio .
                     </Typography>

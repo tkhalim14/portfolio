@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { socialMediaLinks } from '../../app/contactMe.js';
-import colors from '../../Components/Constants/colorscheme.js';
+import colors from '../../Components/Constants/colorScheme.js';
 import LazyLoad from 'react-lazy-load';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';

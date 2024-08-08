@@ -3,7 +3,7 @@ import searchData from "../../Pages/Projects/utils/personalProjects";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { Link } from "react-router-dom";
-import colors from '../Constants/colorscheme';
+import colors from '../Constants/colorScheme';
 
 const SearchBar = () => {
     return (

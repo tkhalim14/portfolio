@@ -1,4 +1,4 @@
-import colors from './Components/Constants/colorscheme';
+import colors from './Components/Constants/colorScheme';
 import { createTheme } from '@mui/material/styles';
 
 const customDarkTheme  = () => ({
@@ -19,7 +19,7 @@ const customDarkTheme  = () => ({
       main: colors[2],
     },
     background: {
-      default: colors[2],
+      default: colors[1],
       paper: colors[1],
     },
     text: {

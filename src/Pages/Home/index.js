@@ -7,7 +7,7 @@ import './index.css';
 import LoadingOverlay from '../../Components/LoadingScreen/index.js';
 import { Card, banners, experiences } from './components';
 import Carousel from '../../Components/Carousel/index';
-import colors from '../../Components/Constants/colorscheme.js';
+import colors from '../../Components/Constants/colorScheme.js';
 import ProfileCard from './components/profileInfo';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
