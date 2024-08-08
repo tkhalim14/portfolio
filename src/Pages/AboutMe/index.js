@@ -1,24 +1,28 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import LazyLoad from 'react-lazy-load';
+import { Link, useLocation } from 'react-router-dom';
+import { 
+  Avatar, 
+  Grow, 
+  ListItemText,
+  ListItemIcon,
+  ListItemButton,
+  ListItem,
+  List,
+  Typography,
+  Button,
+  CardContent,
+  CardActions,
+  Card,
+  Grid,
+  Box, 
+  Tooltip
+} from '@mui/material';
+import { EmojiEvents, Star } from '@mui/icons-material';
+import ProfileImg from '../../Components/Media/AboutDP.jpg';
 import { socialMediaLinks } from '../../app/contactMe.js';
 import colors from '../../Components/Constants/colorScheme.js';
-import LazyLoad from 'react-lazy-load';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Grow from '@mui/material/Grow';
-import Avatar from '@mui/material/Avatar';
-import StarIcon from '@mui/icons-material/Star';
-import ProfileImg from '../../Components/Media/AboutDP.jpg';
 import './index.css';
-
 import { certificates, programmingLanguages , tools } from './constants';
 import Carousel from '../../Components/Carousel/index';
 
@@ -35,21 +39,45 @@ const Item = (props) => {
 const About = () => {
 
   const [carouselIndex, setCarouselIndex] = React.useState(0);
+  const location = useLocation();
+
+  function scrollToTargetAdjusted(element){
+    window.scrollTo({
+         top: element.getBoundingClientRect().top + window.scrollY - 100,
+         behavior: "smooth"
+    });
+}
+
+  React.useEffect(()=>{
+    const element = document.getElementById(location.state?.goto);
+    if(element){
+      scrollToTargetAdjusted(element);
+    }
+  },[location]);
 
     return (
       <>
       <div>
-          <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }}}>
-            <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
-                  <Card sx={{ border: `1px solid ${colors[2]}`, padding: 2 }}>
+          <Box sx={{ display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }}}>
+            <Box sx={{ flex: 3, display:'flex', justifyContent:'center', padding: 5}}>
+                  <Card sx={{ border: `2px solid ${colors[2]}`, padding: "4px 16px" }}>
                       <CardContent>
-                        <Typography variant='h4'>
-                        <LazyLoad>
-                          <Grow in={true}>
-                            <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: 180, width: 180, marginBottom: 3,  margin:2}} align="left"/>
-                          </Grow >
-                        </LazyLoad>
-                        </Typography>
+                        <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: "space-between"}}>
+                          <Typography variant='h4' component={"div"}>
+                            <LazyLoad>
+                              <Grow in={true}>
+                                <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: 180, width: 180, marginBottom: 3,  margin:2}} align="left"/>
+                              </Grow >
+                            </LazyLoad>
+                          </Typography>
+                          <Typography variant='h4' component={"div"}>
+                            <Tooltip title="View Trophies">
+                              <Link state={{ goto: "trophies" }}>
+                                <EmojiEvents color="secondary"/>
+                              </Link>
+                            </Tooltip>
+                          </Typography>
+                        </Box>
                         <Typography variant="h5" component="div">
                             <Grid rows={{ xs: 1}} columns={{ xs: 1 }} sx={{display:'flex',justifyContent:'space-between'}}>
                                   <Grid item>
@@ -77,7 +105,7 @@ const About = () => {
                             <ListItem disablePadding key={1}>
                                 <ListItemButton>
                                 <ListItemIcon>
-                                    <StarIcon />
+                                    <Star color="secondary"/>
                                 </ListItemIcon>
                                 <ListItemText secondary="🎓 With a knack for problem-solving and a flexible approach, I've honed my skills at one of India's top tech institutions." />
                                 </ListItemButton>
@@ -85,7 +113,7 @@ const About = () => {
                             <ListItem disablePadding key={2}>
                                 <ListItemButton>
                                 <ListItemIcon>
-                                    <StarIcon />
+                                    <Star color="secondary"/>
                                 </ListItemIcon>
                                 <ListItemText secondary="💡 From crafting user-friendly interfaces to robust back-end systems, I love building practical solutions. Machine Learning also intrigues me as a way to create intelligent, data-driven tools."/>
                                 </ListItemButton>
@@ -93,7 +121,7 @@ const About = () => {
                             <ListItem disablePadding key={3}>
                                 <ListItemButton>
                                 <ListItemIcon>
-                                    <StarIcon />
+                                    <Star color="secondary"/>
                                 </ListItemIcon>
                                 <ListItemText secondary="🌐 Bridging technology and user experience is my forte. I'm ready to bring my skills to real-world projects and collaborate to create meaningful impact."/>
                                 </ListItemButton>
@@ -106,14 +134,14 @@ const About = () => {
                         </Grid>
                       </CardContent>
                   </Card>
-            </Grid>
-            <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '30%'}}>
-                  <Card sx={{ border: "1px solid #E6EDF3", padding: 2 }}>
+            </Box>
+            <Box sx={{ flex: 2, display:'flex', justifyContent:'center', padding: 5}}>
+                  <Card sx={{ border: `2px solid ${colors[2]}`, padding: 2 }}>
                       <CardContent>
                           <Typography variant='h4'>
                             Skills
+                            <hr/>
                           </Typography>
-                          <br/>
                           <Typography variant='h6' color="primary">
                             Programming Languages
                           </Typography>
@@ -133,17 +161,17 @@ const About = () => {
                           </Typography>
                       </CardContent>
                   </Card>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
       </div>
-      <div style={{display:'flex', justifyContent:'flex-start', padding: 5}}>
-        <div style={{padding: '0 2rem'}}>
-          <div className='home-heading' >
-            Achievements corner: <br/>
+      <div style={{display:'flex', flexDirection: 'row', justifyContent:'flex-start', padding: 4}}>
+        <div style={{padding: '1rem 2rem'}}>
+          <div className='home-heading' style={{color: colors[2]}}>
+            <label id="trophies">Trophies corner:</label> <br/>
             {certificates[carouselIndex]['name']}
           </div>
-            <Carousel index={carouselIndex} updateIndex={setCarouselIndex} items={certificates} renderItems={Item} width={250}/>
         </div>
+        <Carousel index={carouselIndex} updateIndex={setCarouselIndex} items={certificates} renderItems={Item} width={250}/>
       </div>
       </>
     );

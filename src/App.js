@@ -7,7 +7,6 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import { Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
-import colors from './Components/Constants/colorScheme';
 import { ThemeProvider, styled } from '@mui/material/styles';
 import { Box, CssBaseline } from '@mui/material';
 import { customTheme } from './theme';

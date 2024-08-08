@@ -81,7 +81,6 @@ const ProjectPage = (props) => {
         return (
           <TimelineItem key={'project'+index} sx={{ padding: '1rem'}}>
             <TimelineOppositeContent color="text.secondary" style={{ flexGrow: 1, height: '20vmax', zIndex: 0 }}>
-              {/* <div>10:00 am</div> */}
               <div style={{ display: 'flex', justifyContent: index%2===0 || !largeView?'flex-end':'flex-start'}}>
                 <div style={{flexGrow: 1}}>
                   <img
@@ -118,7 +117,6 @@ const ProjectPage = (props) => {
                   onMouseOver={() => {
                     handleEnter(element['name'])
                   }}
-                  // onClick={()=>handleToggle(element['name'])}
                 >
                   <div id={(element['name'])} style={{marginTop: '-8rem', position:'absolute' }}>
                   </div>

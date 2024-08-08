@@ -5,9 +5,10 @@ import { workExperiences, extraCurriculars, educationalDetails} from './profileH
 import '../styles/index.css';
 import { Box, Tab as MUITab, styled, Tabs } from '@mui/material';
 import DetailsTimeLineElement from './timelineElement.js';
+import { RadioButtonChecked } from '@mui/icons-material';
 
 const Tab = styled(MUITab)(() => ({
-  fontSize: 20,
+  fontSize: 20
 }));
 
 const handleHover = (event) => {
@@ -30,15 +31,15 @@ if (hoveredElement) {
 };
 
 export default function CareerTimeline() {
-    const terminal_colors=['#ff0000','#FFD700','#65a765'];
-    const [tabIdx, setTabIdx] = React.useState(1);
+    const terminalColors=['#ff0000','#FFD700','#65a765'];
+    const [tabIndex, setTabIndex] = React.useState(1);
 
     const handleChange = (event, newValue) => {
-      setTabIdx(newValue);
+      setTabIndex(newValue);
     };
 
     function getTabData () {
-      switch(tabIdx) {
+      switch(tabIndex) {
         case 1: return workExperiences;
         case 2: return educationalDetails;
         case 3: return extraCurriculars;
@@ -48,9 +49,16 @@ export default function CareerTimeline() {
 
   return (
   <React.Fragment>
+    <Box sx={{mb: 2}}>
+      {
+        terminalColors.map((color)=>(
+          <RadioButtonChecked sx={{color: color}}/>
+        ))
+      }
+    </Box>
     <Box sx={{display: 'flex', flexDirection: 'row'}}>
         <Tabs
-          value={tabIdx}
+          value={tabIndex}
           onChange={handleChange}
           textColor="secondary"
           indicatorColor="secondary"
@@ -81,7 +89,7 @@ export default function CareerTimeline() {
                     return (
                         <DetailsTimeLineElement
                             key={element.title+index} 
-                            dotColor={terminal_colors[element.id%3]} 
+                            dotColor={terminalColors[element.id%3]} 
                             title={element.title}
                             date={element.date}
                             location={element.location}
