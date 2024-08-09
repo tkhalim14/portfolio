@@ -6,9 +6,8 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
-  Typography,
 } from "@mui/material";
-import { Close } from "@mui/icons-material";
+import { Clear } from "@mui/icons-material";
 
 const ModalComponent = ({
   open, 
@@ -21,15 +20,24 @@ const ModalComponent = ({
 }) => {
   return (
     <Dialog
+      fullWidth
       open={open}
       onClose={onClose}
-      sx={sx}
+      sx={{
+        ...sx,
+        '& .MuiDialog-paper': {
+          border: "1px solid #FFF",
+        }
+      }}
       maxWidth={'lg'}
+      keepMounted
     >
-      <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-        <DialogTitle>{title}</DialogTitle>
-        <IconButton onClick={onClose}>
-          {CloseButton? <CloseButton/>:<Close/>}
+      <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+        <DialogTitle>
+          {title}
+        </DialogTitle>
+        <IconButton onClick={onClose} color="secondary" sx={{padding: 2.5}}>
+          {CloseButton?<CloseButton/>:<Clear/>}
         </IconButton>
       </Box>
       <DialogContent>

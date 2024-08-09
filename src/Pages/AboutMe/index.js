@@ -1,6 +1,5 @@
 import * as React from 'react';
 import LazyLoad from 'react-lazy-load';
-import { Link, useLocation } from 'react-router-dom';
 import { 
   Avatar, 
   Grow, 
@@ -16,7 +15,8 @@ import {
   Card,
   Grid,
   Box, 
-  Tooltip
+  Tooltip,
+  IconButton
 } from '@mui/material';
 import { EmojiEvents, Star } from '@mui/icons-material';
 import ProfileImg from '../../Components/Media/AboutDP.jpg';
@@ -25,12 +25,13 @@ import colors from '../../Components/Constants/colorScheme.js';
 import './index.css';
 import { certificates, programmingLanguages , tools } from './constants';
 import Carousel from '../../Components/Carousel/index';
+import ModalComponent from '../../Components/Modal/index.js';
 
 const Item = (props) => {
   return (
-      <div style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
+      <div style={{display:'flex', flexDirection: 'row', justifyContent:'center'}}>
           <div>
-            <embed src={props.item.url} style={{width: '16rem',height: '12rem'}}></embed>
+            <embed src={props.item.url} style={{width: '36vw', height: '66vh'}}></embed>
           </div>
       </div>
   );
@@ -39,24 +40,21 @@ const Item = (props) => {
 const About = () => {
 
   const [carouselIndex, setCarouselIndex] = React.useState(0);
-  const location = useLocation();
-
-  function scrollToTargetAdjusted(element){
-    window.scrollTo({
-         top: element.getBoundingClientRect().top + window.scrollY - 100,
-         behavior: "smooth"
-    });
-}
-
-  React.useEffect(()=>{
-    const element = document.getElementById(location.state?.goto);
-    if(element){
-      scrollToTargetAdjusted(element);
-    }
-  },[location]);
+  const [ modalBool, setModalBool ] = React.useState(false);
 
     return (
       <>
+      <ModalComponent
+        title="My Trophies"
+        open={modalBool}
+        onClose={() => setModalBool(false)}
+      >
+        
+        <Carousel index={carouselIndex} updateIndex={setCarouselIndex} items={certificates} renderItems={Item} marginBottom={0}/>
+        <Box>
+          {certificates[carouselIndex]['name']}
+        </Box>
+      </ModalComponent>
       <div>
           <Box sx={{ display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }}}>
             <Box sx={{ flex: 3, display:'flex', justifyContent:'center', padding: 5}}>
@@ -72,9 +70,9 @@ const About = () => {
                           </Typography>
                           <Typography variant='h4' component={"div"}>
                             <Tooltip title="View Trophies">
-                              <Link state={{ goto: "trophies" }}>
+                              <IconButton onClick={() => setModalBool(true)}>
                                 <EmojiEvents color="secondary"/>
-                              </Link>
+                              </IconButton>
                             </Tooltip>
                           </Typography>
                         </Box>
@@ -163,15 +161,6 @@ const About = () => {
                   </Card>
             </Box>
           </Box>
-      </div>
-      <div style={{display:'flex', flexDirection: 'row', justifyContent:'flex-start', padding: 4}}>
-        <div style={{padding: '1rem 2rem'}}>
-          <div className='home-heading' style={{color: colors[2]}}>
-            <label id="trophies">Trophies corner:</label> <br/>
-            {certificates[carouselIndex]['name']}
-          </div>
-        </div>
-        <Carousel index={carouselIndex} updateIndex={setCarouselIndex} items={certificates} renderItems={Item} width={250}/>
       </div>
       </>
     );

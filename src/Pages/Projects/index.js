@@ -52,16 +52,19 @@ const ProjectPage = (props) => {
   
   const location = useLocation();
 
+  function scrollToTargetAdjusted(element){
+    window.scrollTo({
+         top: element.getBoundingClientRect().top + window.scrollY - 120,
+         behavior: "smooth"
+    });
+  }
+
   React.useEffect(()=>{
-    if(location.state){
-      const element = document.getElementById(location.state.goto);
-      if (element) {
-        // 👇 Will scroll smoothly to the top of the next section
-        element.scrollIntoView({ behavior: 'smooth' });
-        handleEnter(location.state.goto);
-      }
+    const element = document.getElementById(location.state?.goto);
+    if(element){
+      scrollToTargetAdjusted(element);
     }
-  }, [location, handleEnter]);
+  },[location, handleEnter]);
 
   return (
     <React.Fragment>
@@ -113,9 +116,7 @@ const ProjectPage = (props) => {
                     handleEnter(element['name'])
                   }}
                 >
-                  <div id={(element['name'])} style={{marginTop: '-8rem', position:'absolute' }}>
-                  </div>
-                  <Typography variant="h5" color={colors[2]}>
+                  <Typography variant="h5" color={colors[2]} id={(element['name'])}>
                     {element['name']}
                     <span style={{display:'in-line', color:'orange'}}>
                       &nbsp;&nbsp;&nbsp;
