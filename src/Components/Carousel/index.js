@@ -15,7 +15,7 @@ const CarouselComponent = ({index, updateIndex, items, renderItems: Items, heigh
             fullHeightHover={false}
             navButtonsAlwaysVisible={showNav}
             next={() => updateIndex((index+1)%items.length)}
-            prev={() => updateIndex((index-1)%items.length)}
+            prev={() => updateIndex((items.length+index-1)%items.length)}
           >
               {
                 items.map((item, i) => 

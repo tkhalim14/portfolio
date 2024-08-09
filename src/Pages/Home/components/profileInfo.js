@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import { LocationOn } from '@mui/icons-material';
 import colors from '../../../Components/Constants/colorScheme.js';
-
 import { TypewriterEffect } from './index.js';
+import { 
+  Grid,
+  Card,
+  Tooltip,
+  CardContent,
+  Typography
+} from '@mui/material';
 
 const Fields =  ['Artificial Intelligence', 'Application Development', 'Competitive Programming', 'UI/UX Design', 'Open Source Work']
  
@@ -55,7 +55,30 @@ const ProfileCard = () => (
                     &nbsp;&nbsp;
                     <div style={{display: 'flex', justifyContent: 'flex-start', color: colors[3]}}>
                         <a href="https://www.iitdh.ac.in" style={{color: colors[3]}}>IIT Dharwad</a>
-                        <LocationOnIcon fontSize="small"/>
+                        <Tooltip 
+                          placement='left-start'
+                          title={
+                            <iframe 
+                              title="IIT Dharwad" 
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30757.25973446724!2d74.90965591427177!3d15.502846146221314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf32db0fffffff%3A0x41e1ca5b252a94d!2sIndian%20Institute%20of%20Technology%20Dharwad!5e0!3m2!1sen!2sin!4v1723130139271!5m2!1sen!2sin" 
+                              width={'400'} 
+                              height={'200'} 
+                              style={{border: 0, borderRadius: 4}} 
+                              loading="lazy" 
+                              referrerpolicy="no-referrer-when-downgrade"
+                            />
+                          }
+                          componentsProps={{
+                            tooltip: {
+                              sx: {
+                                bgcolor: 'transparent',
+                              },
+                            },
+                          }}
+                        >
+                        <LocationOn fontSize="small" sx={{color: "#ea4335", ml: 1}}/>
+                        </Tooltip>
+                        
                     </div>
                 </div>
                 <span style={{margin: '0 1rem'}}>

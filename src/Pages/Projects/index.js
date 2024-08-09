@@ -1,11 +1,13 @@
 import * as React from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineConnector,
+  TimelineContent,
+  TimelineOppositeContent,
+  TimelineDot,
+} from '@mui/lab';
 
 import CardContent from '@mui/material/CardContent';
 
@@ -57,13 +59,6 @@ const ProjectPage = (props) => {
         // 👇 Will scroll smoothly to the top of the next section
         element.scrollIntoView({ behavior: 'smooth' });
         handleEnter(location.state.goto);
-        // if(element.classList.contains('pop-out-effect')){
-        //   element.classList.remove('pop-out-effect');
-        // }
-        // element.classList.add('pop-out-effect');
-        // element.addEventListener('animationend', () => {
-        //   element.classList.remove('pop-out-effect');
-        // })
       }
     }
   }, [location, handleEnter]);

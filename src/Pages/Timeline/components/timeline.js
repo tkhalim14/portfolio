@@ -3,7 +3,7 @@ import Timeline from '@mui/lab/Timeline';
 import { timelineItemClasses } from '@mui/lab/TimelineItem';
 import { workExperiences, extraCurriculars, educationalDetails} from './profileHistory.js';
 import '../styles/index.css';
-import { Box, Tab as MUITab, styled, Tabs } from '@mui/material';
+import { Box, Tab as MUITab, styled, Tabs, useMediaQuery, useTheme } from '@mui/material';
 import DetailsTimeLineElement from './timelineElement.js';
 import { RadioButtonChecked } from '@mui/icons-material';
 
@@ -15,8 +15,6 @@ const handleHover = (event) => {
   const hoveredElement = event.currentTarget.parentNode.querySelector('.timeline-dot-target');
 
   if (hoveredElement) {
-      // Add logic for hover effect on the nearest hovered-element
-      // You can update styles, content, or perform other actions here
       hoveredElement.classList.add('hovered');
   }
 };
@@ -24,8 +22,6 @@ const handleHover = (event) => {
 const handleLeave = (event) => {
 const hoveredElement = event.currentTarget.parentNode.querySelector('.timeline-dot-target');
 if (hoveredElement) {
-  // Add logic for when the mouse leaves the hover-trigger element
-  // You can update styles, content, or perform other actions here
   hoveredElement.classList.remove('hovered');
 }
 };
@@ -33,6 +29,7 @@ if (hoveredElement) {
 export default function CareerTimeline() {
     const terminalColors=['#ff0000','#FFD700','#65a765'];
     const [tabIndex, setTabIndex] = React.useState(1);
+    const theme = useTheme();
 
     const handleChange = (event, newValue) => {
       setTabIndex(newValue);
@@ -56,14 +53,17 @@ export default function CareerTimeline() {
         ))
       }
     </Box>
-    <Box sx={{display: 'flex', flexDirection: 'row'}}>
+    <Box sx={{display: 'flex', flexDirection: { xs: "column", md: "row" }}}>
         <Tabs
           value={tabIndex}
           onChange={handleChange}
           textColor="secondary"
           indicatorColor="secondary"
-          orientation='vertical'
+          variant={"scrollable"}
+          allowScrollButtonsMobile
+          orientation={useMediaQuery(theme.breakpoints.up('md'))?'vertical':'horizontal'}
           sx={{
+            overflow: "hidden",
             flex: 1,
             '& .MuiTabs-flexContainer': {
               gap: 2,
@@ -81,7 +81,7 @@ export default function CareerTimeline() {
                     [`& .${timelineItemClasses.root}:before`]: {
                       flex: 0,
                       padding: 0,
-                      marginX: 4,
+                      marginX: {xs: 2, md: 3},
                     },
                 }}
                 >

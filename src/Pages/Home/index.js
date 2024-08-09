@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
 import Lottie from "lottie-react";
-import {Grid, Box} from '@mui/material';
+import {
+  Grid, 
+  Box,
+} from '@mui/material';
 import LazyLoad from 'react-lazy-load';
 import './index.css';
 import LoadingOverlay from '../../Components/LoadingScreen/index.js';
@@ -9,8 +12,7 @@ import { Card, banners, experiences } from './components';
 import Carousel from '../../Components/Carousel/index';
 import colors from '../../Components/Constants/colorScheme.js';
 import ProfileCard from './components/profileInfo';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 const Item = (props) => {
   return (
@@ -20,7 +22,7 @@ const Item = (props) => {
   );
 }
 
-function Home() {
+const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -67,10 +69,10 @@ function Home() {
           </Grid>
           <div name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>
             <button onClick={() => handleNav(carouselIndex-1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
-              <ArrowBackIosIcon/>
+              <ArrowBackIos/>
             </button>
             <button onClick={() => handleNav(carouselIndex+1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
-              <ArrowForwardIosIcon/>
+              <ArrowForwardIos/>
             </button>
           </div>
           <Grid container>
