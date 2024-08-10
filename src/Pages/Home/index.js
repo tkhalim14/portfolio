@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import {
   Grid, 
   Box,
 } from '@mui/material';
-import LazyLoad from 'react-lazy-load';
+// import LazyLoad from 'react-lazy-load';
 import './index.css';
 import LoadingOverlay from '../../Components/LoadingScreen/index.js';
 import { Card, banners, experiences } from './components';
@@ -13,6 +13,7 @@ import Carousel from '../../Components/Carousel/index';
 import colors from '../../Components/Constants/colorScheme.js';
 import ProfileCard from './components/profileInfo';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import ProfilePic from '../../Components/Media/profilepic.jpg';
 
 const Item = (props) => {
   return (
@@ -38,7 +39,7 @@ const Home = () => {
     }
   }
 
-  const [svgData, setsvgData] = useState();
+  // const [svgData, setsvgData] = useState();
 
   useEffect(() => {
     // const hasCodeRunBefore = localStorage.getItem('codeHasRun');
@@ -47,7 +48,7 @@ const Home = () => {
     // }
     import("../../Components/Media/homepage6.json")
     .then(async (data) =>{
-      setsvgData(data);
+      // setsvgData(data);
       await new Promise((resolve) => setTimeout(resolve, 1800));
       setIsLoading(false);
       // localStorage.setItem('codeHasRun', 'true');
@@ -61,10 +62,34 @@ const Home = () => {
             <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }} style={{display:'flex',justifyContent:'center', flexDirection:'row'}}>
                 <ProfileCard/>
             </Grid>
-            <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }} sx={{justifyContent:'center', display:'flex', flexDirection: 'column'}}>
-                <LazyLoad>
+            <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }} sx={{justifyContent: {xs: 'flex-start', md: 'center'}, display:'flex', flexDirection: 'row'}}>
+                {/* <LazyLoad>
                   <Lottie animationData={svgData} loop={false} style={{minHeight: 250, minWidth: 250, width:'35vw'}}/>
-                </LazyLoad>
+                </LazyLoad> */}
+                <Box sx={{height: '100%', minHeight: '300px', overflow: 'visible'}}>
+                  <Box style={{
+                    backgroundImage: `
+                    -webkit-linear-gradient(top, 
+                      rgba(0,0,0,0.9) 0%, 
+                      rgba(0,0,0,0) 10%,
+                      rgba(0,0,0,0) 90%,
+                      rgba(0,0,0,0.9) 100%
+                    ),
+                    -webkit-linear-gradient(left, 
+                      rgba(0,0,0,9) 0%, 
+                      rgba(0,0,0,0) 20%,
+                      rgba(0,0,0,0) 60%,
+                      rgba(0,0,0,0.5) 80%,
+                      rgba(0,0,0,0.9) 100%
+                    ),
+                      url(${ProfilePic})
+                    `, 
+                    width: '400px', 
+                    height: '100%',
+                    backgroundPosition: 'center', 
+                    backgroundSize: '400px'
+                  }}/>
+                </Box>
             </Grid>
           </Grid>
           <div name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>

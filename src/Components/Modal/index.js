@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { Clear } from "@mui/icons-material";
+import colors from "../Constants/colorScheme";
 
 const ModalComponent = ({
   open, 
@@ -26,7 +27,7 @@ const ModalComponent = ({
       sx={{
         ...sx,
         '& .MuiDialog-paper': {
-          border: "1px solid #FFF",
+          border: `1px solid ${colors[2]}`,
         }
       }}
       maxWidth={'lg'}

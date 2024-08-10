@@ -6,6 +6,7 @@ import '../styles/index.css';
 import { Box, Tab as MUITab, styled, Tabs, useMediaQuery, useTheme } from '@mui/material';
 import DetailsTimeLineElement from './timelineElement.js';
 import { RadioButtonChecked } from '@mui/icons-material';
+import colors from '../../../Components/Constants/colorScheme.js';
 
 const Tab = styled(MUITab)(() => ({
   fontSize: 20
@@ -46,11 +47,19 @@ export default function CareerTimeline() {
 
   return (
   <React.Fragment>
-    <Box sx={{mb: 2}}>
+    <Box sx={{mb: 2, gap: 1, display: 'flex', transition: "0.5s all"}}>
       {
-        terminalColors.map((color)=>(
-          <RadioButtonChecked sx={{color: color}}/>
-        ))
+        terminalColors.map((color,index)=>{
+          if(tabIndex-1===index)
+            return (
+              <Box sx={{marginTop: -1, border: `2px solid ${colors[2]}`, borderBottom: "none", borderRadius: "10px 10px 0 0", width: "min-width", display: "inline-flex", padding: "6px 4px"}}>
+                <RadioButtonChecked sx={{color: color, mt: -0.5, cursor: 'pointer'}} onClick={(event) => handleChange(event, index+1)}/>
+              </Box>
+            );
+          return (
+            <RadioButtonChecked sx={{color: color, cursor: 'pointer'}} onClick={(event) => handleChange(event, index+1)}/>
+          );
+      })
       }
     </Box>
     <Box sx={{display: 'flex', flexDirection: { xs: "column", md: "row" }}}>
@@ -75,7 +84,7 @@ export default function CareerTimeline() {
           <Tab value={2} label="Education" />
           <Tab value={3} label="Achievements & Recognitions" />
         </Tabs>
-        <Box sx={{flex: 3, height: '80vh', overflow: 'auto', margin: "0 32px", background: "white", borderRadius: 4}}>
+        <Box sx={{flex: 3, height: '80vh', overflow: 'auto', margin: {xs: "0", md: "0 32px"}, background: "white", borderRadius: 4}}>
             <Timeline
                 sx={{
                     [`& .${timelineItemClasses.root}:before`]: {
@@ -89,7 +98,7 @@ export default function CareerTimeline() {
                     return (
                         <DetailsTimeLineElement
                             key={element.title+index} 
-                            dotColor={terminalColors[element.id%3]} 
+                            dotColor={terminalColors[(tabIndex-1)%3]} 
                             title={element.title}
                             date={element.date}
                             location={element.location}
