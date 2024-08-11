@@ -14,19 +14,53 @@ import CardContent from '@mui/material/CardContent';
 import { GitHub } from '@mui/icons-material';
 import StarIcon from '@mui/icons-material/Star';
 
-import { Button, CardActions, Tooltip, Typography } from '@mui/material';
+import { Box, Button, CardActions, Tooltip, Typography } from '@mui/material';
 
 
 import project from './utils/personalProjects.js';
 import colors from '../../Components/Constants/colorScheme.js';
-import { useMediaQuery } from '@mui/material';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 import { useLocation, Link } from 'react-router-dom';
 
 import './index.css';
+import ModalComponent from '../../Components/Modal/index.js';
+
+const ProjectBanner = ({src, view, setBannerWidth="65%"}) => (
+  <Box style={{flexGrow: 1}}>
+    <img
+      src={src} 
+      alt="banner.png" 
+      style={{
+        width: view ? setBannerWidth :'0', 
+        backgroundColor: colors[2],
+        opacity: view?1:0,
+        transition: '0.5s all',
+        padding: "0rem",
+        borderRadius: '1rem',
+      }}/>
+  </Box>
+);
+
 
 const ProjectPage = (props) => {
-  const largeView = useMediaQuery(`(min-width: 1000px)`);
+  const theme = useTheme();
+  const largeView = useMediaQuery((theme.breakpoints.up('md')));
+  const [ modalBool, setModalBool ] = React.useState(false);
+  const [ modalMetaData, setModalMetaData ] = React.useState({});
+
+  const handleModalContent = (title, src, description) => {
+    setModalMetaData({
+      title: title,
+      src: src,
+      description: description
+    })
+  }
+
+  const handleLearnMoreAction = (title, src, description) => {
+    handleModalContent(title, src, description);
+    setModalBool(true);
+  }
 
   const [projectToggles, setProjectToggles] = React.useState(()=>{
     let x = {};
@@ -68,6 +102,20 @@ const ProjectPage = (props) => {
 
   return (
     <React.Fragment>
+      <ModalComponent
+        title={modalMetaData.title}
+        open={modalBool}
+        onClose={() => setModalBool(false)}
+      >
+        <Box sx={{display: 'flex', gap: 4, flexDirection: {xs: 'column', sm: 'row'}}}>
+          <Box sx={{width: '100%', display: 'flex', alignItems: 'center', flex: 3}}>
+            <ProjectBanner src={modalMetaData.src} view={true} setBannerWidth={"100%"}/>
+          </Box>
+          <Box sx={{flex: 2}}>
+            {modalMetaData.description}
+          </Box>
+        </Box>
+      </ModalComponent>
       <Timeline
         position={largeView?'alternate':'right'}
       >
@@ -77,27 +125,11 @@ const ProjectPage = (props) => {
           return ''
 
         return (
-          <TimelineItem key={'project'+index} sx={{ padding: '1rem'}}>
-            <TimelineOppositeContent color="text.secondary" style={{ flexGrow: 1, height: '20vmax', zIndex: 0 }}>
-              <div style={{ display: 'flex', justifyContent: index%2===0 || !largeView?'flex-end':'flex-start'}}>
-                <div style={{flexGrow: 1}}>
-                  <img
-                    className="opp-content" 
-                    src={element['pic']} 
-                    alt="banner.png" 
-                    style={
-                      largeView?
-                      {
-                      width: projectToggles[element['name']] ?'65%':'0', 
-                      backgroundColor: colors[2],
-                      opacity: projectToggles[element['name']]
-                    }:{
-                      width: projectToggles[element['name']] ?'100%':'0', 
-                      backgroundColor: colors[2],
-                      opacity: projectToggles[element['name']]
-                    }}/>
-                </div>
-              </div>
+          <TimelineItem key={'project'+index} sx={{ padding: 4}}>
+            <TimelineOppositeContent color="text.secondary" style={{ display: largeView?'block':'none', flexGrow: 1, height: '20vmax', zIndex: 0 }}>
+              <Box style={{ display: 'flex', justifyContent: index%2===0 || !largeView?'flex-end':'flex-start'}}>
+                <ProjectBanner src={element['pic']} view={projectToggles[element['name']]}/>
+              </Box>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot sx={{backgroundColor: colors[2]}}/>
@@ -132,7 +164,7 @@ const ProjectPage = (props) => {
                       </b>
                     </span>
                   </Typography>
-                  <div style={{marginTop: '0.3rem',height: '0.05rem', backgroundColor:colors[4]}}/>
+                  <Box style={{marginTop: '0.3rem',height: '0.05rem', backgroundColor:colors[4]}}/>
                     <Typography variant="body2" 
                       sx={{
                         color: colors[4], 
@@ -147,7 +179,17 @@ const ProjectPage = (props) => {
                 </CardContent>
                 <CardActions sx={{justifyContent: 'flex-end', display: largeView ? 'none': 'flex'}}>
                   <Tooltip title={element['description']} placement="bottom-start">
-                    <Button variant='contained' sx={{fontSize: '10px', backgroundColor: colors[5]}}>Learn more...</Button>
+                    <Button 
+                      variant='contained' 
+                      sx={{fontSize: '10px', backgroundColor: colors[5]}} 
+                      onClick={
+                        () => 
+                        handleLearnMoreAction(
+                          element['name'], 
+                          element['pic'],
+                          element['description']
+                        )
+                      }>Learn more...</Button>
                   </Tooltip>
                 </CardActions>
               </TimelineContent>

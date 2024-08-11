@@ -24,9 +24,3 @@
     animation-duration: 1.2s; /* Set the duration of the animation */
     animation-fill-mode: both; /* Maintain the final state of the animation */
 }
-
-.opp-content{
-  transition: 0.5s all;
-  padding: 0rem;
-  border-radius: 1rem;
-}

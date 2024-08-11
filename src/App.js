@@ -10,6 +10,7 @@ import React from 'react';
 import { ThemeProvider, styled } from '@mui/material/styles';
 import { Box, CssBaseline } from '@mui/material';
 import { customTheme } from './theme';
+import { SideNavWidth } from './Components/Header/styles';
 
 const HeaderSpacing = styled(Box)(({theme})=>({
   ...theme.mixins.toolbar,
@@ -24,7 +25,7 @@ function App() {
         <div>
           <Header/>
         </div>
-        <div className='pageContent'>
+        <Box className='pageContent' sx={{paddingLeft: {xs: 0, md: SideNavWidth}}}>
           <HeaderSpacing/>
           <Routes>
             <Route path='/' element={<Home/>}/>
@@ -32,7 +33,7 @@ function App() {
             <Route path='/Timeline' element={<Timeline/>}/>
             <Route path='/Projects' element={<Projects/>}/>
           </Routes>
-        </div>
+        </Box>
         <div className='footerContent'>
           <Footer/>
         </div>

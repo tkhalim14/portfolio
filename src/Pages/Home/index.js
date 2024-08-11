@@ -17,9 +17,9 @@ import ProfilePic from '../../Components/Media/profilepic.jpg';
 
 const Item = (props) => {
   return (
-      <div style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
+      <Box style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
           <img src={props.item.url} style={{ minWidth: '100%', minHeight: '50vh' }} alt={props.item.url}/>
-      </div>
+      </Box>
   );
 }
 
@@ -57,7 +57,7 @@ const Home = () => {
 
     return (
       <>
-      <Box sx={{ flexGrow: 1, margin:'1vmax 0 2vmax 2vmax'}}>
+      <Box sx={{ flexGrow: 1, marginTop:'1vmax', padding: 4}}>
           <Grid container spacing={1}>
             <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }} style={{display:'flex',justifyContent:'center', flexDirection:'row'}}>
                 <ProfileCard/>
@@ -92,14 +92,14 @@ const Home = () => {
                 </Box>
             </Grid>
           </Grid>
-          <div name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>
+          <Box name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>
             <button onClick={() => handleNav(carouselIndex-1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
               <ArrowBackIos/>
             </button>
             <button onClick={() => handleNav(carouselIndex+1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
               <ArrowForwardIos/>
             </button>
-          </div>
+          </Box>
           <Grid container>
             {experiences.map((ele, index) => {
               const valid = index>=carouselIndex && index<carouselIndex+3;
@@ -120,9 +120,9 @@ const Home = () => {
             })}
           </Grid>
       </Box>
-      <div style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
+      <Box style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
           <Carousel items={banners} renderItems={Item}/>
-      </div>
+      </Box>
       <LoadingOverlay open={isLoading}/>
       </>
     );

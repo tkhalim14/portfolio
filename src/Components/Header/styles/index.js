@@ -1,10 +1,16 @@
 import colors from '../../Constants/colorScheme.js';
 
+const SideNavWidth = '4vw';
+
+const TopNavToolbarStyles = {
+  margin: `0 2rem 0 ${SideNavWidth}`
+};
+
 const SideNavStyle = {
   position: 'fixed',
   top: 0,
   height:'100%',
-  width: '4rem',
+  width: SideNavWidth,
   backgroundColor: colors[1],
   borderRight: '0.1rem solid white',
   zIndex: 2,
@@ -21,4 +27,4 @@ const NavbarTitleStyle = {
   justifyContent: 'center'
 };
 
-export { NavbarTitleStyle, SideNavStyle } ;
+export { NavbarTitleStyle, SideNavStyle, TopNavToolbarStyles, SideNavWidth } ;

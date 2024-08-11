@@ -39,15 +39,14 @@
     }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 400px) {
     .resumeButton {
-        padding: 0.5rem 1rem;
         display: none;
     }
 }
 
-@media only screen and (max-width: 520px) {
+/* @media only screen and (max-width: 520px) {
     .dropdown-menu{
         display: none;
     }
-}
+} */

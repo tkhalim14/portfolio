@@ -5,16 +5,7 @@ import { Drawer } from "./index.js";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box } from "@mui/material";
 
-export default function SideNav () {
-
-  const [drawerState, setDrawerState] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setDrawerState((prevState)=>{
-      return !prevState;
-    });
-  }
-  const handleDrawerClose = () => setDrawerState(false);
+export default function SideNav ({drawerState, handleDrawerToggle, handleDrawerClose}) {
   
   return (
     <>
@@ -27,7 +18,7 @@ export default function SideNav () {
             onClick={handleDrawerToggle} 
             style={{all: 'unset', color: 'inherit', cursor: 'pointer'}}
           >
-            <MenuIcon sx={{ fontSize: 32 , padding: '0.4rem 0' }} color="secondary"/>
+            <MenuIcon sx={{ fontSize: "32px" }} color="secondary"/>
           </button>
         </Box>
       </Box>

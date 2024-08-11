@@ -13,7 +13,9 @@ import { socialMediaLinks } from '../../../app/contactMe';
 
 import { UserLogo, ProjectSearchBar, DropdownMenu } from '.';
 
-import { NavbarTitleStyle } from '../styles';
+import { NavbarTitleStyle, TopNavToolbarStyles } from '../styles';
+import { Menu } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 
 const profileDropdown = [
   ['Github', <GitHubIcon/>], 
@@ -25,7 +27,7 @@ const profileDropdown = [
 
 const downloadResume = () => () => window.location.href = socialMediaLinks['Resume']
 
-const TopNav = () => {
+const TopNav = ({handleDrawerToggle}) => {
 
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const handleOpenUserMenu = (event) => {
@@ -39,8 +41,8 @@ const TopNav = () => {
   return (
     <>
       <AppBar position="fixed" style={{ borderBottom: '0.1rem solid white' , zIndex: 1}}>
-          <Toolbar style={{margin: '0 2rem 0 5rem'}} disableGutters>
-            <Box sx={{ flexGrow: 1, display: 'flex' }}>
+          <Toolbar style={TopNavToolbarStyles} disableGutters>
+            <Box sx={{ flexGrow: 1, display: {xs: 'none', md: 'flex'} }}>
               <UserLogo/>
               <Typography
                 variant="h5"
@@ -50,6 +52,20 @@ const TopNav = () => {
                 sx={NavbarTitleStyle}
               >
                Tabish Khalid Halim
+              </Typography>
+            </Box>
+            <Box sx={{ flexGrow: 1, display: {xs: 'flex', md: 'none'}, gap: 1 }}>
+              <IconButton size="small" onClick={handleDrawerToggle}>
+                <Menu color= "secondary"/>
+              </IconButton>
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="/portfolio"
+                sx={NavbarTitleStyle}
+              >
+               T.K. Halim
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 1 , display:'flex', justifyContent: 'flex-end'}}>
