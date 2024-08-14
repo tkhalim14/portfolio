@@ -10,7 +10,7 @@ import colors from '../../../Components/Constants/colorScheme';
 
 const CardComponent = ({title, subtitle, image, description}) => {
     return (
-        <Card sx={{ maxWidth: 400 }} variant="outlined">
+        <Card sx={{ width: 400 }} variant="outlined">
             <CardActionArea>
                 <CardMedia
                     component="img"

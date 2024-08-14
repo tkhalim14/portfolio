@@ -34,9 +34,9 @@ function App() {
             <Route path='/Projects' element={<Projects/>}/>
           </Routes>
         </Box>
-        <div className='footerContent'>
+        <Box className='footerContent' sx={{ml: {xs: '2rem', md: '4rem'}}}>
           <Footer/>
-        </div>
+        </Box>
       </Box>
       </HashRouter>
     </ThemeProvider>

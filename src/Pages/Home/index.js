@@ -18,7 +18,7 @@ import ProfilePic from '../../Components/Media/profilepic.jpg';
 const Item = (props) => {
   return (
       <Box style={{padding: '2rem', display:'flex', flexDirection: 'row', justifyContent:'center'}}>
-          <img src={props.item.url} style={{ minWidth: '100%', minHeight: '50vh' }} alt={props.item.url}/>
+          <img src={props.item.url} style={{ minWidth: '100%', minHeight: '25vmin' }} alt={props.item.url}/>
       </Box>
   );
 }
@@ -26,17 +26,18 @@ const Item = (props) => {
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const [carouselIndex, setCarouselIndex] = useState(0);
-
-  const handleNav = (index) => {
-    const length=experiences.length;
-    const end=index+3;
-    if(end>length || index<0){
-      return;
-    }
-    else{
-      setCarouselIndex(index);
-    }
+  const handleNav = (id, direction) => {
+    const element = document.getElementById(id);
+    if(direction==="left")
+      element.scrollTo({
+        left: element.scrollLeft-490,
+        behavior: 'smooth'
+      });
+    else
+      element.scrollTo({
+        left: element.scrollLeft+490,
+        behavior: 'smooth'
+      });
   }
 
   // const [svgData, setsvgData] = useState();
@@ -93,32 +94,22 @@ const Home = () => {
             </Grid>
           </Grid>
           <Box name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>
-            <button onClick={() => handleNav(carouselIndex-1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
+            <button onMouseDown={() => handleNav("star-experiences", "left")} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
               <ArrowBackIos/>
             </button>
-            <button onClick={() => handleNav(carouselIndex+1)} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
+            <button onMouseDown={() => handleNav("star-experiences", "right")} style={{all: 'unset', cursor: 'pointer', color: colors[2]}}>
               <ArrowForwardIos/>
             </button>
           </Box>
-          <Grid container>
+          <Box sx={{display: 'flex', flexDirection: 'row', gap: 24, width: '100%', overflow: 'hidden'}} id="star-experiences">
             {experiences.map((ele, index) => {
-              const valid = index>=carouselIndex && index<carouselIndex+3;
-              if(valid){
-                return(
-                  <Grid className='experience-item' key={'exp'+index} item xs={12} md={4}>
-                    <Card {...ele}/>
-                  </Grid>
-                );
-              }
-              else{
-                return(
-                  <Grid className='experience-item-none' key={'exp'+index} item xs={12} md={4}>
-                    <Card {...ele}/>
-                  </Grid>
-                );
-              }
+              return(
+                <Box key={'exp'+index} sx={{width: '300px'}}>
+                  <Card {...ele}/>
+                </Box>
+              );
             })}
-          </Grid>
+          </Box>
       </Box>
       <Box style={{display:'flex', justifyContent:'center', flexDirection: 'row'}}>
           <Carousel items={banners} renderItems={Item}/>

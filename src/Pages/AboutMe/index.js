@@ -62,7 +62,17 @@ const About = () => {
                       <Typography variant='h4' component={"div"}>
                         <LazyLoad>
                           <Grow in={true}>
-                            <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: 180, width: 180, marginBottom: 3}} align="left"/>
+                            <Avatar 
+                              alt="profilepic" 
+                              src={ProfileImg} 
+                              sx={{
+                                minHeight: 100, 
+                                minWidth: 100, 
+                                height: 180, 
+                                width: 180, 
+                                marginBottom: 3,
+                                border: `4px solid #FFF`
+                              }} align="left"/>
                           </Grow >
                         </LazyLoad>
                       </Typography>

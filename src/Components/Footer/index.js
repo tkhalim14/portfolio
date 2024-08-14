@@ -38,10 +38,10 @@ const Footer = () => (
     <Box
       sx={{
         backgroundColor: 'primary.main',
-        p: 6,
+        p: {xs: 0, md: 6},
       }}
     >
-        <Grid container spacing={5}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
             <FooterSection
               title={"About Me"}
