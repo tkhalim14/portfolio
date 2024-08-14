@@ -59,7 +59,7 @@ const Home = () => {
     return (
       <>
       <Box sx={{ flexGrow: 1, marginTop:'1vmax', padding: 4}}>
-          <Grid container spacing={1}>
+          <Grid container spacing={1} sx={{justifyContent: 'center'}}>
             <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }} style={{display:'flex',justifyContent:'center', flexDirection:'row'}}>
                 <ProfileCard/>
             </Grid>
