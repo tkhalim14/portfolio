@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-// import Lottie from "lottie-react";
 import {
   Grid, 
   Box,
 } from '@mui/material';
-// import LazyLoad from 'react-lazy-load';
 import './index.css';
 import LoadingOverlay from '../../Components/LoadingScreen/index.js';
 import { Card, banners, experiences } from './components';
@@ -40,8 +38,6 @@ const Home = () => {
       });
   }
 
-  // const [svgData, setsvgData] = useState();
-
   useEffect(() => {
     // const hasCodeRunBefore = localStorage.getItem('codeHasRun');
     // if(hasCodeRunBefore===true){
@@ -64,9 +60,6 @@ const Home = () => {
                 <ProfileCard/>
             </Grid>
             <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }} sx={{justifyContent: {xs: 'flex-start', md: 'center'}, display:'flex', flexDirection: 'row'}}>
-                {/* <LazyLoad>
-                  <Lottie animationData={svgData} loop={false} style={{minHeight: 250, minWidth: 250, width:'35vw'}}/>
-                </LazyLoad> */}
                 <Box sx={{height: '100%', minHeight: '300px', overflow: 'visible'}}>
                   <Box style={{
                     backgroundImage: `
