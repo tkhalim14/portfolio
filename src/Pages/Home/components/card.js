@@ -12,9 +12,10 @@ const CardComponent = ({title, subtitle, image, description}) => {
     return (
         <Card sx={{ width: 400 }} variant="outlined">
             <CardActionArea>
-                <CardMedia
+                <CardMedia        // 400x300 image resolution
                     component="img"
-                    height="100%"
+                    height="300px"
+                    width="400px"
                     image={image}
                     alt={image}
                 />

@@ -10,7 +10,7 @@ export default function SideNav ({drawerState, handleDrawerToggle, handleDrawerC
   return (
     <>
       <Box style={SideNavStyle}>
-        <Box style={{flex: 1, display:'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '0.5rem'}}>
+        <Box style={{flex: 1, display:'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '1rem'}}>
           <button 
             id={"Open SideNav"} 
             title={"Open SideNav"} 

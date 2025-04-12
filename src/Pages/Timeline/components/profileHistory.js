@@ -6,6 +6,7 @@ let workExperiences = [
       "Implemented the UI design and webapp of the Technical Council website of IIT Dharwad using the technologies : React.js, CSS.",
     link: "https://smp.iitdh.ac.in",
     date: "Oct, 2021 - Oct, 2022",
+    isVisibleOnHomePage: false
   },
   {
     title: "Public Relations",
@@ -14,6 +15,8 @@ let workExperiences = [
       "I was given this role to based off my people skills. Throughout the experience, my core responsibilities were inviting companies for placements, being the point of contact between company and the candidates and coordinating the selection process",
     link: "https://cdc.iitdh.ac.in",
     date: "Mar, 2022 - May, 2023",
+    image: process.env.PUBLIC_URL+'/images/work.jpeg',
+    isVisibleOnHomePage: true
   },
   {
     title: "Software Developer Intern",
@@ -22,6 +25,8 @@ let workExperiences = [
       "I had done my internship under the role of software development at Benam for a period of 6 months. Apart from software development,  I learnt the following skills: user experience, optimizing app performance, integrating marketing and analytics functionalities, and ensuring comprehensive testing capabilities.",
     link: "https://www.linkedin.com/in/tabish-khalid-halim-27209b201/details/experience/1635537136559/single-media-viewer/?type=DOCUMENT&profileId=ACoAADNytLYBIMCuYNxZL32JzwXCu05XMgj6RYo",
     date: "Mar, 2023 - Aug, 2023",
+    image: process.env.PUBLIC_URL+'/images/work.jpeg',
+    isVisibleOnHomePage: true
   },
   {
     title: "Teaching Assistant",
@@ -30,6 +35,8 @@ let workExperiences = [
       "Assessed and demonstrated 10 labs on basics of C & C++ programming including topics such as datatypes, operators, control statements, arrays, strings, pointers, functions, structures, file operations, classes, and objects.",
     link: "https://iitdh.ac.in",
     date: "Aug, 2023 - Nov, 2023",
+    image: process.env.PUBLIC_URL+'/images/TA.jpeg',
+    isVisibleOnHomePage: true
   },
   {
     title: "Teaching Assistant",
@@ -38,6 +45,8 @@ let workExperiences = [
       "Teaching Assistant for the Artificial Intelligence Lab course. Enabled students to learn the fundamentals of Artificial Intelligence. Guided in understanding complex concepts, evaluating assignments, and facilitating discussions to enhance learning.",
     link: "https://iitdh.ac.in",
     date: "Aug, 2023 - Nov, 2023",
+    image: process.env.PUBLIC_URL+'/images/TA.jpeg',
+    isVisibleOnHomePage: true
   },
   {
     title: "Software Developer Intern",
@@ -46,6 +55,8 @@ let workExperiences = [
       "As an intern at effiHR, collaborated with the web team to develop production-ready code for the organization's official webpage. Tasked with creation of responsive UI elements along with implementation of various web designs along with optimizing code using system design patterns for querying and caching web contents.",
     link: "https://home.effihr.com/",
     date: "Apr, 2024 - July, 2022",
+    image: process.env.PUBLIC_URL+'/images/work.jpeg',
+    isVisibleOnHomePage: true
   },
 ];
 
@@ -57,6 +68,7 @@ let extraCurriculars = [
       "I contested & became the Junior Technical Secretary at IIT Dharwad. The skills I learned from this Position of Responsibility were Leadership, Team Building, Community Management, Event Organization and Club Management.",
     link: "",
     date: "Feb, 2021 - May, 2022 ",
+    isVisibleOnHomePage: false
   },
   {
     title: "Event: Code-Topia",
@@ -65,6 +77,7 @@ let extraCurriculars = [
       "Conducted a series of workshop for the fresher's batch at IIT Dharwad to foster the coding culture in the community.",
     link: "",
     date: "Mar, 2021 - Jun, 2021",
+    isVisibleOnHomePage: false
   },
   {
     title: "Event: Code Wars",
@@ -73,6 +86,7 @@ let extraCurriculars = [
       "Conducted live-action coding competition for the freshers batch at IIT Dharwad.",
     link: "",
     date: "Jun, 2021",
+    isVisibleOnHomePage: false
   },
   {
     title: "Event: YearBook Website",
@@ -81,6 +95,7 @@ let extraCurriculars = [
       "Conducted an open-source website building event open for all the batches during the month of October for creating our virtual yearbook.",
     link: "",
     date: "Oct, 2021",
+    isVisibleOnHomePage: false
   },
   {
     title: "SporoTech",
@@ -89,6 +104,7 @@ let extraCurriculars = [
       "I was part of the organising team for SporoTech: IIT Dharwad's first ever Sports-themed Robotics Event. The skills that I gained were submission management, event hosting and event conduction.",
     link: "",
     date: "Oct, 2021 - Nov 2021",
+    isVisibleOnHomePage: false
   },
   {
     title: "Student Mentor",
@@ -97,6 +113,7 @@ let extraCurriculars = [
       "I became a Student Mentor for my junior batch in 2nd year. The core skills I learned from this were mentorship, communication, group therapy and social skills.",
     link: "",
     date: "Nov, 2021 - Nov, 2022",
+    isVisibleOnHomePage: false
   },
   {
     title: "Emotion Detector - SOI",
@@ -105,6 +122,7 @@ let extraCurriculars = [
       "Our team won the second prize for the AI track event of Summer of Innovation for Emotion Detection achieving accuracy of 68% . ",
     link: "",
     date: "July, 2022",
+    isVisibleOnHomePage: false
   },
   {
     title: "Jr. Overall Coordinator",
@@ -113,6 +131,7 @@ let extraCurriculars = [
       " Jr. Overall Coordinator is one of the frontier positions in the PARSEC organizing team. The person in this position will act as a frontier for laying down the groundwork of the PARSEC organizing team and assist the core team in ensuring the smooth functioning of the festival as a whole.",
     link: "",
     date: "Aug, 2021 - May, 2022",
+    isVisibleOnHomePage: false
   },
   {
     title: "Digital Alpha | Inter-IIT Tech Meet 10.0",
@@ -121,6 +140,7 @@ let extraCurriculars = [
       "Participated in the Inter-IIT Tech meet 10.0 . Our team secured 11th position in the Digital Alpha Problem Statement. Technologies used : TypeScript, Node.js, CSS, MongoDB.",
     link: "",
     date: "Mar 25, 2022 - Mar 27, 2022",
+    isVisibleOnHomePage: false
   },
   {
     title: "Overall Coordinator",
@@ -129,6 +149,8 @@ let extraCurriculars = [
       "Overall Coordinator is one of the core positions in the PARSEC organizing team. I acted as a representative figure of the PARSEC organizing team and ensure smooth conduct of the events in a cost-effective manner and satisfying the needs of all the stakeholders of the event. ",
     link: "",
     date: "Sept, 2022 - May, 2023",
+    image: process.env.PUBLIC_URL+'/images/ExtraCurricular.jpeg',
+    isVisibleOnHomePage: true
   },
   {
     title: "Solo & Band Performance - Music | Inter-IIT Cultural Meet 5.0",
@@ -137,6 +159,7 @@ let extraCurriculars = [
       "Participated & represented our institute at the Inter-IIT Cultural Meet. I was part of both the Solo Singing and Band Performance Teams.",
     link: "",
     date: "9th Jan, 2023 - 11th Feb, 2023",
+    isVisibleOnHomePage: false
   },
   {
     title: "Grow Simple | Inter-IIT Tech Meet 11.0",
@@ -145,6 +168,7 @@ let extraCurriculars = [
       "Won the Bronze Medal at the Inter-IIT Tech Meet 11.0. Our team secured the third position in the Grow Simple problem statement. Typescript, CSS, FastAPI, Expo & Figma.",
     link: "",
     date: "10th Feb, 2023 - 12th Feb, 2023",
+    isVisibleOnHomePage: false
   },
   {
     title: "Sleepless Coding Saga Hackathon | IIT Dharwad",
@@ -153,6 +177,7 @@ let extraCurriculars = [
       "Participated in the 24-hrs long Sleepless Coding Saga Hackathon at IIT Dharwad for the Campus Marketplace track. Technologies used : React.js, FastAPI, MongoDB",
     link: "https://github.com/Shriagrawal/IITDH_OLX",
     date: "5th Nov, 2023 - 6th Nov, 2023",
+    isVisibleOnHomePage: false
   },
 ];
 

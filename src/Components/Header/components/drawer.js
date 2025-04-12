@@ -31,8 +31,8 @@ const DrawerComponent = ({open, pages, onClose}) => {
         <Box role="presentation">
             <List sx={{display: "flex", flexDirection: "column", gap: 2, mr: 1}}>
                 {pages.map((page, index) => (
-                  <Link to={page.route} style={{all: 'unset', flexGrow: 1}} onClick={onClose}>
-                    <ListItem 
+                  <Link to={page.route} key={page.route} style={{all: 'unset', flexGrow: 1}} onClick={onClose}>
+                    <ListItem
                       key={index} 
                       disablePadding 
                       sx={(location.pathname===page.route)?{
