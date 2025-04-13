@@ -6,8 +6,8 @@ import LazyLoad from "react-lazy-load";
 import '../index.css';
 
 const ProfilePicStyles = {
-  width: '400px', 
-  height: '500px',
+  width: '300px', 
+  height: '400px',
   backgroundPosition: 'center', 
   objectFit: 'cover',
   borderRadius: '1rem',

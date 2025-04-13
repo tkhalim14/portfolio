@@ -19,7 +19,7 @@ const handleNav = (id, direction) => {
 
 const experiencesCorner = () => (
   <>
-    <Box name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem'}}>
+    <Box name="controls" style={{display:'flex', justifyContent:'flex-end', padding: '1rem', marginBottom: '0.1rem'}}>
       <Typography color={colors[2]} flexGrow={1} variant="h4">
         My Experiences
       </Typography>

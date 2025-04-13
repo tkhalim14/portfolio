@@ -14,19 +14,19 @@ const LoadingOverlay = ({ open }) => (
     <Backdrop open={open} sx={{ background: colors[2], zIndex: 9999 }}>
         <Grid container justifyContent="space-evenly" padding="8vmax">
             <Grid item xs={12} md={6} className='fade-in' style={{ display:'flex', justifyContent:'center', flexDirection:'column' }}>
-                <Box>
-                    <Typography variant="h5">Welcome to</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginTop: '1.5vh'}}>
-                    <Typography variant="h2" sx={{ fontFamily: 'Roboto',letterSpacing: '10px' }}>
-                      Tabish Khalid's Portfolio .
-                    </Typography>
-                </Box>
+              <Box>
+                <Typography variant="h5">Welcome to</Typography>
+              </Box>
+              <Box sx={{ display: 'flex', marginTop: '1.5vh'}}>
+                <Typography variant="h2" sx={{ fontFamily: 'Roboto',letterSpacing: '10px' }}>
+                  Tabish Khalid's Portfolio .
+                </Typography>
+              </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-                <Suspense fallback={<CircularProgress/>}>
-                  <Lottie animationData={LoadingSVG} loop={true} style={{minHeight: 250, minWidth: 250, width:'40vw'}}/>
-                </Suspense>
+              <Suspense fallback={<CircularProgress/>}>
+                <Lottie animationData={LoadingSVG} loop={true} style={{minHeight: 250, minWidth: 250, width:'40vw'}}/>
+              </Suspense>
             </Grid>
         </Grid>
     </Backdrop>

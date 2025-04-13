@@ -7,7 +7,8 @@ import {
   Card,
   Tooltip,
   CardContent,
-  Typography
+  Typography,
+  Box
 } from '@mui/material';
 
 const Fields =  ['Artificial Intelligence', 'Application Development', 'Competitive Programming', 'UI/UX Design', 'Open Source Work']
@@ -54,7 +55,6 @@ const ProfileCard = () => (
               B.Tech, CSE'24
               &nbsp;&nbsp;
               <div style={{display: 'flex', justifyContent: 'flex-start', color: colors[3]}}>
-                  <a href="https://www.iitdh.ac.in" style={{color: colors[3]}}>IIT Dharwad</a>
                   <Tooltip 
                     placement='left-start'
                     title={
@@ -76,9 +76,12 @@ const ProfileCard = () => (
                       },
                     }}
                   >
-                  <LocationOn fontSize="small" sx={{color: "#ea4335", ml: 1}}/>
+                    <Box style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                      <a href="https://www.iitdh.ac.in" style={{color: colors[3]}}>IIT Dharwad</a>
+                      <LocationOn fontSize="small" sx={{color: "#ea4335", ml: 1}}/>
+                    </Box>
                   </Tooltip>
-                  
+                    
               </div>
           </div>
           <span style={{margin: '0 1rem'}}>
