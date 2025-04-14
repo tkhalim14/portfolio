@@ -15,7 +15,7 @@ let workExperiences = [
       "I was given this role to based off my people skills. Throughout the experience, my core responsibilities were inviting companies for placements, being the point of contact between company and the candidates and coordinating the selection process",
     link: "https://cdc.iitdh.ac.in",
     date: "Mar, 2022 - May, 2023",
-    image: process.env.PUBLIC_URL+'/images/work.jpeg',
+    image: process.env.PUBLIC_URL+'/images/Work.jpeg',
     isVisibleOnHomePage: true
   },
   {
@@ -25,7 +25,7 @@ let workExperiences = [
       "I had done my internship under the role of software development at Benam for a period of 6 months. Apart from software development,  I learnt the following skills: user experience, optimizing app performance, integrating marketing and analytics functionalities, and ensuring comprehensive testing capabilities.",
     link: "https://www.linkedin.com/in/tabish-khalid-halim-27209b201/details/experience/1635537136559/single-media-viewer/?type=DOCUMENT&profileId=ACoAADNytLYBIMCuYNxZL32JzwXCu05XMgj6RYo",
     date: "Mar, 2023 - Aug, 2023",
-    image: process.env.PUBLIC_URL+'/images/work.jpeg',
+    image: process.env.PUBLIC_URL+'/images/Work.jpeg',
     isVisibleOnHomePage: true
   },
   {
@@ -55,7 +55,7 @@ let workExperiences = [
       "As an intern at effiHR, collaborated with the web team to develop production-ready code for the organization's official webpage. Tasked with creation of responsive UI elements along with implementation of various web designs along with optimizing code using system design patterns for querying and caching web contents.",
     link: "https://home.effihr.com/",
     date: "Apr, 2024 - July, 2022",
-    image: process.env.PUBLIC_URL+'/images/work.jpeg',
+    image: process.env.PUBLIC_URL+'/images/Work.jpeg',
     isVisibleOnHomePage: true
   },
 ];
