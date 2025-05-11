@@ -17,27 +17,16 @@ const ProfilePicStyles = {
 const ProfilePictureComponent = () => {
 
   return (
-    <Box sx={{overflow: 'visible', position: 'relative'}} className="flip-card">
-      <Box className="flip-card-inner">
-        <LazyLoad className="flip-card-front">
-          <img
-            src={ProfilePic}
-            style={{ 
-            ...ProfilePicStyles
-            }}
-            alt={ProfilePic}
-          />
-        </LazyLoad>
-        <LazyLoad className="flip-card-back">
-          <img
-            src={ProfileLogo}
-            style={{ 
-            ...ProfilePicStyles
-            }}
-            alt={ProfileLogo}
-          />
-        </LazyLoad>
-      </Box>
+    <Box sx={{overflow: 'visible', position: 'relative', textAlign: 'center'}} className="flip-card"> 
+      <LazyLoad>
+        <img
+          src={ProfilePic}
+          style={{ 
+          ...ProfilePicStyles
+          }}
+          alt={ProfilePic}
+        />
+      </LazyLoad>
     </Box>
   );
 }
