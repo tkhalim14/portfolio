@@ -22,6 +22,15 @@ const SearchBar = () => {
                       <TextField sx={{zIndex:0}} {...params} label="Search projects…" fullWidth size="small" color="secondary"/>
                   </div>
                 )}
+                slotProps={{
+                  paper: {
+                    sx: {
+                      marginTop: '0.5rem',
+                      border: '2px solid white',
+                      borderRadius: '0.5rem',
+                    },
+                  },
+                }}
             />
         </div>
     );

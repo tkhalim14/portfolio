@@ -36,7 +36,7 @@ const DropdownMenuElemet = ({profilePic, items, links, anchorElUser, handleOpenM
                   marginTop: 5.5, 
                   marginLeft:-0.9,
                   '& .MuiMenu-list': {
-                    border: `1px solid ${colors[2]}`,
+                    border: `2px solid ${colors[2]}`,
                     borderRadius: 2
                   }
                 }}

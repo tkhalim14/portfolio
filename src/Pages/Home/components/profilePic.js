@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React from "react";
-import ProfileLogo from '../../../Components/Media/logo.png';
 import ProfilePic from '../../../Components/Media/profilepic.jpg';
 import LazyLoad from "react-lazy-load";
 import '../index.css';
@@ -17,7 +16,7 @@ const ProfilePicStyles = {
 const ProfilePictureComponent = () => {
 
   return (
-    <Box sx={{overflow: 'visible', position: 'relative', textAlign: 'center'}} className="flip-card"> 
+    <Box sx={{overflow: 'visible', position: 'relative', alignContent: 'center'}}> 
       <LazyLoad>
         <img
           src={ProfilePic}

@@ -162,8 +162,10 @@ const About = () => {
                         Skills
                         <hr/>
                       </Typography>
-                      <Typography variant='h6' color="primary">
+                      <Box sx={{height: '1rem'}}/>
+                      <Typography variant='h6' sx={{width: 'max-content'}}>
                         Programming Languages
+                        <hr/>
                       </Typography>
                       <Typography variant='body1' color="secondary" fontWeight={600}>
                       {programmingLanguages.map((element)=>(
@@ -171,8 +173,9 @@ const About = () => {
                       ))}
                       </Typography>
                       <br/>
-                      <Typography variant='h6' color="primary">
+                      <Typography variant='h6' sx={{width: 'max-content'}}>
                         Tools & Technologies
+                        <hr/>
                       </Typography>
                       <Typography variant='body1' color="secondary" fontWeight={600} >
                       {tools.map((element)=>(
