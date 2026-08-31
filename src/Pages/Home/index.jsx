@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 
-import Lottie from "lottie-react";
+// import { Lottie } from "lottie-react";
 
 import banner from '../../Components/Media/banner.png'
 
@@ -14,14 +14,13 @@ import Grow from '@mui/material/Grow';
 import ProfileImg from '../../Components/Media/profilepic.jpg';
 
 import './index.css';
-import colors from '../../Components/Constants/colorscheme.js';
-import Profile from './profilecard.js'
-import LoadingOverlay from '../../Components/LoadingScreen/index.js';
+import colors from '../../Components/Constants/colorscheme';
+import Profile from './profilecard'
+import LoadingOverlay from '../../Components/LoadingScreen/index';
 
-import Timeline from '../Timeline/index.js';
-// import Projects from '../Projects/index.js';
+import Timeline from '../Timeline/index';
+// import Projects from '../Projects/index';
 
-import LazyLoad from 'react-lazy-load';
 import { Typography } from '@mui/material';
 
 import Accordion from '@mui/material/Accordion';
@@ -64,19 +63,15 @@ function Home() {
           <Grid container spacing={1}>
             <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
                 <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundImage: 'url('+banner+')', backgroundPosition:'center'}}>
-                  <LazyLoad>
                     <Grow in={true}>
                       <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: '10vw', width: '10vw', margin:2, marginBottom: 1.5}} align="left"/>
                     </Grow >
-                  </LazyLoad>
                 </Card>
                 <Profile/>
             </Grid>
             <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }} sx={{justifyContent:'center',display:'flex'}}>
               <Grid item sx={{justifyContent:'center',display:'flex',flexDirection:'column'}}>
-                <LazyLoad>
-                  <Lottie animationData={svgData} loop={false} style={{minHeight: 250, minWidth: 250, width:'35vw'}}/>
-                </LazyLoad>
+                  {/* <Lottie animationData={svgData} loop={false} style={{minHeight: 250, minWidth: 250, width:'35vw'}}/> */}
               </Grid>
             </Grid>
           </Grid>

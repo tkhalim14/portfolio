@@ -1,7 +1,7 @@
-import CustomizedTimeline from './index.js';
+import CustomizedTimeline from './index';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import colors from '../../Components/Constants/colorscheme.js';
+import colors from '../../Components/Constants/colorscheme';
 
 import './index.css';
 

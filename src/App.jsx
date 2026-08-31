@@ -1,10 +1,10 @@
 import './App.css';
-import Home from './Pages/Home/index.js';
-import About from './Pages/AboutMe/index.js';
-import Timeline from './Pages/Timeline/timeline.js';
-import Projects from './Pages/Projects/index.js';
-import Header from './Components/Header/index.js';
-import Footer from './Components/Footer/index.js';
+import Home from './Pages/Home/index';
+import About from './Pages/AboutMe/index';
+import Timeline from './Pages/Timeline/timeline';
+import Projects from './Pages/Projects/index';
+import Header from './Components/Header/index';
+import Footer from './Components/Footer/index';
 import { Routes, Route, HashRouter  } from "react-router-dom";
 import React from 'react';
 

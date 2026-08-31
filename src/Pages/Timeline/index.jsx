@@ -16,8 +16,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 
-import colors from '../../Components/Constants/colorscheme.js';
-import {exp_elements,curricular_elements,education_elements} from './elements.js';
+import colors from '../../Components/Constants/colorscheme';
+import {exp_elements,curricular_elements,education_elements} from './elements';
 import './index.css';
 
 

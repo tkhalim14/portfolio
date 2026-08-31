@@ -42,8 +42,8 @@ import { styled, alpha } from '@mui/material/styles';
 
 import ProfilePic from '../Media/logo.jpg';
 
-import colors from '../Constants/colorscheme.js';
-import contactLinks from '../Constants/contactme.js';
+import colors from '../Constants/colorscheme';
+import contactLinks from '../Constants/contactme';
 
 import searchData from "../../Pages/Projects/projects.json";
 

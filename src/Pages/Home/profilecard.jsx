@@ -11,8 +11,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Fade from '@mui/material/Fade';
 import Typewriter from "typewriter-effect";
 
-import colors from '../../Components/Constants/colorscheme.js';
-import contactLinks from '../../Components/Constants/contactme.js';
+import colors from '../../Components/Constants/colorscheme';
+import contactLinks from '../../Components/Constants/contactme';
 
 
 export default function BasicCard() {

@@ -15,7 +15,7 @@ import { Typography } from '@mui/material';
 
 
 import project from './projects.json';
-import colors from '../../Components/Constants/colorscheme.js';
+import colors from '../../Components/Constants/colorscheme';
 
 import { useLocation, Link } from 'react-router-dom';
 

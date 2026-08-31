@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 
 import { Box } from "@mui/material";
 
-import contactLinks from '../../Components/Constants/contactme.js';
+import contactLinks from '../../Components/Constants/contactme';
 
 export default function Footer() {
 
@@ -40,7 +40,7 @@ export default function Footer() {
               <Button href={contactLinks['resume']} sx={{color:'secondary.main'}}>Download Resume&nbsp; <Download/></Button>
             </Typography>
             <Typography variant="body2">
-              <Button href="/About" sx={{color:'secondary.main'}}>Go to About Section</Button>
+              <Button href="/portfolio#About" sx={{color:'secondary.main'}}>Go to About Section</Button>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -73,7 +73,7 @@ export default function Footer() {
         <Box mt={5}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"Copyright © "}
-            <a color="inherit" href="https://your-website.com/" key={'https://your-website.com/'}>
+            <a color="inherit" href="https://github.com/tkhalim14/portfolio" key={'https://github.com/tkhalim14/portfolio'}>
               Tabish Portfolio
             </a>{" " + new Date().getFullYear()+"."}
           </Typography>

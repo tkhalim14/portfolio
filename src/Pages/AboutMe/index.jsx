@@ -1,4 +1,4 @@
-import banner from '../../Components/Media/banner.png';
+// import banner from '../../Components/Media/banner.png';
 
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
@@ -10,27 +10,42 @@ import Typography from '@mui/material/Typography';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import contactLinks from '../../Components/Constants/contactme.js';
-import colors from '../../Components/Constants/colorscheme.js';
-
+import contactLinks from '../../Components/Constants/contactme';
+import colors from '../../Components/Constants/colorscheme';
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Grow from '@mui/material/Grow';
+import Avatar from '@mui/material/Avatar';
 import StarIcon from '@mui/icons-material/Star';
+
+// import banner from '../../Components/Media/banner.png';
+import ProfileImg from '../../Components/Media/AboutDP.jpg';
+
+// import { useLocation } from 'react-router-dom';
 
 // import { styled } from '@mui/material/styles';
 
-import {programmingLanguages , tools} from './techstack.js';
+import {programmingLanguages , tools} from './techstack';
 
 
 function About() {
 
-  React.useEffect(() => {
-    document.body.style.backgroundImage = `url(${banner})`;
-  });
+  // const location = useLocation();
+
+  // React.useEffect(() => {
+  //   if(location.pathname === '/About'){
+  //     document.body.style.backgroundImage = `url(${banner})`;
+  //   }
+  //   else{
+  //     document.body.style.backgroundImage = 'none';
+  //   }
+  //   // console.log(location.pathname);
+    
+  // });
 
   const theme = createTheme({
     palette: {
@@ -59,16 +74,32 @@ function About() {
     return (
       <>
       <div>
-        <Grid sx={{display:'flex', justifyContent:'space-between', flexDirection:'column',mt:'5vh'}}>
-          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5}}>
+        <Grid sx={{display:'flex', justifyContent:'space-evenly', flexDirection: { xs: "column", md: "row" }}}>
+          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '55%'}}>
             <ThemeProvider theme={theme}>
-                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'60vw'}}>
+                <Card sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderTopRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', width: '35%'}}>
+                </Card>
+                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0}}>
                     <CardContent>
+                      <Typography variant='h4'>
+                        <Grow in={true}>
+                          <Avatar alt="profilepic" src={ProfileImg} sx={{minHeight: 100, minWidth: 100, height: 180, width: 180, marginBottom: 3,  margin:2}} align="left"/>
+                        </Grow >
+                      </Typography>
                       <Typography variant="h5" component="div">
-                          Tabish Khalid Halim
+                          <Grid rows={{ xs: 1}} columns={{ xs: 1 }} sx={{display:'flex',justifyContent:'space-between'}}>
+                                <Grid item>
+                                    Tabish Khalid Halim
+                                </Grid>
+                                <Grid item>
+                                    <CardActions sx={{display:'inline',justifyContent:'flex-end'}}>
+                                        <Button size="medium" href={contactLinks['resume']} variant="contained" color="secondary">Resume</Button>
+                                    </CardActions>
+                                </Grid>
+                            </Grid>
                       </Typography>
                       <Typography sx={{ fontSize: 14 , mb: 1.5 }} color="text.secondary" gutterBottom>
-                          B.Tech, CSE'24
+                          B.Tech, CSE '24
                           <br/> <a href="https://www.iitdh.ac.in" >IIT Dharwad</a>
                       </Typography>
                       <Typography variant="body2">
@@ -108,20 +139,22 @@ function About() {
                           <Grid item>
                               Thanks for visiting my portfolio. Explore my projects and experiences, and let's connect!
                           </Grid>
-                          <Grid item>
+                          {/* <Grid item>
                           <CardActions sx={{display:'inline',justifyContent:'flex-end'}}>
                             <Button size="small" href={contactLinks['resume']} variant="contained" color="secondary">Resume</Button>
                           </CardActions>
-                          </Grid>
+                          </Grid> */}
                       </Grid>
                     </CardContent>
                     
                 </Card>
             </ThemeProvider>
           </Grid>
-          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 10, paddingBottom:6}}>
+          <Grid item sx={{ display:'flex', justifyContent:'center', padding: 5, minWidth: '30%'}}>
             <ThemeProvider theme={theme}>
-                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'60vw'}}>
+                <Card sx={{borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
+                    <CardContent sx={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, bgcolor: colors[2], backgroundPosition:'center', height: '2.5%'}}>
+                    </CardContent>
                     <CardContent>
                         <Typography variant='h4'>
                           Skills
@@ -132,7 +165,7 @@ function About() {
                         </Typography>
                         <Typography variant='body1' color="secondary" fontWeight={600}>
                         {programmingLanguages.map((element)=>(
-                          <Button variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
+                          <Button key={element} variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
                         ))}
                         </Typography>
                         <br/>
@@ -141,7 +174,7 @@ function About() {
                         </Typography>
                         <Typography variant='body1' color="secondary" fontWeight={600} >
                         {tools.map((element)=>(
-                          <Button variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
+                          <Button key={element} variant="outlined" color="secondary" style={{margin:5}}>{element}</Button>
                         ))}
                         </Typography>
                     </CardContent>
@@ -150,9 +183,8 @@ function About() {
           </Grid>
         </Grid>
       </div>
-      <div style={{position: 'relative',}}>
-            
-        </div>
+      <div style={{position: 'relative'}}>
+      </div>
       </>
     );
   }

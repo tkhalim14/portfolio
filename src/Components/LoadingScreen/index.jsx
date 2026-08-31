@@ -1,14 +1,14 @@
-// LoadingOverlay.js
+// LoadingOverlay
 import React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 // import LinearProgress from '@mui/material/LinearProgress';
 // import CircularProgress from '@mui/material/CircularProgress';
 
-import colors from '../Constants/colorscheme.js';
+import colors from '../Constants/colorscheme';
 import './index.css';
 
 const LoadingOverlay = ({ open }) => {
@@ -38,7 +38,7 @@ const LoadingOverlay = ({ open }) => {
                 {/* Second Column */}
                 <Grid item xs={12} md={6}>
                     {/* Your content for the second column */}
-                    <Lottie animationData={svgData} loop={true} style={{minHeight: 250, minWidth: 250, width:'40vw'}}/>
+                    {/* <Lottie animationData={svgData} loop={true} style={{minHeight: 250, minWidth: 250, width:'40vw'}}/> */}
                 </Grid>
             </Grid>
         </Backdrop>
