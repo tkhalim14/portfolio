@@ -1,4 +1,4 @@
-import colors from '../../Constants/colorScheme.js';
+import colors from '../../Constants/colorScheme';
 
 const SideNavWidth = '4vw';
 
@@ -28,3 +28,4 @@ const NavbarTitleStyle = {
 };
 
 export { NavbarTitleStyle, SideNavStyle, TopNavToolbarStyles, SideNavWidth } ;
+
