@@ -1,4 +1,4 @@
-.experience-item{
+.experience-item {
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -13,7 +13,7 @@
     }
 }
 
-.experience-item-none{
+.experience-item-none {
     animation: fadeOutAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;

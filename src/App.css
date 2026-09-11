@@ -1,11 +1,10 @@
 .Main {
-  transition:0.5s ;
-  
+    transition: 0.5s;
 }
-.pageContent{
-  padding-top: 1rem;
+.pageContent {
+    padding-top: 1rem;
 }
-.footerContent{
-  position:'relative';
-  bottom: 0;
+.footerContent {
+    position: 'relative';
+    bottom: 0;
 }

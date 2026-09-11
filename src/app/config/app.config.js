@@ -1,19 +1,18 @@
 export const routes = [
     {
         name: 'Home',
-        route: '/'
+        route: '/',
     },
     {
         name: 'Projects',
-        route: '/Projects'
+        route: '/Projects',
     },
     {
         name: 'Timeline',
-        route: '/Timeline'
+        route: '/Timeline',
     },
     {
         name: 'About',
-        route: '/About'
+        route: '/About',
     },
-]
-
+];

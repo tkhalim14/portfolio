@@ -11,12 +11,12 @@
     transition: 0.2s all;
 }
 
-.resumeButton:hover{
+.resumeButton:hover {
     background-color: white;
     color: black;
 }
 
-.searchBar{
+.searchBar {
     display: block;
     position: 'relative';
     margin-left: 0;
@@ -27,7 +27,7 @@
     color: '#FFF';
     border-radius: 4px;
     padding: 1rem;
-    width: "100%";
+    width: '100%';
 }
 
 @media only screen and (max-width: 800px) {
