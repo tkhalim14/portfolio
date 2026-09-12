@@ -5,6 +5,7 @@
     "homepage": "https://tkhalim14.github.io/portfolio",
     "type": "module",
     "scripts": {
+        "start": "npm run dev",
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",

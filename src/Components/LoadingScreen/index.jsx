@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import colors from '../Constants/colorScheme';
 import './index.css';
 import { CircularProgress } from '@mui/material';
+import LoadingAnimation from '/Media/LoadingAnimation.svg';
 
 const LoadingOverlay = ({ open }) => (
     <Backdrop open={open} sx={{ background: colors[2], zIndex: 9999 }}>
@@ -26,7 +27,7 @@ const LoadingOverlay = ({ open }) => (
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
                 <Suspense fallback={<CircularProgress />}>
-                    <img src="/images/LoadingAnimation.svg" alt="LoadingAnimation" />
+                    <img src={LoadingAnimation} alt="LoadingAnimation" />
                 </Suspense>
             </Grid>
         </Grid>

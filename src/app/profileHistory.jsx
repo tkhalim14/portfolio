@@ -1,3 +1,7 @@
+import ExtraCurricular from '../../Media/Projects/ExtraCurricular.jpeg';
+import Work from '../../Media/Projects/Work.jpeg';
+import TA from '../../Media/Projects/TA.jpeg';
+
 const workExperiences = [
     {
         title: 'Website Team',
@@ -15,7 +19,7 @@ const workExperiences = [
             'I was given this role to based off my people skills. Throughout the experience, my core responsibilities were inviting companies for placements, being the point of contact between company and the candidates and coordinating the selection process',
         link: 'https://cdc.iitdh.ac.in',
         date: 'Mar, 2022 - May, 2023',
-        imageURL: '/images/Work.jpeg',
+        imageURL: Work,
         isVisibleOnHomePage: true,
     },
     {
@@ -25,7 +29,7 @@ const workExperiences = [
             'I had done my internship under the role of software development at Benam for a period of 6 months. Apart from software development,  I learnt the following skills: user experience, optimizing app performance, integrating marketing and analytics functionalities, and ensuring comprehensive testing capabilities.',
         link: 'https://www.linkedin.com/in/tabish-khalid-halim-27209b201/details/experience/1635537136559/single-media-viewer/?type=DOCUMENT&profileId=ACoAADNytLYBIMCuYNxZL32JzwXCu05XMgj6RYo',
         date: 'Mar, 2023 - Aug, 2023',
-        imageURL: '/images/Work.jpeg',
+        imageURL: Work,
         isVisibleOnHomePage: true,
     },
     {
@@ -35,7 +39,7 @@ const workExperiences = [
             'Assessed and demonstrated 10 labs on basics of C & C++ programming including topics such as datatypes, operators, control statements, arrays, strings, pointers, functions, structures, file operations, classes, and objects.',
         link: 'https://iitdh.ac.in',
         date: 'Aug, 2023 - Nov, 2023',
-        imageURL: '/images/TA.jpeg',
+        imageURL: TA,
         isVisibleOnHomePage: true,
     },
     {
@@ -45,7 +49,7 @@ const workExperiences = [
             'Teaching Assistant for the Artificial Intelligence Lab course. Enabled students to learn the fundamentals of Artificial Intelligence. Guided in understanding complex concepts, evaluating assignments, and facilitating discussions to enhance learning.',
         link: 'https://iitdh.ac.in',
         date: 'Aug, 2023 - Nov, 2023',
-        imageURL: '/images/TA.jpeg',
+        imageURL: TA,
         isVisibleOnHomePage: true,
     },
     {
@@ -55,7 +59,7 @@ const workExperiences = [
             "As an intern at effiHR, collaborated with the web team to develop production-ready code for the organization's official webpage. Tasked with creation of responsive UI elements along with implementation of various web designs along with optimizing code using system design patterns for querying and caching web contents.",
         link: 'https://home.effihr.com/',
         date: 'Apr, 2024 - July, 2022',
-        imageURL: '/images/Work.jpeg',
+        imageURL: Work,
         isVisibleOnHomePage: true,
     },
 ];
@@ -113,7 +117,8 @@ const extraCurriculars = [
             'I became a Student Mentor for my junior batch in 2nd year. The core skills I learned from this were mentorship, communication, group therapy and social skills.',
         link: '',
         date: 'Nov, 2021 - Nov, 2022',
-        isVisibleOnHomePage: false,
+        imageURL: ExtraCurricular,
+        isVisibleOnHomePage: true,
     },
     {
         title: 'Emotion Detector - SOI',
@@ -149,7 +154,7 @@ const extraCurriculars = [
             'Overall Coordinator is one of the core positions in the PARSEC organizing team. I acted as a representative figure of the PARSEC organizing team and ensure smooth conduct of the events in a cost-effective manner and satisfying the needs of all the stakeholders of the event. ',
         link: '',
         date: 'Sept, 2022 - May, 2023',
-        imageURL: '/images/ExtraCurricular.jpeg',
+        imageURL: ExtraCurricular,
         isVisibleOnHomePage: true,
     },
     {
@@ -205,19 +210,4 @@ const HomeCarouselExperiences = [
     ...workExperiences.filter((ele) => ele.isVisibleOnHomePage),
 ];
 
-const banners = [
-    {
-        url: '/images/Banner-1.png',
-    },
-    {
-        url: '/images/autoreels-banner.png',
-    },
-    {
-        url: '/images/musipy-banner.png',
-    },
-    {
-        url: '/images/multi-tridos.png',
-    },
-];
-
-export { workExperiences, extraCurriculars, educationalDetails, HomeCarouselExperiences, banners };
+export { workExperiences, extraCurriculars, educationalDetails, HomeCarouselExperiences };
